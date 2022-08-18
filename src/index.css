@@ -1,5 +1,5 @@
 html{
-  background-color: var(--light-dark-color);
+  background-color: var(--dark-color);
 }
 
 html *{
@@ -13,7 +13,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 500;
 }
 
 code {
@@ -35,4 +34,8 @@ code {
 
 .text-color-pink{
   color: var(--pink-color);
+}
+
+.text-color-blue{
+  color: var(--blue-color);
 }
