@@ -10,7 +10,9 @@ class Home extends React.Component {
     render() {
         return (
             <div className="Home">
-                
+                <section>
+                    <img className="BaldoIMG" src={require("../Images/manuelbaldoni.png")} alt="Baldo"/>
+                </section>
             </div>
         );
     }

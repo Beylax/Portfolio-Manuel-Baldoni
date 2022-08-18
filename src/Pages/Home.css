@@ -1,0 +1,12 @@
+.BaldoIMG{
+    position: relative;
+    border-radius: 50%;
+}
+
+.BaldoIMG::after{
+    content: '';
+    position: relative;
+    width: 100%;
+    height: 30rem;
+    background-color: red;
+}

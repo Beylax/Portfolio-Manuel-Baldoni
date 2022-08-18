@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
+import Navbar from "./Components/Navbar";
 
 class App extends React.Component {
 	constructor(props) {
@@ -12,7 +13,10 @@ class App extends React.Component {
 	render() {
     return (
       <div className="App fs-1 text-center">
-        Ciao DPT
+        <Navbar/>
+        <Routes>
+					<Route path="/" element={<Home />} />
+				</Routes>
       </div>
     );
 	}
