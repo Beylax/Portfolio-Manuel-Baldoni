@@ -11,7 +11,7 @@ class Home extends React.Component {
         return (
             <div className="Home">
                 <section className="position-relative mt-5 row g-0 align-items-center">
-                    <div className="Social col-md-2">
+                    <div className="Social col-md-2 g-0">
                         <a className="col-4 col-md-12" href="https://github.com/Beylax" target="_blank" rel="noreferrer">
                             <img src={require("../Images/github-logo.png")} alt="https://github.com/Beylax"/>
                         </a>

@@ -15,20 +15,20 @@ class Navbar extends React.Component {
                     <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                        <ul className="navbar-nav mb-lg-0 w-100 mx-5">
-                            <li className="nav-item d-flex align-items-center col-9">
+                        <ul className="navbar-nav mb-lg-0 w-100">
+                            <li className="writer nav-item d-flex align-items-center col-12 col-lg-9">
                                 {/* Scritta che si scrive da sola */}
                                 <div className="typewriter">
-                                    <div>Manuel Baldoni</div>
+                                    <div>MANUEL BALDONI</div>
                                 </div>
                             </li>
-                            <li className="nav-item col-1">
+                            <li className="nav-item col-12 col-lg-1">
                                 <Link to="/" className="nav-link text-color-pink">HOME</Link>
                             </li>
-                            <li className="nav-item col-1">
+                            <li className="nav-item col-12 col-lg-1">
                                 <Link to="/about" className="nav-link text-color-pink">ABOUT</Link>
                             </li>
-                            <li className="nav-item col-1">
+                            <li className="nav-item col-12 col-lg-1">
                                 <Link to="/contact" className="nav-link text-color-pink">CONTACT</Link>
                             </li>
                         </ul>

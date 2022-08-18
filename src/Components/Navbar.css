@@ -1,7 +1,12 @@
+.navbar-nav{
+    margin: 0 3rem;
+}
+
 .nav-link{
     position: relative;
     padding: 0;
     transition: all .3s;
+    text-align: center;
 }
 
 .nav-link::before{
@@ -59,4 +64,14 @@
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: var(--blue-color) }
+}
+
+@media screen and (max-width: 992px) {
+    .navbar-nav{
+        margin: 0;
+    }
+
+    .writer{
+        justify-content: center;
+    }
 }
