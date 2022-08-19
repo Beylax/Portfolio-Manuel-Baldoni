@@ -1,5 +1,6 @@
 html{
-  background-color: var(--dark-color);
+  background-image: url("./Images/bg_image.png");
+  min-height: 100vh;
 }
 
 html *{
@@ -38,4 +39,26 @@ code {
 
 .text-color-blue{
   color: var(--blue-color);
+}
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--light-dark-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--dark-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue-color);
 }

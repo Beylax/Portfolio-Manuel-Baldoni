@@ -1,3 +1,7 @@
+.Navbar{
+    margin-bottom: 10rem;
+}
+
 .navbar-nav{
     margin: 0 3rem;
 }
@@ -9,6 +13,15 @@
     text-align: center;
 }
 
+.nav-link:visited{
+    color: var(--pink-color) !important;
+}
+
+.nav-link.active{
+    color: var(--blue-color) !important;
+    font-weight: bolder !important;
+}
+
 .nav-link::before{
     content: '';
     position: absolute;
@@ -18,16 +31,17 @@
     right: 0;
     bottom: 0;
     background-color: var(--blue-color);
-    transition: all .3s;
+    transition: all .5s;
 }
 
 .nav-link:hover{
-    color: var(--blue-color);
+    color: var(--blue-color) !important;
 }
 
 .nav-link:hover::before{
     max-width: 100%;
 }
+
 
 .typewriter div {
     color: var(--blue-color);
@@ -38,26 +52,14 @@
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
     animation: 
-        typing 2s steps(14, end),
-        blink-caret .6s step-end infinite;
-}
-
-.typewriter div:hover{
-    animation: 
-        untyping 2s steps(14, end),
+        typing 5s steps(14, end) infinite,
         blink-caret .6s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-/* The typing effect */
-@keyframes untyping {
-    from { width: 100% }
-    to { width: 0 }
+    0% { width: 0 }
+    30% { width: 100% }
 }
 
 /* The typewriter cursor effect */
@@ -67,6 +69,10 @@
 }
 
 @media screen and (max-width: 992px) {
+    .Navbar{
+        margin-bottom: 0;
+    }
+    
     .navbar-nav{
         margin: 0;
     }

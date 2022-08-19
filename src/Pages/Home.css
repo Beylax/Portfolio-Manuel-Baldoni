@@ -2,7 +2,12 @@
 .Social{
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 3rem;
+}
+
+.Social > a > img{
+    max-width: 3rem;
+    max-height: 3rem;
 }
 
 .BaldoIMG{
