@@ -34,6 +34,7 @@
         flex-direction: row;
         order: 3;
         margin-top: 5vh;
+        margin-bottom: 5vh;
     }
 
     .Title > div{
