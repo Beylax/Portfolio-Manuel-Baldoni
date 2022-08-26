@@ -1,0 +1,41 @@
+.Contact {
+	margin: 0 auto;
+	margin-top: 3rem;
+	max-width: 70rem;
+	color: var(--pink-color);
+}
+
+.Contact .input {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border: none;
+	border-radius: 1rem;
+	box-shadow: 0 0 10px var(--blue-color);
+	color: var(--pink-color);
+	text-align: center;
+	width: 100%;
+}
+
+.Contact > textarea {
+	min-height: 10rem;
+}
+
+.Contact > .btn {
+	margin: 0 auto;
+	height: 5rem;
+	max-width: 10rem;
+	font-weight: bold;
+	color: var(--pink-color);
+	border: none;
+}
+
+.Contact > .btn:hover {
+	box-shadow: 0 0 10px var(--blue-color);
+	color: var(--blue-color);
+}
+
+@media screen and (max-width: 992px) {
+	.Contact {
+		margin: 0 1rem;
+	}
+}

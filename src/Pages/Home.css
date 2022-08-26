@@ -1,3 +1,7 @@
+.Home{
+    margin-top: 10rem;
+}
+
 /* #1 sezione */
 .Social{
     display: flex;
@@ -30,6 +34,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    .Home{
+        margin-top: 0;
+    }
+
     .Social{
         flex-direction: row;
         order: 3;

@@ -27,13 +27,13 @@ class Navbar extends React.Component {
                                 <div>MANUEL BALDONI</div>
                             </div>
                         </li>
-                        <li className="nav-item col-12 col-lg-1 mx-2">
+                        <li className="nav-item col-12 col-lg-1">
                             <Link to="/" className="nav-link text-color-pink fw-light active" id="home" onClick={() => this.ToggleActive("home")}>HOME</Link>
                         </li>
-                        <li className="nav-item col-12 col-lg-1 mx-2">
+                        <li className="nav-item col-12 col-lg-1">
                             <Link to="/about" className="nav-link text-color-pink fw-light" id="about" onClick={() => this.ToggleActive("about")}>ABOUT</Link>
                         </li>
-                        <li className="nav-item col-12 col-lg-1 mx-2">
+                        <li className="nav-item col-12 col-lg-1">
                             <Link to="/contact" className="nav-link text-color-pink fw-light" id="contact" onClick={() => this.ToggleActive("contact")}>CONTACT</Link>
                         </li>
                     </ul>

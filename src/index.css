@@ -1,6 +1,7 @@
 html{
   background-image: url("./Images/bg_image.png");
   min-height: 100vh;
+  overflow: hidden;
 }
 
 html *{
@@ -39,6 +40,10 @@ code {
 
 .text-color-blue{
   color: var(--blue-color);
+}
+
+.btn-blue{
+  background-color: var(--blue-color);
 }
 
 /* Scrollbar */

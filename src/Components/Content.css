@@ -1,0 +1,26 @@
+/* Transizione tra le pagine */
+.fadeIn {
+    animation: 0.5s fadeIn forwards;
+}
+  
+.fadeOut {
+    animation: 0.5s fadeOut forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translate(100%, 0);
+    }
+    to {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        transform: translate(0px, 0px);
+    }
+    to {
+        transform: translate(100%, 0);
+    }
+}
