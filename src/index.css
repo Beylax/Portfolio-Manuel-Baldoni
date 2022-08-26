@@ -1,7 +1,6 @@
 html {
 	background-image: url("./Images/bg_image.png");
 	min-height: 100vh;
-	overflow: hidden;
 }
 
 html * {
