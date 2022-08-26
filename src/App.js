@@ -13,7 +13,7 @@ class App extends React.Component {
 		return (
 			<div className="App fs-1 text-center">
 				<Navbar />
-				<Content/>
+				<Content />
 			</div>
 		);
 	}

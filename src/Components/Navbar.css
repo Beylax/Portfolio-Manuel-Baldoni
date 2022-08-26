@@ -1,75 +1,106 @@
-.navbar-nav{
-    margin: 0 3rem;
+#NAV_CONTAINER {
+	max-height: 100vh;
+	overflow: hidden;
+	transition: all 1s ease-in-out;
 }
 
-.nav-link{
-    position: relative;
-    padding: 0;
-    transition: all .3s;
-    text-align: center;
+.navbar-nav {
+	margin: 0 3rem;
 }
 
-.nav-link:visited{
-    color: var(--pink-color) !important;
+#BTN_NAVBAR {
+	display: none;
+	transition: all 0.5s;
 }
 
-.nav-link.active{
-    color: var(--blue-color) !important;
-    font-weight: bolder !important;
+.rotate{
+    transform: rotate(360deg);
 }
 
-.nav-link::before{
-    content: '';
-    position: absolute;
-    max-width: 0;
-    height: .1rem;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--blue-color);
-    transition: all .5s;
+.nav-link {
+	position: relative;
+	padding: 0;
+	transition: all 0.3s;
+	text-align: center;
 }
 
-.nav-link:hover{
-    color: var(--blue-color) !important;
+.nav-link:visited {
+	color: var(--pink-color) !important;
 }
 
-.nav-link:hover::before{
-    max-width: 100%;
+.nav-link.active {
+	color: var(--blue-color) !important;
+	font-weight: bolder !important;
 }
 
+.nav-link::before {
+	content: "";
+	position: absolute;
+	max-width: 0;
+	height: 0.1rem;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--blue-color);
+	transition: all 0.5s;
+}
+
+.nav-link:hover {
+	color: var(--blue-color) !important;
+}
+
+.nav-link:hover::before {
+	max-width: 100%;
+}
 
 .typewriter div {
-    color: var(--blue-color);
-    font-family: monospace;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid var(--blue-color); /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-        typing 5s steps(14, end) infinite,
-        blink-caret .6s step-end infinite;
+	color: var(--blue-color);
+	font-family: monospace;
+	overflow: hidden; /* Ensures the content is not revealed until the animation */
+	border-right: 0.15em solid var(--blue-color); /* The typwriter cursor */
+	white-space: nowrap; /* Keeps the content on a single line */
+	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+	letter-spacing: 0.15em; /* Adjust as needed */
+	animation: typing 5s steps(14, end) infinite,
+		blink-caret 0.6s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
-    0% { width: 0 }
-    30% { width: 100% }
+	0% {
+		width: 0;
+	}
+	30% {
+		width: 100%;
+	}
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: var(--blue-color) }
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: var(--blue-color);
+	}
 }
 
-@media screen and (max-width: 992px) {    
-    .navbar-nav{
-        margin: 0;
-    }
+@media screen and (max-width: 992px) {
+	.nav-close {
+		max-height: 0 !important;
+	}
 
-    .writer{
-        justify-content: center;
-    }
+	.navbar-nav {
+		margin: 0;
+	}
+
+	#BTN_NAVBAR {
+		display: block;
+		transition: all 0.5s;
+	}
+
+	.writer {
+		justify-content: center;
+	}
 }

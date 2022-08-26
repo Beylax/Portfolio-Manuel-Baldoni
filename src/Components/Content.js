@@ -7,7 +7,7 @@ import Contact from "../Pages/Contact";
 import Error from "../Pages/Error";
 
 function Content() {
-    const className = " Content ";
+	const className = " Content ";
 	const location = useLocation();
 
 	const [displayLocation, setDisplayLocation] = useState(location);

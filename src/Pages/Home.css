@@ -1,51 +1,51 @@
-.Home{
-    margin-top: 10rem;
+.Home {
+	margin-top: 10rem;
 }
 
 /* #1 sezione */
-.Social{
-    display: flex;
-    flex-direction: column;
-    row-gap: 3rem;
+.Social {
+	display: flex;
+	flex-direction: column;
+	row-gap: 3rem;
 }
 
-.Social > a > img{
-    max-width: 3rem;
-    max-height: 3rem;
+.Social > a > img {
+	max-width: 3rem;
+	max-height: 3rem;
 }
 
-.BaldoIMG{
-    max-height: 60vh;
-    max-width: 100%;
+.BaldoIMG {
+	max-height: 60vh;
+	max-width: 100%;
 }
 
-.Title > div{
-    margin: 1rem 0;
-    text-shadow: 0px 0px 20px black;
-    text-align: start;
+.Title > div {
+	margin: 1rem 0;
+	text-shadow: 0px 0px 20px black;
+	text-align: start;
 }
 
-.Home .h1{
-    font-size: max(6vw, 4rem);
+.Home .h1 {
+	font-size: max(6vw, 4rem);
 }
 
-.Home .h2{
-    font-size: max(3vw, 2rem);
+.Home .h2 {
+	font-size: max(3vw, 2rem);
 }
 
 @media screen and (max-width: 768px) {
-    .Home{
-        margin-top: 0;
-    }
+	.Home {
+		margin-top: 0;
+	}
 
-    .Social{
-        flex-direction: row;
-        order: 3;
-        margin-top: 5vh;
-        margin-bottom: 5vh;
-    }
+	.Social {
+		flex-direction: row;
+		order: 3;
+		margin-top: 5vh;
+		margin-bottom: 5vh;
+	}
 
-    .Title > div{
-        text-align: center;
-    }
+	.Title > div {
+		text-align: center;
+	}
 }
