@@ -13,8 +13,8 @@
 	transition: all 0.5s;
 }
 
-.rotate{
-    transform: rotate(360deg);
+.rotate {
+	transform: rotate(360deg);
 }
 
 .nav-link {

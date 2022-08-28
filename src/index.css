@@ -1,6 +1,9 @@
 html {
-	background-image: url("./Images/bg_image.png");
+	position: relative;
 	min-height: 100vh;
+	background-image: url("./Images/bg_image.png");
+	background-size: cover;
+	overflow-x: hidden;
 }
 
 html * {
@@ -46,8 +49,16 @@ code {
 	color: var(--white-color);
 }
 
+.text-color-dark{
+	color: var(--dark-color);
+}
+
 .btn-blue {
 	background-color: var(--blue-color);
+}
+
+.btn-pink {
+	background-color: var(--pink-color);
 }
 
 /* Scrollbar */
@@ -70,4 +81,11 @@ code {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background: var(--blue-color);
+}
+
+@media screen and (max-width: 768px) {
+	html {
+		background-image: url("./Images/bg_image_vertical.png");
+		background-size: stretch;
+	}
 }

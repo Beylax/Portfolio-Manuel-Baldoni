@@ -6,6 +6,7 @@
 }
 
 .Contact .input {
+	position: relative;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	border: none;
@@ -29,7 +30,7 @@
 	border: none;
 }
 
-.Contact > .btn:hover {
+.Contact > .btn:hover, .Contact > .btn:focus {
 	box-shadow: 0 0 10px var(--blue-color);
 	color: var(--blue-color);
 }

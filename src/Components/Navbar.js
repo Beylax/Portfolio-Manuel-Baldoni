@@ -20,8 +20,8 @@ class Navbar extends React.Component {
 		let NavContainer = document.getElementById("NAV_CONTAINER");
 		NavContainer.classList.toggle("nav-close");
 
-        let btn = document.getElementById("BTN_NAVBAR");
-        btn.classList.toggle("rotate");
+		let btn = document.getElementById("BTN_NAVBAR");
+		btn.classList.toggle("rotate");
 		if (NavContainer.classList.contains("nav-close")) {
 			btn.innerHTML = "&#8212;";
 		} else {

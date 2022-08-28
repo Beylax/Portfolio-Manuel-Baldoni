@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 class Home extends React.Component {
@@ -6,6 +7,14 @@ class Home extends React.Component {
 		super(props);
 		this.state = {};
 	}
+
+	ToggleActive = (linkID) => {
+		let links = document.getElementsByClassName("nav-link");
+		for (let i = 0; i < links.length; i++) {
+			links[i].classList.remove("active");
+		}
+		document.getElementById(linkID).classList.add("active");
+	};
 
 	render() {
 		return (
@@ -53,7 +62,7 @@ class Home extends React.Component {
 							alt="Baldo"
 						/>
 					</div>
-					<div className="Title col-md-3 text-nowrap">
+					<div className="Title col-md-3 text-nowrap text-start">
 						<div className="h1 text-color-blue fw-bold">
 							DEVELOPER
 						</div>
@@ -62,6 +71,14 @@ class Home extends React.Component {
 						</div>
 						<div className="h3 text-color-pink fw-light">
 							FRONT-END EXPERT
+						</div>
+						<div className="row g-0 justify-content-between my-5 mx-5 mx-md-0">
+							<Link to="/about#projects" className="btn btn-contact text-color-pink fw-bold py-3 px-4 col-md-5" onClick={() => this.ToggleActive("about")}>
+								I MIEI PROGETTI
+							</Link>
+							<Link to="/contact" className="btn btn-pink-reverse text-color-pink fw-bold py-3 px-4 col-md-5" onClick={() => this.ToggleActive("contact")}>
+								CONTATTATMI
+							</Link>
 						</div>
 					</div>
 				</section>
