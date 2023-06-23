@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  @apply bg-primary;
+}
+
+/* ------------------ START TYPOGRAPHY ------------------- */
+h1,.h1{
+	font-size: clamp(4.375rem, 4.0136rem + 1.8072vw, 6.25rem);
+	line-height: 1;
+}
+h3,.h3{
+	font-size: clamp(1.875rem, 1.634rem + 1.2048vw, 3.125rem);
+	line-height: 1;
+}
+h4,.h4{
+	font-size: clamp(1.25rem, 1.1054rem + 0.7229vw, 2rem);
+}
+h5,.h5{
+	font-size: clamp(0.875rem, 0.8027rem + 0.3614vw, 1.25rem);
+}
+/* ------------------ END TYPOGRAPHY ------------------- */
+
+/* ------------------ START GENERAL ------------------- */
+a{
+	@apply relative text-highlight after:absolute after:top-full after:left-0 after:w-0 after:h-[1px] after:bg-highlight after:transition-all hover:after:w-full
+}
+
+.quote{
+	@apply max-w-[600px]
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+	@apply bg-transparent
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	@apply bg-highlight rounded-full
+}
+
+.underline-effect{
+	@apply after:absolute after:top-full after:left-0 after:w-0 after:h-[1px] after:transition-all hover:after:w-full
+}
+/* ------------------ END GENERAL ------------------- */
+
+/* ------------------ START HEADER ------------------- */
+.nav-item{
+	@apply relative after:bg-white
+}
+.nav-item.active{
+	@apply after:w-full
+}
+.nav-link{
+	@apply text-white uppercase font-bold
+}
+/* ------------------ END HEADER ------------------- */
