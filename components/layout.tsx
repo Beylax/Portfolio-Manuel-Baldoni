@@ -9,12 +9,12 @@ export default function Layout({children} : any) {
     return (
         <div className={poppins.className}>
             <Head>
-                <title>Manuel Baldoni</title>
+                <title>Manuel Baldoni | Portfolio</title>
                 <meta name="description" content="Portfolio di Manuel Baldoni - Full-stack developer - Front-end passion"></meta>
             </Head>
             
             <Header></Header>
-            <main>
+            <main className="overflow-x-hidden max-w-screen">
                 {children}
             </main>
             <Footer></Footer>

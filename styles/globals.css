@@ -31,7 +31,7 @@ h5,.h5{
 
 /* ------------------ START GENERAL ------------------- */
 a{
-	@apply relative text-highlight after:absolute after:top-full after:left-0 after:w-0 after:h-[1px] after:bg-highlight after:transition-all hover:after:w-full
+	@apply relative text-highlight
 }
 
 .quote{
@@ -54,7 +54,20 @@ a{
 }
 
 .underline-effect{
-	@apply after:absolute after:top-full after:left-0 after:w-0 after:h-[1px] after:transition-all hover:after:w-full
+	@apply relative after:absolute after:top-full after:left-0 after:w-0 after:h-[1px] after:transition-all hover:after:w-full
+}
+
+.translate-tl-full{
+	translate: 50% 50%;
+}
+.translate-bl-full{
+	translate: 50% -50%;
+}
+.translate-tr-full{
+	translate: -50% 50%;
+}
+.translate-br-full{
+	translate: -50% -50%;
 }
 /* ------------------ END GENERAL ------------------- */
 
