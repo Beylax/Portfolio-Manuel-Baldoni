@@ -26,7 +26,8 @@ module.exports = {
       animation: {
         'blink': 'blinking 1s steps(2) infinite',
         'spin': 'spinning 10s linear infinite',
-        'spin-reverse': 'spinning-reverse 10s linear infinite'
+        'spin-reverse': 'spinning-reverse 10s linear infinite',
+        'pause': 'pause'
       },
       keyframes: {
         blinking: {

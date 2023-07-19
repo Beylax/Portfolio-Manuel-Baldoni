@@ -45,17 +45,17 @@ export default function Hero() {
                 <div className="absolute w-[10px] h-[10px] bg-[#888fa6] top-[60px] left-[80px] rounded-full"></div>
                 <div className="absolute w-[10px] h-[10px] bg-[#888fa6] top-[80px] left-[50px] rounded-full"></div>
 
-                <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-[200%] h-[200%] bg-transparent rounded-full border-2 border-[#888fa6] origin-[0_0] animate-spin-reverse">
-                    <div className='absolute w-fit aspect-square pointer-events-none top-0 left-0 origin-center animate-spin translate-tl-full'>
+                <div className="absolute group top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-[200%] h-[200%] bg-transparent rounded-full border-2 border-[#888fa6] origin-[0_0] animate-spin-reverse hover:animate-pause">
+                    <div className='absolute w-fit aspect-square pointer-events-none top-0 left-0 origin-center animate-spin group-hover:animate-pause translate-tl-full'>
                         <Icon icon="react" fill={tailwindConfig?.theme?.extend?.colors["react"]} />
                     </div>
-                    <div className='absolute w-fit aspect-square pointer-events-none bottom-0 left-0 origin-center animate-spin translate-bl-full'>
+                    <div className='absolute w-fit aspect-square pointer-events-none bottom-0 left-0 origin-center animate-spin group-hover:animate-pause translate-bl-full'>
                         <Icon icon="html" fill={tailwindConfig?.theme?.extend?.colors["html"]} />
                     </div>
-                    <div className='absolute w-fit aspect-square pointer-events-none top-0 right-0 origin-center animate-spin translate-tr-full'>
+                    <div className='absolute w-fit aspect-square pointer-events-none top-0 right-0 origin-center animate-spin group-hover:animate-pause translate-tr-full'>
                         <Icon icon="css" fill={tailwindConfig?.theme?.extend?.colors["css"]} />
                     </div>
-                    <div className='absolute w-fit aspect-square pointer-events-none bottom-0 right-0 origin-center animate-spin translate-br-full'>
+                    <div className='absolute w-fit aspect-square pointer-events-none bottom-0 right-0 origin-center animate-spin group-hover:animate-pause translate-br-full'>
                         <Icon icon="javascript" fill={tailwindConfig?.theme?.extend?.colors["javascript"]} />
                     </div>
                 </div>
