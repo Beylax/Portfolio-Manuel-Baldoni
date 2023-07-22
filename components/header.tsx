@@ -7,7 +7,7 @@ export default function Header() {
     const router = useRouter();
 
     return (
-        <header className="bg-secondary py-6">
+        <header className="fixed top-0 w-full bg-secondary py-6 z-[100000]">
             <Container>
                 <nav className="flex items-center justify-between">
                     <Link href="/" className="relative w-12 h-12 rounded-full">

@@ -15,6 +15,7 @@ module.exports = {
         'secondary': "#1A0B2E",
         'tertiary': "#CCD6F6",
         'highlight': "#7127BA",
+        "hemerald": "#50C878",
         "javascript": "#ffd600",
         "html": "#f1652a",
         "css": "#006bc0",
@@ -40,6 +41,12 @@ module.exports = {
         "spinning-reverse": {
           '0%': { rotate: "0deg" },
           '100%': { rotate: "-360deg" },
+        }
+      },
+      spacing: {
+        translate: {
+          'center-x': "transform: translateX(-50%)",
+          'center-y': "transform: translateY(-50%)"
         }
       }
     },

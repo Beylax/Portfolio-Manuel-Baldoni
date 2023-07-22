@@ -2,23 +2,29 @@ import Container from "./container";
 import Image from "next/image";
 import Icon from "./icon";
 import tailwindConfig from '../tailwind.config.js';
+import Link from "next/link";
 
 export default function Hero() {
     return (
         <div className="relative overflow-y-visible">
-            <section className='py-20'>
+            <section className='py-40'>
                 <Container>
-                    <div className='flex flex-wrap items-center gap-10'>
+                    <div className='flex flex-wrap items-center gap-20'>
                         <div className='relative w-[258px] mx-auto aspect-square pointer-events-none'>
-                            <Image src={"/images/Me.png"} alt='manuel-baldoni' fill className='pointer-events-none object-cover drop-shadow-img_hero' />
+                            <Image src={"/images/hero_avatar.png"} alt='manuel-baldoni' fill className='pointer-events-none object-cover drop-shadow-img_hero' />
                         </div>
                         <div className='grow'>
                             <div>
                                 <p className='text-white p-0 m-0'>A developer for <span className='text-highlight uppercase font-bold'>passion</span></p>
                                 <h1 className='text-white font-bold my-10'>Manuel <span className='text-highlight'>Baldoni</span></h1>
                             </div>
-                            <div className='relative quote'>
+                            <div className='relative quote my-10'>
                                 <p className='relative text-tertiary italic'>&quot;Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars to change the world.&quot;</p>
+                            </div>
+
+                            <div className="flex items-center justify-center md:justify-start gap-x-20 mt-10">
+                                <Link href={"#info"} className="underline-effect-small py-2 text-xl font-bold uppercase text-white"><span>my skills</span></Link>
+                                <Link href={"/contact"} className="underline-effect-small py-2 text-xl font-bold uppercase text-white"><span>contact me</span></Link>
                             </div>
                         </div>
                     </div>
@@ -45,17 +51,17 @@ export default function Hero() {
                 <div className="absolute w-[10px] h-[10px] bg-[#888fa6] top-[60px] left-[80px] rounded-full"></div>
                 <div className="absolute w-[10px] h-[10px] bg-[#888fa6] top-[80px] left-[50px] rounded-full"></div>
 
-                <div className="absolute group top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-[200%] h-[200%] bg-transparent rounded-full border-2 border-[#888fa6] origin-[0_0] animate-spin-reverse hover:animate-pause">
-                    <div className='absolute w-fit aspect-square pointer-events-none top-0 left-0 origin-center animate-spin group-hover:animate-pause translate-tl-full'>
+                <div className="absolute group top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-[200%] h-[200%] bg-transparent rounded-full border-2 border-[#888fa6] origin-[0_0] animate-spin-reverse ">
+                    <div className='absolute w-fit aspect-square pointer-events-none top-0 left-0 origin-center animate-spin translate-tl-full'>
                         <Icon icon="react" fill={tailwindConfig?.theme?.extend?.colors["react"]} />
                     </div>
-                    <div className='absolute w-fit aspect-square pointer-events-none bottom-0 left-0 origin-center animate-spin group-hover:animate-pause translate-bl-full'>
+                    <div className='absolute w-fit aspect-square pointer-events-none bottom-0 left-0 origin-center animate-spin translate-bl-full'>
                         <Icon icon="html" fill={tailwindConfig?.theme?.extend?.colors["html"]} />
                     </div>
-                    <div className='absolute w-fit aspect-square pointer-events-none top-0 right-0 origin-center animate-spin group-hover:animate-pause translate-tr-full'>
+                    <div className='absolute w-fit aspect-square pointer-events-none top-0 right-0 origin-center animate-spin translate-tr-full'>
                         <Icon icon="css" fill={tailwindConfig?.theme?.extend?.colors["css"]} />
                     </div>
-                    <div className='absolute w-fit aspect-square pointer-events-none bottom-0 right-0 origin-center animate-spin group-hover:animate-pause translate-br-full'>
+                    <div className='absolute w-fit aspect-square pointer-events-none bottom-0 right-0 origin-center animate-spin translate-br-full'>
                         <Icon icon="javascript" fill={tailwindConfig?.theme?.extend?.colors["javascript"]} />
                     </div>
                 </div>
