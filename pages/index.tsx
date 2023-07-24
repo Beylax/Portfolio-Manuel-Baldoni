@@ -7,9 +7,11 @@ import Hero from '../components/hero'
 const Home: NextPage = () => {
 	return (
 		<div>
-			<Hero></Hero>
 			<section>
-				<Container className="flex flex-col gap-y-20 py-40">
+				<Hero></Hero>
+			</section>
+			<section>
+				<Container className="flex flex-col gap-y-20 lg:py-40">
 					<Project
 						title='Amadori Website'
 						image_src='/images/project_amadori.png'
@@ -23,7 +25,6 @@ const Home: NextPage = () => {
 						link='https://a41.it'
 						description="Area41 is the <i>coolest</i> skateboard e streetware shop in Cesena - Italy. They had an old looking website and they wanted some fresh air, so I restyled the website to a <b>brand new interface</b> keeping the key values that rapresent the essence of the shop.<br><br>For this website I used the built in <a href='https://www.register.it/' target='__blank' className='font-bold after:bg-highlight underline-effect'>Register</a>'s website builder, with particolar attenction to the SEO aspect (the website is an ecommerce too)."
 					/>
-
 				</Container>
 			</section>
 		</div>

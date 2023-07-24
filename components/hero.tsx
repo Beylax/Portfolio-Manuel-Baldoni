@@ -10,21 +10,21 @@ export default function Hero() {
             <section className='py-40'>
                 <Container>
                     <div className='flex flex-wrap items-center gap-20'>
-                        <div className='relative w-[258px] mx-auto aspect-square pointer-events-none'>
+                        <Link href="/contact" className='block relative w-[258px] mx-auto aspect-square hover:scale-110 transition-all duration-500'>
                             <Image src={"/images/hero_avatar.png"} alt='manuel-baldoni' fill className='pointer-events-none object-cover drop-shadow-img_hero' />
-                        </div>
+                        </Link>
                         <div className='grow'>
                             <div>
-                                <p className='text-white p-0 m-0'>A developer for <span className='text-highlight uppercase font-bold'>passion</span></p>
-                                <h1 className='text-white font-bold my-10'>Manuel <span className='text-highlight'>Baldoni</span></h1>
+                                <p className='text-white text-center lg:text-start p-0 m-0'>A developer for <span className='text-highlight uppercase font-bold'>passion</span></p>
+                                <h1 className='text-white font-bold text-center lg:text-start my-10'>Manuel <span className='text-highlight'>Baldoni</span></h1>
                             </div>
-                            <div className='relative quote my-10'>
-                                <p className='relative text-tertiary italic'>&quot;Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars to change the world.&quot;</p>
+                            <div className='relative quote my-10 mx-auto lg:mx-0'>
+                                <p className='relative text-tertiary italic text-center lg:text-start mx-auto lg:mx-0'>&quot;Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars to change the world.&quot;</p>
                             </div>
 
-                            <div className="flex items-center justify-center md:justify-start gap-x-20 mt-10">
-                                <Link href={"#info"} className="underline-effect-small py-2 text-xl font-bold uppercase text-white"><span>my skills</span></Link>
-                                <Link href={"/contact"} className="underline-effect-small py-2 text-xl font-bold uppercase text-white"><span>contact me</span></Link>
+                            <div className="flex items-center justify-center lg:justify-start gap-x-20 mt-10">
+                                <Link href={"#info"} className="underline-effect-small py-2 text-xl font-bold uppercase text-white hover:text-tertiary transition-all duration-500"><span>my skills</span></Link>
+                                <Link href={"/contact"} className="underline-effect-small py-2 text-xl font-bold uppercase text-white hover:text-tertiary transition-all duration-500"><span>contact me</span></Link>
                             </div>
                         </div>
                     </div>
@@ -32,15 +32,15 @@ export default function Hero() {
             </section>
             <section>
                 <Container>
-                    <h3 className='text-tertiary mb-5'>
+                    <h3 className='text-tertiary text-center lg:text-start mb-5'>
                         I&apos;m a Software Engineer. <span className='animate-blink'>|</span>
                     </h3>
-                    <p className='text-white'>Currently, I&apos;m a Software Engineer at <a href='https://diemmea.com' target='__blank' className='font-bold after:bg-highlight underline-effect'>DMA - CX Company for B2B</a></p>
+                    <p className='text-white text-center lg:text-start'>Currently, I&apos;m a Software Engineer at <a href='https://diemmea.com' target='__blank' className='font-bold after:bg-highlight underline-effect'>DMA - CX Company for B2B</a></p>
                 </Container>
             </section>
             <section className='my-20'>
                 <Container>
-                    <p className='text-white quote'>
+                    <p className='text-center lg:text-start text-white quote mx-auto lg:mx-0'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </p>
                 </Container>

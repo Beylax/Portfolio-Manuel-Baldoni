@@ -10,7 +10,7 @@ export default function Header() {
         <header className="fixed top-0 w-full bg-secondary py-6 z-[100000]">
             <Container>
                 <nav className="flex items-center justify-between">
-                    <Link href="/" className="relative w-12 h-12 rounded-full">
+                    <Link href="/" className="relative w-12 h-12 rounded-full hover:scale-110 transition-all duration-500">
                         <Image src={"/images/logo.png"} alt="logo" fill objectFit="cover" />
                     </Link>
 

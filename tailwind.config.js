@@ -17,6 +17,9 @@ module.exports = {
         'highlight': "#7127BA",
         "hemerald": "#50C878",
         "javascript": "#ffd600",
+        "linkedin": "#0077B5",
+        "github": "#333",
+        "instagram": "#fb3958",
         "html": "#f1652a",
         "css": "#006bc0",
         "react": "#61dbfc"
