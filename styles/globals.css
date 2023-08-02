@@ -110,11 +110,27 @@ a{
 	filter: blur(0px);
 }
 
+.drop-down{
+	opacity: 0;
+	transform: translateY(-80%);
+	transition: all .5s ease-in-out;
+}
+
+.drop-down.show{
+	opacity: 1;
+	transform: translateY(0%);
+}
+
 @media (prefers-reduced-motion) {
 	.slide-in{
 		opacity: 1;
 		filter: blur(0px);
 		transform: translate(0%, 0%);
+	}
+
+	.drop-down{
+		opacity: 1;
+		transform: translateY(0%);
 	}
 }
 

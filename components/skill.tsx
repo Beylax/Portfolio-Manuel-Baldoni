@@ -10,7 +10,7 @@ interface IProps{
 export default function Skill(props: IProps) {
     
     return (
-        <div className="skill relative w-full aspect-square rounded-2xl overflow-hidden flex items-center justify-center group">
+        <div className="skill relative w-full aspect-square rounded-2xl overflow-hidden flex items-center justify-center group shadow-skill">
             <div className="absolute inset-0 bg-highlight opacity-20 z-10"></div>
             {
                 props?.link ? 

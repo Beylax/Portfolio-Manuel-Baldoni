@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Project from '../components/project'
 import Hero from '../components/hero'
 import Skill from '../components/skill'
+import SwiperSkill from '../components/swiper_skill'
 
 const Home: NextPage = () => {
 	return (
@@ -13,43 +14,7 @@ const Home: NextPage = () => {
 			</section>
 			<section className='pt-20 lg:pt-40'>
 				<h3 className='text-center font-bold mb-20'>MY SKILLS AND KNOWLEDGE</h3>
-				<Container>
-					<ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-						<li>
-							<Skill img_name='html_logo.png' title='HTML'></Skill>
-						</li>
-						<li>
-							<Skill img_name='css_logo.png' title='CSS'></Skill>
-						</li>
-						<li>
-							<Skill img_name='tailwind_logo.png' link='https://tailwindcss.com/' title='Tailwind'></Skill>
-						</li>
-						<li>
-							<Skill img_name='javascript_logo.png' title='Javascript'></Skill>
-						</li>
-						<li>
-							<Skill img_name='typescript_logo.png' link='https://www.typescriptlang.org/' title='Typescript'></Skill>
-						</li>
-						<li>
-							<Skill img_name='react_logo.png' link='https://it.legacy.reactjs.org/' title='React'></Skill>
-						</li>
-						<li>
-							<Skill img_name='nodejs_logo.png' link='https://nodejs.org' title='NodeJS'></Skill>
-						</li>
-						<li>
-							<Skill img_name='c_logo.png' title='C'></Skill>
-						</li>
-						<li>
-							<Skill img_name='csharp_logo.png' title='C#'></Skill>
-						</li>
-						<li>
-							<Skill img_name='github_logo.png' link='https://github.com/' title='Git'></Skill>
-						</li>
-						<li>
-							<Skill img_name='docker_logo.png' link='https://www.docker.com/' title='Docker'></Skill>
-						</li>
-					</ul>
-				</Container>
+				<SwiperSkill></SwiperSkill>
 			</section>
 			<section className='py-20 lg:py-40'>
 				<h3 className='text-center font-bold mb-20'>MY PROJECTS</h3>

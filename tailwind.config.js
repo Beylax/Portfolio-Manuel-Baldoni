@@ -51,6 +51,9 @@ module.exports = {
           'center-x': "transform: translateX(-50%)",
           'center-y': "transform: translateY(-50%)"
         }
+      },
+      boxShadow: {
+        'skill': '0 10px 20px -15px rgba(255, 255, 255, 0.8)',
       }
     },
   },
