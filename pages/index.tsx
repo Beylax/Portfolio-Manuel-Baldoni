@@ -11,7 +11,7 @@ const Home: NextPage = () => {
 			<section>
 				<Hero></Hero>
 			</section>
-			<section className='lg:pt-40'>
+			<section className='pt-20 lg:pt-40'>
 				<h3 className='text-center font-bold mb-20'>MY SKILLS AND KNOWLEDGE</h3>
 				<Container>
 					<ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
 					</ul>
 				</Container>
 			</section>
-			<section className='lg:py-40'>
+			<section className='py-20 lg:py-40'>
 				<h3 className='text-center font-bold mb-20'>MY PROJECTS</h3>
 				<Container className="flex flex-col gap-y-20">
 					<Project
