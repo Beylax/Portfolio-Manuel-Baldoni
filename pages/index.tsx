@@ -3,6 +3,7 @@ import Container from '../components/container'
 import Image from 'next/image'
 import Project from '../components/project'
 import Hero from '../components/hero'
+import Skill from '../components/skill'
 
 const Home: NextPage = () => {
 	return (
@@ -10,8 +11,49 @@ const Home: NextPage = () => {
 			<section>
 				<Hero></Hero>
 			</section>
-			<section>
-				<Container className="flex flex-col gap-y-20 lg:py-40">
+			<section className='lg:pt-40'>
+				<h3 className='text-center font-bold mb-20'>MY SKILLS AND KNOWLEDGE</h3>
+				<Container>
+					<ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+						<li>
+							<Skill img_name='html_logo.png' link='https://it.legacy.reactjs.org/' title='HTML'></Skill>
+						</li>
+						<li>
+							<Skill img_name='css_logo.png' link='https://it.legacy.reactjs.org/' title='CSS'></Skill>
+						</li>
+						<li>
+							<Skill img_name='tailwind_logo.png' link='https://it.legacy.reactjs.org/' title='Tailwind'></Skill>
+						</li>
+						<li>
+							<Skill img_name='javascript_logo.png' link='https://it.legacy.reactjs.org/' title='Javascript'></Skill>
+						</li>
+						<li>
+							<Skill img_name='typescript_logo.png' link='https://it.legacy.reactjs.org/' title='Typescript'></Skill>
+						</li>
+						<li>
+							<Skill img_name='react_logo.png' link='https://it.legacy.reactjs.org/' title='React'></Skill>
+						</li>
+						<li>
+							<Skill img_name='nodejs_logo.png' link='https://it.legacy.reactjs.org/' title='NodeJS'></Skill>
+						</li>
+						<li>
+							<Skill img_name='c_logo.png' link='https://it.legacy.reactjs.org/' title='C'></Skill>
+						</li>
+						<li>
+							<Skill img_name='csharp_logo.png' link='https://it.legacy.reactjs.org/' title='C#'></Skill>
+						</li>
+						<li>
+							<Skill img_name='github_logo.png' link='https://it.legacy.reactjs.org/' title='Git'></Skill>
+						</li>
+						<li>
+							<Skill img_name='docker_logo.png' link='https://it.legacy.reactjs.org/' title='Docker'></Skill>
+						</li>
+					</ul>
+				</Container>
+			</section>
+			<section className='lg:py-40'>
+				<h3 className='text-center font-bold mb-20'>MY PROJECTS</h3>
+				<Container className="flex flex-col gap-y-20">
 					<Project
 						title='Amadori Website'
 						image_src='/images/project_amadori.png'
