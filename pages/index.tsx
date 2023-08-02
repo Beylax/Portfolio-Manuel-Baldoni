@@ -16,37 +16,37 @@ const Home: NextPage = () => {
 				<Container>
 					<ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
 						<li>
-							<Skill img_name='html_logo.png' link='https://it.legacy.reactjs.org/' title='HTML'></Skill>
+							<Skill img_name='html_logo.png' title='HTML'></Skill>
 						</li>
 						<li>
-							<Skill img_name='css_logo.png' link='https://it.legacy.reactjs.org/' title='CSS'></Skill>
+							<Skill img_name='css_logo.png' title='CSS'></Skill>
 						</li>
 						<li>
-							<Skill img_name='tailwind_logo.png' link='https://it.legacy.reactjs.org/' title='Tailwind'></Skill>
+							<Skill img_name='tailwind_logo.png' link='https://tailwindcss.com/' title='Tailwind'></Skill>
 						</li>
 						<li>
-							<Skill img_name='javascript_logo.png' link='https://it.legacy.reactjs.org/' title='Javascript'></Skill>
+							<Skill img_name='javascript_logo.png' title='Javascript'></Skill>
 						</li>
 						<li>
-							<Skill img_name='typescript_logo.png' link='https://it.legacy.reactjs.org/' title='Typescript'></Skill>
+							<Skill img_name='typescript_logo.png' link='https://www.typescriptlang.org/' title='Typescript'></Skill>
 						</li>
 						<li>
 							<Skill img_name='react_logo.png' link='https://it.legacy.reactjs.org/' title='React'></Skill>
 						</li>
 						<li>
-							<Skill img_name='nodejs_logo.png' link='https://it.legacy.reactjs.org/' title='NodeJS'></Skill>
+							<Skill img_name='nodejs_logo.png' link='https://nodejs.org' title='NodeJS'></Skill>
 						</li>
 						<li>
-							<Skill img_name='c_logo.png' link='https://it.legacy.reactjs.org/' title='C'></Skill>
+							<Skill img_name='c_logo.png' title='C'></Skill>
 						</li>
 						<li>
-							<Skill img_name='csharp_logo.png' link='https://it.legacy.reactjs.org/' title='C#'></Skill>
+							<Skill img_name='csharp_logo.png' title='C#'></Skill>
 						</li>
 						<li>
-							<Skill img_name='github_logo.png' link='https://it.legacy.reactjs.org/' title='Git'></Skill>
+							<Skill img_name='github_logo.png' link='https://github.com/' title='Git'></Skill>
 						</li>
 						<li>
-							<Skill img_name='docker_logo.png' link='https://it.legacy.reactjs.org/' title='Docker'></Skill>
+							<Skill img_name='docker_logo.png' link='https://www.docker.com/' title='Docker'></Skill>
 						</li>
 					</ul>
 				</Container>
