@@ -1,5 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/autoplay';
 import Skill from './skill';
 import SlideIn from './slide-in';
 import DropDown from './drop-down';
@@ -8,13 +10,13 @@ export default function SwiperSkill() {
     return (
         <Swiper
             className='w-[90%] !overflow-visible'
+            modules={[Autoplay]}
             spaceBetween={50}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
             slidesPerView={1.8}
-            scrollbar
-            freeMode
-            // TODO: Aggiungere breakpoints con slidesPerView
+            freeMode={true}
+            autoplay={{
+                delay: 500
+            }}
             breakpoints={{
                 768: {
                     slidesPerView: 2.8

@@ -4,7 +4,7 @@ import SlideIn from "./slide-in";
 interface IProject {
     title: string;
     description: string;
-    link: string;
+    link?: string;
     image_src: string;
     reverse?: boolean;
 }
@@ -26,10 +26,17 @@ export default function Project({ title, description, link, image_src, reverse }
                         }
                     </h4>
 
-                    <Link href={link} className={`block lg:hidden relative group w-11/12 mx-auto aspect-video rounded-xl overflow-hidden mt-10`}>
-                        <Image src={image_src} alt="project_amadori" fill className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
-                        <div className="absolute inset-0 opacity-50 bg-black"></div>
-                    </Link>
+                    {
+                        link ?
+                            <Link href={link} className={`block lg:hidden relative group w-11/12 mx-auto aspect-video rounded-xl overflow-hidden mt-10`}>
+                                <Image src={image_src} alt="project_amadori" fill className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
+                                <div className="absolute inset-0 opacity-50 bg-black"></div>
+                            </Link> :
+                            <div className={`block lg:hidden relative group w-11/12 mx-auto aspect-video rounded-xl overflow-hidden mt-10`}>
+                                <Image src={image_src} alt="project_amadori" fill className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
+                                <div className="absolute inset-0 opacity-50 bg-black"></div>
+                            </div>
+                    }
 
                     {
                         link ?
@@ -45,10 +52,17 @@ export default function Project({ title, description, link, image_src, reverse }
                             </div>
                     }
                 </div>
-                <Link href={link} className={`hidden lg:block relative group w-full lg:w-1/2 aspect-video rounded-xl overflow-hidden border-highlight z-10 border-none lg:border-t-[2px] ${reverse ? "lg:border-l-[2px] lg:shadow-[-10px_-10px_30px_-10px_rgba(80,200,120,0.6)]" : "lg:border-r-[2px] lg:shadow-[10px_-10px_30px_-10px_rgba(80,200,120,0.6)]"}`}>
-                    <Image src={image_src} alt="project_amadori" fill className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
-                    <div className="absolute inset-0 opacity-50 bg-black"></div>
-                </Link>
+                {
+                    link ?
+                        <Link href={link} className={`hidden lg:block relative group w-full lg:w-1/2 aspect-video rounded-xl overflow-hidden border-highlight z-10 border-none lg:border-t-[2px] ${reverse ? "lg:border-l-[2px] lg:shadow-[-10px_-10px_30px_-10px_rgba(80,200,120,0.6)]" : "lg:border-r-[2px] lg:shadow-[10px_-10px_30px_-10px_rgba(80,200,120,0.6)]"}`}>
+                            <Image src={image_src} alt="project_amadori" fill className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
+                            <div className="absolute inset-0 opacity-50 bg-black"></div>
+                        </Link> :
+                        <div className={`hidden lg:block relative group w-full lg:w-1/2 aspect-video rounded-xl overflow-hidden border-highlight z-10 border-none lg:border-t-[2px] ${reverse ? "lg:border-l-[2px] lg:shadow-[-10px_-10px_30px_-10px_rgba(80,200,120,0.6)]" : "lg:border-r-[2px] lg:shadow-[10px_-10px_30px_-10px_rgba(80,200,120,0.6)]"}`}>
+                            <Image src={image_src} alt="project_amadori" fill className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
+                            <div className="absolute inset-0 opacity-50 bg-black"></div>
+                        </div>
+                }
             </div>
         </SlideIn>
     )
