@@ -16,7 +16,7 @@ export default function DropDown({children, delay}: IDropDown) {
                     entry.target.classList.remove("show")
                 }
             })
-        })
+        }, { threshold: 0.15 })
         const elements = document.querySelectorAll(`.drop-down`)
         elements.forEach(element => observer.observe(element))
     })

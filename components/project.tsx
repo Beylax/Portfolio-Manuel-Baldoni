@@ -43,12 +43,12 @@ export default function Project({ title, description, link, image_src, reverse }
                             <Link href={link} target="__blank" className={`block group relative top-[-50px] lg:top-0 w-full lg:w-[120%] rounded-xl overflow-hidden lg:mt-10 border-hemerald cursor-pointer transition-all ${reverse ? " border-r-2 border-l-2 lg:border-l-0 lg:translate-x-[-16%]" : "border-l-2 border-r-2 lg:border-r-0"}`}>
                                 <div className="absolute inset-0 bg-secondary opacity-50 z-10"></div>
                                 <div className={`absolute w-0 h-full group-hover:w-full bg-hemerald opacity-50 z-20 transition-all duration-500 ${reverse ? "right-0" : "left-0"}`}></div>
-                                <div className="relative text-tertiary px-8 py-6 z-30 backdrop-blur-md" dangerouslySetInnerHTML={{ __html: description }}></div>
+                                <div className="relative text-tertiary px-8 py-6 z-30 backdrop-blur-md" dangerouslySetInnerHTML={{ __html: description }} />
                             </Link> :
                             <div className={`block group relative top-[-50px] lg:top-0 w-full lg:w-[120%] rounded-xl overflow-hidden mt-10 border-hemerald cursor-pointer transition-all ${reverse ? " border-r-2 border-l-2 lg:border-l-0 lg:translate-x-[-16%]" : "border-l-2 border-r-2 lg:border-r-0"}`}>
                                 <div className="absolute inset-0 bg-secondary opacity-50 z-10"></div>
                                 <div className={`absolute w-0 h-full group-hover:w-full bg-hemerald opacity-50 z-20 transition-all duration-500 ${reverse ? "right-0" : "left-0"}`}></div>
-                                <div className="relative text-tertiary px-8 py-6 z-30 backdrop-blur-md" dangerouslySetInnerHTML={{ __html: description }}></div>
+                                <div className="relative text-tertiary px-8 py-6 z-30 backdrop-blur-md" dangerouslySetInnerHTML={{ __html: description }} />
                             </div>
                     }
                 </div>

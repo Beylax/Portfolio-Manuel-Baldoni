@@ -13,7 +13,7 @@ export default function SlideIn({ children, direction }: ISlideIn) {
                     entry.target.classList.add("show")
                 }
             })
-        })
+        }, { threshold: 0.15 })
         const elements = document.querySelectorAll(`.slide-in-${direction}`)
         elements.forEach(element => observer.observe(element))
     })

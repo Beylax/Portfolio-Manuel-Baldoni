@@ -11,11 +11,11 @@ export default function Hero() {
                 <Container>
                     <div className='flex flex-wrap items-center gap-20'>
                         <Link href="/contact" className='block relative w-[258px] mx-auto aspect-square hover:scale-110 transition-all duration-500'>
-                            <Image src={"/images/hero_avatar.png"} alt='manuel-baldoni' fill className='pointer-events-none object-cover drop-shadow-img_hero' />
+                            <Image src={"/images/hero_avatar.png"} alt='manuel-baldoni' fill className='pointer-events-none object-cover' />
                         </Link>
                         <div className='grow'>
                             <div>
-                                <p className='text-white text-center lg:text-start p-0 m-0'>A developer for <span className='text-highlight uppercase font-bold'>passion</span></p>
+                                <p className='text-white text-center lg:text-start p-0 m-0'>A developer driven by <span className='text-highlight50 uppercase font-bold'>passion</span></p>
                                 <h1 className='text-white font-bold text-center lg:text-start my-10'>Manuel <span className='text-highlight'>Baldoni</span></h1>
                             </div>
                             <div className='relative quote my-10 mx-auto lg:mx-0'>

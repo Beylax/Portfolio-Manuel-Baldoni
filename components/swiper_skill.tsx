@@ -14,9 +14,6 @@ export default function SwiperSkill() {
             spaceBetween={50}
             slidesPerView={1.8}
             freeMode={true}
-            autoplay={{
-                delay: 500
-            }}
             breakpoints={{
                 768: {
                     slidesPerView: 2.8

@@ -5,7 +5,7 @@ import Icon from "./icon";
 
 export default function Footer() {
     return (
-        <footer className="bg-secondary py-6">
+        <footer className="bg-secondary py-4">
             <Container className="flex items-center justify-between">
                 <div className="w-fit">
                     © 2023 <Link href="/" className="text-white">Manuel Baldoni</Link>

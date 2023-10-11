@@ -14,7 +14,8 @@ module.exports = {
         'primary': "#11071F",
         'secondary': "#1A0B2E",
         'tertiary': "#CCD6F6",
-        'highlight': "#7127BA",
+        'highlight': "#A3178C",
+        'highlight50': "#51127F",
         "hemerald": "#50C878",
         "javascript": "#ffd600",
         "linkedin": "#0077B5",
@@ -25,7 +26,7 @@ module.exports = {
         "react": "#61dbfc"
       },
       dropShadow: {
-        'img_hero': "0 0 10px #7127BA"
+        'img_hero': "0 0 10px #A3178C"
       },
       animation: {
         'blink': 'blinking 1s steps(2) infinite',
