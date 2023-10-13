@@ -55,7 +55,7 @@ module.exports = {
       },
       boxShadow: {
         'skill': '0 10px 20px -15px rgba(255, 255, 255, 0.8)',
-      }
+      },
     },
   },
   plugins: [],

@@ -1,10 +1,12 @@
 import type { NextPage } from 'next'
 import Container from '../components/container'
 import Image from 'next/image'
-import Project from '../components/project'
+import dynamic from 'next/dynamic'
 import Hero from '../components/hero'
 import Skill from '../components/skill'
 import SwiperSkill from '../components/swiper_skill'
+
+const Project = dynamic(() => import('../components/project'), { ssr: false })
 
 const Home: NextPage = () => {
 	return (
