@@ -3,8 +3,12 @@ import Image from "next/image";
 import Icon from "./icon";
 import tailwindConfig from '../tailwind.config.js';
 import Link from "next/link";
+import { useContext } from "react";
+import { LoadingContext } from "./layout";
 
 export default function Hero() {
+    const { isLoading } = useContext(LoadingContext)
+
     return (
         <div className="relative overflow-y-visible">
             <section className='py-40'>
@@ -23,8 +27,8 @@ export default function Hero() {
                             </div>
 
                             <div className="flex items-center justify-center lg:justify-start gap-x-20 mt-10">
-                                <Link href={"#info"} className="underline-effect-small py-2 text-xl font-bold uppercase text-white hover:text-tertiary transition-all duration-500"><span>my skills</span></Link>
-                                <Link href={"/contact"} className="underline-effect-small py-2 text-xl font-bold uppercase text-white hover:text-tertiary transition-all duration-500"><span>contact me</span></Link>
+                                <Link href={"#skills"} className="underline-effect-small py-2 text-xl font-bold uppercase text-white hover:text-tertiary transition-all duration-500"><span>my skills</span></Link>
+                                <Link href={"#TODO:"} className="underline-effect-small py-2 text-xl font-bold uppercase text-white hover:text-tertiary transition-all duration-500"><span>contact me</span></Link>
                             </div>
                         </div>
                     </div>
@@ -41,7 +45,10 @@ export default function Hero() {
             <section className='my-20'>
                 <Container>
                     <p className='text-center lg:text-start text-white quote mx-auto lg:mx-0'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Sono un appassionato Front End Developer alla prima e significativa esperienza professionale in DMA nella creazione di esperienze utente coinvolgenti e interattive.
+                        <br></br>
+                        Ho una buona conoscenza delle tecnologie front-end come HTML, CSS e JavaScript, e sto lavorando con diversi framework come React, Vue e Angular.
+                        I miei punti di forza sono l'adattabilità e la velocità di apprendimento e ho una buona conoscenza della lingua inglese.
                     </p>
                 </Container>
             </section>

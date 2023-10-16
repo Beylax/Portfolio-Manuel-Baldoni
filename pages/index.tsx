@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 			<section>
 				<Hero></Hero>
 			</section>
-			<section className='pt-20 lg:pt-40'>
+			<section id='skills' className='pt-20 lg:pt-40'>
 				<h3 className='text-center font-bold mb-20'>MY SKILLS AND KNOWLEDGE</h3>
 				<SwiperSkill></SwiperSkill>
 			</section>

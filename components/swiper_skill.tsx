@@ -16,16 +16,16 @@ export default function SwiperSkill() {
             freeMode={true}
             breakpoints={{
                 768: {
-                    slidesPerView: 2.8
+                    slidesPerView: 2.4
                 },
                 986: {
-                    slidesPerView: 3.8
+                    slidesPerView: 3.4
                 },
                 1024: {
-                    slidesPerView: 4.8
+                    slidesPerView: 4.4
                 },
                 1200: {
-                    slidesPerView: 5.8
+                    slidesPerView: 5.4
                 }
             }}
         >
