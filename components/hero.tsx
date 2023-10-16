@@ -45,10 +45,11 @@ export default function Hero() {
             <section className='my-20'>
                 <Container>
                     <p className='text-center lg:text-start text-white quote mx-auto lg:mx-0'>
-                        Sono un appassionato Front End Developer alla prima e significativa esperienza professionale in DMA nella creazione di esperienze utente coinvolgenti e interattive.
+                        {"I am a passionate Front End Developer with my first significant professional experience in DMA, creating engaging and interactive user experiences. "}
                         <br></br>
-                        Ho una buona conoscenza delle tecnologie front-end come HTML, CSS e JavaScript, e sto lavorando con diversi framework come React, Vue e Angular.
-                        I miei punti di forza sono l'adattabilità e la velocità di apprendimento e ho una buona conoscenza della lingua inglese.
+                        {"I have a solid understanding of front-end technologies like HTML, CSS, and JavaScript, and I am working with various frameworks such as React, Vue, and Angular."}
+                        <br></br>
+                        {"My strengths include adaptability, quick learning, and a good command of the English language."}
                     </p>
                 </Container>
             </section>
