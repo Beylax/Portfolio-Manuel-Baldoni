@@ -32,7 +32,7 @@ module.exports = {
         'blink': 'blinking 1s steps(2) infinite',
         'spin': 'spinning 10s linear infinite',
         'spin-reverse': 'spinning-reverse 10s linear infinite',
-        'pause': 'pause'
+        'pause': 'pause',
       },
       keyframes: {
         blinking: {
@@ -45,7 +45,7 @@ module.exports = {
         "spinning-reverse": {
           '0%': { rotate: "0deg" },
           '100%': { rotate: "-360deg" },
-        }
+        },
       },
       spacing: {
         translate: {

@@ -11,10 +11,10 @@ export default function Hero() {
 
     return (
         <div className="relative overflow-y-visible">
-            <section className='py-40'>
+            <section className='py-40 min-h-screen flex items-center'>
                 <Container>
-                    <div className='flex flex-wrap items-center gap-20'>
-                        <Link href="/contact" className='block relative w-[258px] mx-auto aspect-square hover:scale-110 transition-all duration-500'>
+                    <div className={`flex flex-wrap items-center gap-20 transition-all duration-700 ease-[cubic-bezier(.47,1.64,.41,.8)] ${isLoading ? "scale-50" : ""}`}>
+                        <Link href="#contact" className='block relative w-[258px] mx-auto aspect-square transition-all duration-500'>
                             <Image src={"/images/hero_avatar.png"} alt='manuel-baldoni' fill className='pointer-events-none object-cover' />
                         </Link>
                         <div className='grow'>
