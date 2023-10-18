@@ -5,8 +5,9 @@ import dynamic from 'next/dynamic'
 import Hero from '../components/hero'
 import Skill from '../components/skill'
 import SwiperSkill from '../components/swiper_skill'
-import { skills } from '../lib/utils'
+import { ISkill, skills } from '../lib/utils'
 import DropDown from '../components/drop-down'
+import Blob from '../components/blob'
 
 const Project = dynamic(() => import('../components/project'), { ssr: false })
 
@@ -14,7 +15,7 @@ const Home: NextPage = () => {
 	return (
 		<div>
 			<section className='relative min-h-screen flex items-center'>
-				
+				{/* <Blob /> */}
 				<Container>
 					<Hero></Hero>
 				</Container>
@@ -39,14 +40,14 @@ const Home: NextPage = () => {
 				</Container>
 			</section>
 			<section id='skills' className='pt-20 lg:pt-40'>
-				<h3 className='text-center font-bold mb-20'>MY SKILLS AND <span className='text-hemerald'>KNOWLEDGE</span></h3>
+				<h3 className='text-center font-bold mb-20'>MY SKILLS AND <span className='text-highlight'>KNOWLEDGE</span></h3>
 				{/* <SwiperSkill></SwiperSkill> */}
-				<Container className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6'>
+				<Container className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6'>
 					{
-						skills?.map((skill, i) => {
+						skills?.map((skill: ISkill, i) => {
 							return (
 								<DropDown key={skill?.title} delay={i * 200}>
-									<Skill img_name={skill?.image_name} title={skill?.title} link={skill?.link}></Skill>
+									<Skill image_name={skill?.image_name} title={skill?.title} link={skill?.link} level={skill?.level}></Skill>
 								</DropDown>
 							)
 						})
@@ -54,7 +55,7 @@ const Home: NextPage = () => {
 				</Container>
 			</section>
 			<section className='py-20 lg:py-40'>
-				<h3 className='text-center font-bold mb-20'>MY PROJECTS</h3>
+				<h3 className='text-center font-bold mb-20'>MY <span className='text-highlight'>PROJECTS</span></h3>
 				<Container className="flex flex-col gap-y-20">
 					<Project
 						title='Amadori Website'

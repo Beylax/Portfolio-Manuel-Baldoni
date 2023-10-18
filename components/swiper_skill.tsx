@@ -5,7 +5,7 @@ import 'swiper/css/autoplay';
 import Skill from './skill';
 import SlideIn from './slide-in';
 import DropDown from './drop-down';
-import { skills } from '../lib/utils';
+import { ISkill, skills } from '../lib/utils';
 import { useEffect, useState } from 'react';
 
 export default function SwiperSkill() {
@@ -14,8 +14,8 @@ export default function SwiperSkill() {
             className='w-[90%] !overflow-visible'
             modules={[Autoplay]}
             spaceBetween={50}
-            slidesPerView={1.8}
             freeMode={true}
+            slidesPerView={1.8}
             breakpoints={{
                 768: {
                     slidesPerView: 2.4
@@ -32,11 +32,11 @@ export default function SwiperSkill() {
             }}
         >
             {
-                skills?.map((skill, i) => {
+                skills?.map((skill: ISkill, i) => {
                     return (
                         <SwiperSlide>
-                            <DropDown delay={i*200}>
-                                <Skill img_name={skill?.image_name} title={skill?.title} link={skill?.link}></Skill>
+                            <DropDown delay={0}>
+                                <Skill image_name={skill?.image_name} title={skill?.title} link={skill?.link}></Skill>
                             </DropDown>
                         </SwiperSlide>
                     )
