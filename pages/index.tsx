@@ -5,18 +5,53 @@ import dynamic from 'next/dynamic'
 import Hero from '../components/hero'
 import Skill from '../components/skill'
 import SwiperSkill from '../components/swiper_skill'
+import { skills } from '../lib/utils'
+import DropDown from '../components/drop-down'
 
 const Project = dynamic(() => import('../components/project'), { ssr: false })
 
 const Home: NextPage = () => {
 	return (
 		<div>
+			<section className='relative min-h-screen flex items-center'>
+				
+				<Container>
+					<Hero></Hero>
+				</Container>
+			</section>
 			<section>
-				<Hero></Hero>
+				<Container>
+					<h3 className='text-tertiary text-center lg:text-start mb-5'>
+						I&apos;m a Software Engineer. <span className='animate-blink'>|</span>
+					</h3>
+					<p className='text-white text-center lg:text-start'>Currently, I&apos;m a Software Engineer at <a href='https://diemmea.com' target='__blank' className='font-bold after:bg-highlight underline-effect'>DMA - CX Company for B2B</a></p>
+				</Container>
+			</section>
+			<section className='my-20'>
+				<Container>
+					<p className='text-center lg:text-start text-white quote mx-auto lg:mx-0'>
+						{"I am a passionate Front End Developer with my first significant professional experience in DMA, creating engaging and interactive user experiences. "}
+						<br></br>
+						{"I have a solid understanding of front-end technologies like HTML, CSS, and JavaScript, and I am working with various frameworks such as React, Vue, and Angular."}
+						<br></br>
+						{"My strengths include adaptability, quick learning, and a good command of the English language."}
+					</p>
+				</Container>
 			</section>
 			<section id='skills' className='pt-20 lg:pt-40'>
-				<h3 className='text-center font-bold mb-20'>MY SKILLS AND KNOWLEDGE</h3>
-				<SwiperSkill></SwiperSkill>
+				<h3 className='text-center font-bold mb-20'>MY SKILLS AND <span className='text-hemerald'>KNOWLEDGE</span></h3>
+				{/* <SwiperSkill></SwiperSkill> */}
+				<Container className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6'>
+					{
+						skills?.map((skill, i) => {
+							return (
+								<DropDown key={skill?.title} delay={i * 200}>
+									<Skill img_name={skill?.image_name} title={skill?.title} link={skill?.link}></Skill>
+								</DropDown>
+							)
+						})
+					}
+				</Container>
 			</section>
 			<section className='py-20 lg:py-40'>
 				<h3 className='text-center font-bold mb-20'>MY PROJECTS</h3>

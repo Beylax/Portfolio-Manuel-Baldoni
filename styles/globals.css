@@ -45,7 +45,7 @@ a{
 }
 
 .underline-effect-small{
-	@apply relative after:absolute after:top-full after:left-1/2 after:w-7/12 after:h-1 after:bg-highlight50 after:rounded-full after:transition-all after:duration-500
+	@apply relative after:absolute after:top-full after:left-1/2 after:w-7/12 after:h-1 after:bg-hemerald after:rounded-full after:transition-all after:duration-500
 }
 .underline-effect-small::after{
 	transform: translateX(-50%);
@@ -136,17 +136,17 @@ a{
 }
 
 .loader {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: 
-	translate(-50%, -50%)
-	rotateZ(45deg);
-perspective: 1000px;
-border-radius: 50%;
-width: 100px;
-height: 100px;
-color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: 
+		translate(-50%, -50%)
+		rotateZ(45deg);
+	perspective: 1000px;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	color: #fff;
 }
 .loader:before,
 .loader:after {
