@@ -34,7 +34,7 @@ export default function SwiperSkill() {
             {
                 skills?.map((skill: ISkill, i) => {
                     return (
-                        <SwiperSlide>
+                        <SwiperSlide key={skill?.title}>
                             <DropDown delay={0}>
                                 <Skill image_name={skill?.image_name} title={skill?.title} link={skill?.link}></Skill>
                             </DropDown>
