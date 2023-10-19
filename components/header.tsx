@@ -28,7 +28,7 @@ export default function Header() {
 
     return (
         <>
-            <header id="navbar" className={`fixed left-1/2 translate-x-[-50%] w-[90%] lg:w-[85%] max-w-[1400px] isolate z-[10000] transition-all duration-700 ease-[cubic-bezier(.47,1.64,.41,.8)] ${isLoading ? "top-[100px]" : "top-6"}`}>
+            <header id="navbar" className={`fixed left-1/2 translate-x-[-50%] w-[90%] lg:w-[85%] max-w-[1400px] isolate z-[10000] transition-all duration-700 ease-[cubic-bezier(.47,1.64,.41,.8)] ${isLoading ? "top-[-100px]" : "top-10"}`}>
                 <nav className="flex items-center justify-between bg-gradient-to-r from-highlight to-highlight50 rounded-full p-3 shadow-[0_10px_20px_-16px_white] z-[100]">
                     <Link href="/" className="relative w-8 h-8 rounded-full transition-all duration-500">
                         <Image src={"/images/logo.png"} alt="logo" fill className="object-cover" />

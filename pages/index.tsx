@@ -25,12 +25,8 @@ const Home: NextPage = () => {
 					<h3 className='text-tertiary text-center lg:text-start mb-5'>
 						I&apos;m a Software Engineer. <span className='animate-blink'>|</span>
 					</h3>
-					<p className='text-white text-center lg:text-start'>Currently, I&apos;m a Software Engineer at <a href='https://diemmea.com' target='__blank' className='font-bold after:bg-highlight underline-effect'>DMA - CX Company for B2B</a></p>
-				</Container>
-			</section>
-			<section className='my-20'>
-				<Container>
-					<p className='text-center lg:text-start text-white quote mx-auto lg:mx-0'>
+					<p className='text-white text-center lg:text-start'>Currently, I&apos;m a Front-end Developer at <a href='https://diemmea.com' target='__blank' className='font-bold after:bg-highlight underline-effect'>DMA - CX Company for B2B</a></p>
+					<p className='text-center lg:text-start text-white quote mx-auto lg:mx-0 mt-5'>
 						{"I am a passionate Front End Developer with my first significant professional experience in DMA, creating engaging and interactive user experiences. "}
 						<br></br>
 						{"I have a solid understanding of front-end technologies like HTML, CSS, and JavaScript, and I am working with various frameworks such as React, Vue, and Angular."}
@@ -39,8 +35,10 @@ const Home: NextPage = () => {
 					</p>
 				</Container>
 			</section>
-			<section id='skills' className='pt-20 lg:pt-40'>
-				<h3 className='text-center font-bold mb-20'>MY SKILLS AND <span className='text-highlight'>KNOWLEDGE</span></h3>
+			<section id='skills'>
+				<Container>
+					<h3 className='text-center font-bold'>MY SKILLS AND <span className='text-highlight'>KNOWLEDGE</span></h3>
+				</Container>
 				{/* <SwiperSkill></SwiperSkill> */}
 				<Container className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6'>
 					{
@@ -54,8 +52,10 @@ const Home: NextPage = () => {
 					}
 				</Container>
 			</section>
-			<section className='py-20 lg:py-40'>
-				<h3 className='text-center font-bold mb-20'>MY <span className='text-highlight'>PROJECTS</span></h3>
+			<section>
+				<Container>
+					<h3 className='text-center font-bold'>MY <span className='text-highlight'>PROJECTS</span></h3>
+				</Container>
 				<Container className="flex flex-col gap-y-20">
 					<Project
 						title='Amadori Website'
