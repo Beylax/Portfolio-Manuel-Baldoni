@@ -5,19 +5,21 @@ import tailwindConfig from "../tailwind.config";
 import { useEffect, useRef, useState } from "react";
 
 function Content(props: { skill: ISkill; isHover: boolean }) {
+    const { skill, isHover } = props
+
     return (
         <div>
             <div className="relative w-1/2 aspect-square mx-auto group-hover:scale-110 transition-all duration-300">
                 <div
                     className="level absolute inset-[-2px] rounded-full group-hover:rotate-[720deg] transition-all duration-1000"
                     style={{
-                        background: `conic-gradient(${props?.isHover ? tailwindConfig.theme.extend.colors["tertiary"] : tailwindConfig.theme.extend.colors["hemerald"]} ${props?.skill?.level || 0}%, transparent 0)`
+                        background: `conic-gradient(${isHover ? tailwindConfig.theme.extend.colors["tertiary"] : tailwindConfig.theme.extend.colors["hemerald"]} ${skill?.level || 0}%, transparent 0)`
                     }}
                 ></div>
-                <Image src={`/images/${props?.skill?.image_name}`} alt={props?.skill?.title} fill className="object-contain bg-primary rounded-full p-4"></Image>
+                <Image src={`/images/${skill?.image_name}`} alt={skill?.title} fill className="object-contain bg-primary rounded-full p-4"></Image>
             </div>
             <h5 className="text-center text-white font-bold mt-4">
-                {props?.skill?.title}
+                {skill?.title}
             </h5>
         </div>
     )

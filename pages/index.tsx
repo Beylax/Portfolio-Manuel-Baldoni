@@ -25,7 +25,9 @@ const Home: NextPage = () => {
 					right={'-100px'}
 					background={tailwindConfig.theme.extend.colors["hemerald"]}
 					blur={'blur(100px)'}
-					opacity={0.4}					
+					origin='left'
+					opacity={0.4}
+					animation="spin"
 				/>
 				<Blob
 					width={'200px'}
@@ -36,7 +38,9 @@ const Home: NextPage = () => {
 					right={''}
 					background={tailwindConfig.theme.extend.colors["tertiary"]}
 					blur={'blur(100px)'}
-					opacity={0.4}					
+					origin='right'
+					opacity={0.4}
+					animation="bounce"
 				/>
 				<Blob
 					width={'500px'}
@@ -47,7 +51,9 @@ const Home: NextPage = () => {
 					right={''}
 					background={tailwindConfig.theme.extend.colors["highlight"]}
 					blur={'blur(200px)'}
-					opacity={0.3}					
+					origin='bottom-right'
+					opacity={0.3}
+					animation="pulse"
 				/>
 				<Container>
 					<Hero></Hero>

@@ -8,12 +8,14 @@ export interface IBlob {
     background: string
     blur: string
     opacity: number
+    origin: string
+    animation?: "spin" | "ping" | "pulse" | "bounce"
 }
 
 export default function Blob(props: IBlob) {
     return (
         <div
-            className="absolute rounded-full"
+            className={`absolute rounded-full animate-${props?.animation}`}
             style={{
                 width: props?.width,
                 height: props?.height,
@@ -25,6 +27,7 @@ export default function Blob(props: IBlob) {
                 WebkitFilter: props?.blur,
                 filter: props?.blur,
                 opacity: props?.opacity,
+                transformOrigin: props?.origin,
                 zIndex: -1
             }}
         >
