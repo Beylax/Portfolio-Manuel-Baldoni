@@ -9,7 +9,7 @@ function Content(props: { skill: ISkill; isHover: boolean }) {
 
     return (
         <div>
-            <div className="relative w-1/2 aspect-square mx-auto group-hover:scale-110 transition-all duration-300">
+            <div className="relative w-1/2 aspect-square mx-auto transition-all duration-300">
                 <div
                     className="level absolute inset-[-2px] rounded-full group-hover:rotate-[720deg] transition-all duration-1000"
                     style={{
