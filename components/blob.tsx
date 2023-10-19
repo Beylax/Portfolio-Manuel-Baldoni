@@ -22,8 +22,10 @@ export default function Blob(props: IBlob) {
                 left: props?.left,
                 right: props?.right,
                 background: props?.background,
+                WebkitFilter: props?.blur,
                 filter: props?.blur,
                 opacity: props?.opacity,
+                zIndex: -1
             }}
         >
         </div>

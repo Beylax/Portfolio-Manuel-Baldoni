@@ -8,14 +8,47 @@ import SwiperSkill from '../components/swiper_skill'
 import { ISkill, skills } from '../lib/utils'
 import DropDown from '../components/drop-down'
 import Blob from '../components/blob'
+import tailwindConfig from '../tailwind.config'
 
 const Project = dynamic(() => import('../components/project'), { ssr: false })
 
 const Home: NextPage = () => {
 	return (
 		<div>
-			<section className='relative min-h-screen flex items-center'>
-				{/* <Blob /> */}
+			<section className='relative isolate min-h-screen flex items-center'>
+				<Blob
+					width={'200px'}
+					height={'200px'}
+					top={'10%'}
+					bottom={''}
+					left={''}
+					right={'-100px'}
+					background={tailwindConfig.theme.extend.colors["hemerald"]}
+					blur={'blur(100px)'}
+					opacity={0.4}					
+				/>
+				<Blob
+					width={'200px'}
+					height={'200px'}
+					top={'0'}
+					bottom={''}
+					left={'-100px'}
+					right={''}
+					background={tailwindConfig.theme.extend.colors["tertiary"]}
+					blur={'blur(100px)'}
+					opacity={0.4}					
+				/>
+				<Blob
+					width={'500px'}
+					height={'500px'}
+					top={''}
+					bottom={'-200px'}
+					left={'60%'}
+					right={''}
+					background={tailwindConfig.theme.extend.colors["highlight"]}
+					blur={'blur(200px)'}
+					opacity={0.3}					
+				/>
 				<Container>
 					<Hero></Hero>
 				</Container>
@@ -40,7 +73,7 @@ const Home: NextPage = () => {
 					<h3 className='text-center font-bold'>MY SKILLS AND <span className='text-highlight'>KNOWLEDGE</span></h3>
 				</Container>
 				{/* <SwiperSkill></SwiperSkill> */}
-				<Container className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6'>
+				<Container className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-6'>
 					{
 						skills?.map((skill: ISkill, i) => {
 							return (
