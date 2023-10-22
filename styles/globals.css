@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 html,
-body {
+body,
+main{
 	color-scheme: dark;
-	scroll-behavior: smooth;
+	scroll-behavior: smooth !important;
+	scroll-padding-top: 80px;
 	padding: 0;
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -36,6 +38,9 @@ h5,.h5{
 /* ------------------ END TYPOGRAPHY ------------------- */
 
 /* ------------------ START GENERAL ------------------- */
+main > *{
+	@apply pt-20
+}
 main > div > section{
 	@apply py-16 lg:py-24
 }
@@ -132,6 +137,28 @@ a{
 	opacity: 1;
 	transform: translateY(0%);
 }
+
+.pop-in.container > *{
+	opacity: 0;
+	transform: scale(0.3);
+	transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.pop-in.container.show > *{
+	opacity: 1;
+	transform: scale(1);
+}
+
+.pop-in:not(.container){
+	opacity: 0;
+	transform: scale(0.3);
+	transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pop-in:not(.container).show{
+	opacity: 1;
+	transform: scale(1);
+}
+
 
 @media (prefers-reduced-motion) {
 	.slide-in{

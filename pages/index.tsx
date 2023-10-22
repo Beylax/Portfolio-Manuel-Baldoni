@@ -1,14 +1,13 @@
 import type { NextPage } from 'next'
 import Container from '../components/container'
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import Hero from '../components/hero'
 import Skill from '../components/skill'
-import SwiperSkill from '../components/swiper_skill'
 import { ISkill, skills } from '../lib/utils'
-import DropDown from '../components/drop-down'
 import Blob from '../components/blob'
 import tailwindConfig from '../tailwind.config'
+import PopIn from '../components/pop-in'
+import Link from 'next/link'
 
 const Project = dynamic(() => import('../components/project'), { ssr: false })
 
@@ -79,19 +78,25 @@ const Home: NextPage = () => {
 					<h3 className='text-center font-bold'>MY SKILLS AND <span className='text-highlight'>KNOWLEDGE</span></h3>
 				</Container>
 				{/* <SwiperSkill></SwiperSkill> */}
-				<Container className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-6'>
-					{
-						skills?.map((skill: ISkill, i) => {
-							return (
-								<DropDown key={skill?.title} delay={i * 200}>
-									<Skill image_name={skill?.image_name} title={skill?.title} link={skill?.link} level={skill?.level}></Skill>
-								</DropDown>
-							)
-						})
-					}
+				<Container>
+					<PopIn className='container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-6' delay={0}>
+						{
+							skills?.map((skill: ISkill, i) => {
+								return (
+									<Skill
+										key={skill?.title}
+										skill={skill}
+										style={{
+											transitionDelay: `${i*200}ms`
+										}}
+									></Skill>
+								)
+							})
+						}
+					</PopIn>
 				</Container>
 			</section>
-			<section>
+			<section id='projects'>
 				<Container>
 					<h3 className='text-center font-bold'>MY <span className='text-highlight'>PROJECTS</span></h3>
 				</Container>
@@ -116,6 +121,10 @@ const Home: NextPage = () => {
 						For this project we used <a href='https://www.google.com/script/start/' target='__blank' className='font-bold after:bg-highlight underline-effect'>GAS (Google App Script)</a> for the back-end and HTML, CSS (bootstrap), JS for the front-end."
 						reverse
 					/>
+
+					<Link href={"/projects"} className='ml-auto underline-effect after:bg-highlight'>
+						<h5>view all my projects</h5>
+					</Link>
 				</Container>
 			</section>
 		</div>

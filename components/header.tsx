@@ -46,13 +46,13 @@ export default function Header() {
                                 Home
                             </Link>
                         </li>
-                        <li className={`nav-item underline-effect ${router?.route === "/about" ? "active" : ""}`}>
-                            <Link href="#TODO:" className="nav-link">
+                        <li className={`nav-item underline-effect ${router?.route === "/projects" ? "active" : ""}`}>
+                            <Link href="/projects" className="nav-link">
                                 Projects
                             </Link>
                         </li>
-                        <li className={`nav-item underline-effect ${router?.route === "/contact" ? "active" : ""}`}>
-                            <Link href="#TODO:" className="nav-link">
+                        <li className={`nav-item underline-effect ${router?.route === "/career" ? "active" : ""}`}>
+                            <Link href="/career" className="nav-link">
                                 Career
                             </Link>
                         </li>
