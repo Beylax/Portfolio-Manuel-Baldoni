@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+	@apply accent-highlight
+}
+
 html,
 body,
 main{

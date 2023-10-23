@@ -31,11 +31,8 @@ export default function Hero() {
     </div> */}
 
     return (
-        <div className={`flex flex-wrap items-center gap-20 transition-all duration-700 ease-[cubic-bezier(.47,1.64,.41,.8)] ${isLoading ? "scale-50" : ""}`}>
-            <Link href="#contact" className='block relative w-[258px] mx-auto aspect-square transition-all duration-500'>
-                <Image src={"/images/hero_avatar.png"} alt='manuel-baldoni' fill className='pointer-events-none object-cover' />
-            </Link>
-            <div className='grow'>
+        <div className={`flex flex-wrap items-center gap-y-20 transition-all duration-700 ease-[cubic-bezier(.47,1.64,.41,.8)] ${isLoading ? "scale-50" : ""}`}>
+            <div className='w-full lg:w-2/3'>
                 <div>
                     <p className='text-white text-center lg:text-start p-0 m-0'>A developer driven by <span className='text-highlight50 uppercase font-bold'>passion</span></p>
                     <h1 className='text-white font-bold text-center lg:text-start my-10'>Manuel <span className='text-highlight'>Baldoni</span></h1>
@@ -47,6 +44,19 @@ export default function Hero() {
                 <div className="flex items-center justify-center lg:justify-start gap-x-20 mt-10">
                     <Link href={"#skills"} className="underline-effect-small py-2 text-xl font-bold uppercase text-white hover:text-hemerald transition-all duration-500"><span>my skills</span></Link>
                     <Link href={"#TODO:"} className="underline-effect-small py-2 text-xl font-bold uppercase text-white hover:text-hemerald transition-all duration-500"><span>contact me</span></Link>
+                </div>
+            </div>
+            <div className="relative w-1/3 min-w-[250px] mx-auto order-first lg:order-last">
+                <Link href="#contact" className='block relative w-full aspect-square transition-all duration-500  overflow-hidden rounded-[84%_32%_33%_49%_/_94%_74%_49%_25%] blur-md'>
+                    <Image src={"/images/baldoni.png"} alt='manuel-baldoni' fill className='pointer-events-none object-cover' />
+                    <div className="absolute inset-0 bg-highlight opacity-20 blur-[100px]">
+                    </div>
+                </Link>
+                <div className='absolute top-[-10px] left-[-10px] lg:top-[-20px] lg:left-[-20px] w-full aspect-square transition-all duration-500 overflow-hidden rounded-[84%_32%_33%_49%_/_94%_74%_49%_25%] blur-sm'>
+                    <Image src={"/images/baldoni.png"} alt='manuel-baldoni' fill className='pointer-events-none object-cover' />
+                </div>
+                <div className='absolute top-[-20px] left-[-20px] lg:top-[-40px] lg:left-[-40px] w-full aspect-square transition-all duration-500 overflow-hidden rounded-[84%_32%_33%_49%_/_94%_74%_49%_25%]'>
+                    <Image src={"/images/baldoni.png"} alt='manuel-baldoni' fill className='pointer-events-none object-cover' />
                 </div>
             </div>
         </div>
