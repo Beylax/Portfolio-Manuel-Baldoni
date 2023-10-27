@@ -42,7 +42,7 @@ h5,.h5{
 /* ------------------ END TYPOGRAPHY ------------------- */
 
 /* ------------------ START GENERAL ------------------- */
-main > *{
+main > *:not(.no-padding-top){
 	@apply pt-20
 }
 main > div > section{
@@ -269,3 +269,16 @@ a{
 	@apply text-white uppercase font-bold
 }
 /* ------------------ END HEADER ------------------- */
+
+/* ------------------ START HERO ------------------- */
+.orbit {
+	position: relative;
+	padding: 10%;
+    -webkit-transform-style: preserve-3d; 
+    -webkit-transform: rotate3d(1.5, 0.2, 1, 90deg);
+}
+.orbit > .hero-img {
+    -webkit-transform-style: preserve-3d; 
+    -webkit-transform: rotate3d(-1.5, -0.2, -1,90deg) translateX(-10px);
+}
+/* ------------------ END HERO ------------------- */

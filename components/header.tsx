@@ -51,13 +51,8 @@ export default function Header() {
                                 Projects
                             </Link>
                         </li>
-                        <li className={`nav-item underline-effect ${router?.route === "/career" ? "active" : ""}`}>
-                            <Link href="/career" className="nav-link">
-                                Career
-                            </Link>
-                        </li>
                         <li className={`nav-item underline-effect ${router?.route === "/contact" ? "active" : ""}`}>
-                            <Link href="#TODO:" className="nav-link">
+                            <Link href="mailto:info@manuelbaldoni.com" target="_blank" className="nav-link">
                                 Get in touch
                             </Link>
                         </li>
@@ -79,17 +74,12 @@ export default function Header() {
                         </Link>
                     </li>
                     <li className={`nav-item underline-effect w-fit ${router?.route === "/about" ? "active" : ""}`}>
-                        <Link href="#TODO:" className="nav-link">
+                        <Link href="/projects" className="nav-link">
                             Projects
                         </Link>
                     </li>
                     <li className={`nav-item underline-effect w-fit ${router?.route === "/contact" ? "active" : ""}`}>
-                        <Link href="#TODO:" className="nav-link">
-                            Career
-                        </Link>
-                    </li>
-                    <li className={`nav-item underline-effect w-fit ${router?.route === "/contact" ? "active" : ""}`}>
-                        <Link href="#TODO:" className="nav-link">
+                        <Link href="mailto:info@manuelbaldoni.com" className="nav-link">
                             Get in touch
                         </Link>
                     </li>
