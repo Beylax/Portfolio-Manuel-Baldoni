@@ -1,11 +1,12 @@
 import { useEffect } from "react"
 
-interface ISlideIn {
-    children: any,
-    direction: "left" | "right"
+interface IPopIn {
+    children: any
+    className?: string
+    delay: number
 }
 
-export default function SlideIn({ children, direction }: ISlideIn) {
+export default function PopIn({children, delay, className}: IPopIn) {
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -13,13 +14,13 @@ export default function SlideIn({ children, direction }: ISlideIn) {
                     entry.target.classList.add("show")
                 }
             })
-        }, { threshold: 0 })
-        const elements = document.querySelectorAll(`.slide-in-${direction}`)
+        }, { threshold: 0.15 })
+        const elements = document.querySelectorAll(`.pop-in`)
         elements.forEach(element => observer.observe(element))
     })
 
     return (
-        <div className={`slide-in slide-in-${direction}`}>
+        <div className={`pop-in ${className}`} style={{ transitionDelay: `${delay}ms` }}>
             {children}
         </div>
     )

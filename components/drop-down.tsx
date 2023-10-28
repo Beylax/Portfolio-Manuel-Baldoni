@@ -12,19 +12,14 @@ export default function DropDown({children, delay}: IDropDown) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("show")
                 }
-                else {
-                    entry.target.classList.remove("show")
-                }
             })
-        })
+        }, { threshold: 0.15 })
         const elements = document.querySelectorAll(`.drop-down`)
         elements.forEach(element => observer.observe(element))
     })
 
-    const style = `drop-down`
-
     return (
-        <div className={style}>
+        <div className={"drop-down"} style={{ transitionDelay: `${delay}ms` }}>
             {children}
         </div>
     )
