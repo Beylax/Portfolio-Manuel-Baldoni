@@ -1,5 +1,4 @@
 import Link from "next/link";
-import tailwindConfig from "../tailwind.config";
 import Container from "./container";
 import Icon from "./icon";
 
