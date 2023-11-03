@@ -1,15 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import SlideIn from "./slide-in";
-interface IProject {
-    title: string;
-    description: string;
-    link?: string;
-    image_src: string;
-    reverse?: boolean;
+import { IProject } from "../lib/utils";
+
+interface IPropsProject {
+    project: IProject
+    reverse: boolean
 }
 
-export default function Project({ title, description, link, image_src, reverse }: IProject) {
+export default function Project(props: IPropsProject) {
+    const { title, description, link, image_src } = props?.project
+    const reverse = props?.reverse
+
     return (
         <SlideIn direction={reverse ? "left" : "right"}>
             <div className={`project relative flex flex-wrap items-center gap-y-8 ${reverse ? "flex-row-reverse" : ""}`}>
@@ -28,7 +30,7 @@ export default function Project({ title, description, link, image_src, reverse }
 
                     {
                         link ?
-                            <Link href={link} className={`block lg:hidden relative group w-11/12 mx-auto aspect-video rounded-xl overflow-hidden mt-10`}>
+                            <Link href={link} target="__blank" className={`block lg:hidden relative group w-11/12 mx-auto aspect-video rounded-xl overflow-hidden mt-10`}>
                                 <Image src={image_src} alt="project_amadori" fill className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
                                 <div className="absolute inset-0 opacity-50 bg-black"></div>
                             </Link> :
@@ -54,7 +56,7 @@ export default function Project({ title, description, link, image_src, reverse }
                 </div>
                 {
                     link ?
-                        <Link href={link} className={`hidden lg:block relative group w-full lg:w-1/2 aspect-video rounded-xl overflow-hidden border-highlight z-10 border-none lg:border-t-[2px] ${reverse ? "lg:border-l-[2px] lg:shadow-[-10px_-10px_30px_-10px_rgba(80,200,120,0.6)]" : "lg:border-r-[2px] lg:shadow-[10px_-10px_30px_-10px_rgba(80,200,120,0.6)]"}`}>
+                        <Link href={link} target="__blank" className={`hidden lg:block relative group w-full lg:w-1/2 aspect-video rounded-xl overflow-hidden border-highlight z-10 border-none lg:border-t-[2px] ${reverse ? "lg:border-l-[2px] lg:shadow-[-10px_-10px_30px_-10px_rgba(80,200,120,0.6)]" : "lg:border-r-[2px] lg:shadow-[10px_-10px_30px_-10px_rgba(80,200,120,0.6)]"}`}>
                             <Image src={image_src} alt="project_amadori" fill className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
                             <div className="absolute inset-0 opacity-50 bg-black"></div>
                         </Link> :
