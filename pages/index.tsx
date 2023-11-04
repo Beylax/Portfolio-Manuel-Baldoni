@@ -77,7 +77,6 @@ const Home: NextPage = () => {
 				<Container>
 					<h3 className='text-center font-bold'>MY SKILLS AND <span className='text-highlight'>KNOWLEDGE</span></h3>
 				</Container>
-				{/* <SwiperSkill></SwiperSkill> */}
 				<Container>
 					<PopIn className='container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-6' delay={0}>
 						{
@@ -104,7 +103,11 @@ const Home: NextPage = () => {
 					{
 						projects?.slice(0, 3)?.map((p, i) => {
 							return (
-								<Project project={p} reverse={i % 2 === 0}></Project>
+								<Project
+									key={p?.title}
+									project={p}
+									reverse={i % 2 === 0}
+								></Project>
 							)
 						})
 					}

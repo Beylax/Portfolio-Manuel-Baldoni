@@ -17,7 +17,11 @@ const Projects: NextPage = () => {
                     {
                         projects?.map((p, i) => {
                             return (
-                                <Project project={p} reverse={i % 2 === 0}></Project>
+                                <Project
+                                    key={p?.title}
+                                    project={p}
+                                    reverse={i % 2 === 0}
+                                ></Project>
                             )
                         })
                     }
