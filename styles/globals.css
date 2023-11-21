@@ -260,13 +260,19 @@ a{
 
 /* ------------------ START HEADER ------------------- */
 .nav-item{
-	@apply relative after:bg-white
+	@apply flex flex-col items-center justify-center
 }
-.nav-item.active{
-	@apply after:w-full
-}
+
 .nav-link{
-	@apply text-white uppercase font-bold
+	@apply block w-fit p-2 rounded-full
+}
+
+.nav-item.active .nav-link{
+	@apply bg-white
+}
+
+.nav-item.active path{
+	@apply fill-black
 }
 /* ------------------ END HEADER ------------------- */
 
