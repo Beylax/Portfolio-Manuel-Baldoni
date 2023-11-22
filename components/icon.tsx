@@ -1,7 +1,6 @@
 import { SvgProperties } from 'csstype';
 
-
-interface IIcon extends SvgProperties {
+export interface IIcon extends SvgProperties {
     icon: "react" | "html" | "css" | "javascript" | "linkedin" | "github" | "instagram" | "home" | "project" | "mail-send";
     className?: string;
     classNameIcon?: string;

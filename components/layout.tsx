@@ -10,7 +10,7 @@ const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "70
 
 export const LoadingContext = createContext<{ isLoading: boolean }>({ isLoading: true })
 
-const DELAY_LOADING = 2.5
+const DELAY_LOADING = 0
 
 export default function Layout({ children }: any) {
     const [isLoading, setIsLoading] = useState(true)

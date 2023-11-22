@@ -13,7 +13,7 @@ const Project = dynamic(() => import('../components/project'), { ssr: false })
 
 const Home: NextPage = () => {
 	return (
-		<div>
+		<div className='no-padding-top'>
 			<section className='relative isolate min-h-screen flex items-center'>
 				<Blob
 					width={'200px'}

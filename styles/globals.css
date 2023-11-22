@@ -264,7 +264,7 @@ a{
 }
 
 .nav-link{
-	@apply block w-fit p-2 rounded-full
+	@apply block w-fit p-2 rounded-full cursor-pointer
 }
 
 .nav-item.active .nav-link{

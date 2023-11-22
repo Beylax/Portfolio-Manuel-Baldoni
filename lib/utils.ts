@@ -1,3 +1,6 @@
+import { IIcon } from "../components/icon"
+import tailwindConfig from "../tailwind.config"
+
 export interface ISkill {
     image_name: string
     title: string
@@ -120,4 +123,40 @@ export const projects: Array<IProject> = [
         link:'https://a41.it',
         description: "During the <i>stage</i> of my fourth year in secondary school in collaboration with 3 other students we built a <b>management dashboard</b> for the Mercato Saraceno's municipality. The software is capable of handling the reports of the municipality avoiding saving them in papers and archieves.<br><br> For this project we used <a href='https://www.google.com/script/start/' target='__blank' className='font-bold after:bg-highlight underline-effect'>GAS (Google App Script)</a> for the back-end and HTML, CSS (bootstrap), JS for the front-end."
     },
+]
+
+export interface INavItem {
+    label: string
+    link: string
+    icon: IIcon
+}
+
+export const navItems: Array<INavItem> = [
+    {
+        label: "Home",
+        link: "/",
+        icon: {
+            icon: "home",
+            fill: "white",
+            classNameIcon: "cursor-pointer"
+        }
+    },
+    {
+        label: "Projects",
+        link: "/projects",
+        icon: {
+            icon: "project",
+            fill: "white",
+            classNameIcon: "cursor-pointer"
+        }
+    },
+    {
+        label: "Contact",
+        link: "mailto:info@manuelbaldoni.com",
+        icon: {
+            icon: "mail-send",
+            fill: "white",
+            classNameIcon: "cursor-pointer"
+        }
+    }
 ]
