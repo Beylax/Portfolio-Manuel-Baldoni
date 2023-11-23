@@ -8,7 +8,7 @@ const Project = dynamic(() => import('../components/project'), { ssr: false })
 
 const Projects: NextPage = () => {
     return (
-        <div>
+        <div className="no-padding-top">
             <section>
                 <Container className="mb-20">
                     <h1 className='uppercase text-center font-bold'>MY <span className='uppercase text-highlight'>PROJECTS</span></h1>

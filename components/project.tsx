@@ -17,7 +17,7 @@ export default function Project(props: IPropsProject) {
             <div className={`project relative flex flex-wrap items-center gap-y-8 ${reverse ? "flex-row-reverse" : ""}`}>
                 <div className="relative w-full lg:w-1/2 z-30">
                     <h5 className={`w-fit mx-auto lg:mx-0 text-highlight font-semibold pointer-events-none ${reverse ? "lg:ml-auto" : ""}`}>Featured Project</h5>
-                    <h4 className={`w-fit mx-auto lg:mx-0 text-tertiary lg:text-center font-semibold cursor-pointer ${reverse ? "lg:ml-auto" : ""}`}>
+                    <h4 className={`w-fit mx-auto lg:mx-0 text-tertiary text-center font-semibold cursor-pointer ${reverse ? "lg:ml-auto" : ""}`}>
                         {
                             link ?
                                 <Link href={link} target="__blank" className="text-tertiary">
