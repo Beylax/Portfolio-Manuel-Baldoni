@@ -10,7 +10,7 @@ const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "70
 
 export const LoadingContext = createContext<{ isLoading: boolean }>({ isLoading: true })
 
-const DELAY_LOADING = 0
+const DELAY_LOADING = 3
 
 export default function Layout({ children }: any) {
     const [isLoading, setIsLoading] = useState(true)
@@ -33,7 +33,7 @@ export default function Layout({ children }: any) {
                     <meta name="description" content="Portfolio di Manuel Baldoni - Full-stack developer - Front-end passion"></meta>
                 </Head>
 
-                <div className={`loading flex items-center justify-center fixed z-[100000] bg-gradient-to-r from-highlight to-highlight50 transition-all duration-[2000ms] ease-[cubic-bezier(.47,1.64,.41,.8)] overflow-hidden inset-0 ${isLoading ? "" : "scale-150 opacity-0 pointer-events-none"}`}>
+                <div className={`loading flex items-center justify-center fixed z-[100000] bg-gradient-to-r from-highlight to-highlight50 transition-all duration-500 overflow-hidden inset-0 ${isLoading ? "" : "scale-150 opacity-0 pointer-events-none"}`}>
                     <div className="relative">
                         <span className="loader"></span>
                     </div>

@@ -1,13 +1,11 @@
 import type { NextPage } from 'next'
-import Container from '../components/container'
+import Link from 'next/link'
 import dynamic from 'next/dynamic'
+import { ISkill, projects, skills } from '../lib/utils'
+import Container from '../components/container'
 import Hero from '../components/hero'
 import Skill from '../components/skill'
-import { ISkill, projects, skills } from '../lib/utils'
-import Blob from '../components/blob'
-import tailwindConfig from '../tailwind.config'
 import PopIn from '../components/pop-in'
-import Link from 'next/link'
 
 const Project = dynamic(() => import('../components/project'), { ssr: false })
 
@@ -15,45 +13,6 @@ const Home: NextPage = () => {
 	return (
 		<div className='no-padding-top'>
 			<section className='relative isolate min-h-screen flex items-center'>
-				<Blob
-					width={'200px'}
-					height={'200px'}
-					top={'10%'}
-					bottom={''}
-					left={''}
-					right={'-100px'}
-					background={tailwindConfig.theme.extend.colors["hemerald"]}
-					blur={'blur(100px)'}
-					origin='left'
-					opacity={0.4}
-					animation="spin"
-				/>
-				<Blob
-					width={'200px'}
-					height={'200px'}
-					top={'0'}
-					bottom={''}
-					left={'-100px'}
-					right={''}
-					background={tailwindConfig.theme.extend.colors["tertiary"]}
-					blur={'blur(100px)'}
-					origin='right'
-					opacity={0.4}
-					animation="bounce"
-				/>
-				<Blob
-					width={'500px'}
-					height={'500px'}
-					top={''}
-					bottom={'-200px'}
-					left={'60%'}
-					right={''}
-					background={tailwindConfig.theme.extend.colors["highlight"]}
-					blur={'blur(200px)'}
-					origin='bottom-right'
-					opacity={0.3}
-					animation="pulse"
-				/>
 				<Container>
 					<Hero></Hero>
 				</Container>

@@ -1,42 +1,45 @@
-import Image from "next/image";
-import Container from "./container";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useRef, useState } from "react";
+import { navItems } from "../lib/utils";
 import { LoadingContext } from "./layout";
 import Icon from "./icon";
-import { navItems } from "../lib/utils";
 
-const DELAY_VISIBILITY = 3
+const DELAY_VISIBILITY = 5
 
 export default function Header() {
-    const router = useRouter();
+    const { isLoading } = useContext(LoadingContext)
+    const router = useRouter()
 
     const [isVisible, setIsVisible] = useState(true)
 
     useEffect(() => {
-        setIsVisible(true)
+        if (!isLoading) {
+            setIsVisible(true)
 
-        const timeId = setTimeout(() => {
-            // After 3 seconds set the show value to false
-            setIsVisible(false)
-        }, DELAY_VISIBILITY * 1000)
+            const timeId = setTimeout(() => {
+                // After 3 seconds set the show value to false
+                setIsVisible(false)
+            }, DELAY_VISIBILITY * 1000)
 
-        return () => {
-            clearTimeout(timeId)
+            return () => {
+                clearTimeout(timeId)
+            }
         }
-    }, [router.route]);
+    }, [isLoading, router.route]);
 
     useEffect(() => {
-        const timeId = setTimeout(() => {
-            // After 3 seconds set the show value to false
-            setIsVisible(false)
-        }, DELAY_VISIBILITY * 1000)
+        if (!isLoading) {
+            const timeId = setTimeout(() => {
+                // After 3 seconds set the show value to false
+                setIsVisible(false)
+            }, DELAY_VISIBILITY * 1000)
 
-        return () => {
-            clearTimeout(timeId)
+            return () => {
+                clearTimeout(timeId)
+            }
         }
-    }, [isVisible]);
+    }, [isLoading, isVisible]);
 
     return (
         <header className="group fixed top-0 left-0 right-0 h-[80px] lg:h-auto lg:bottom-0 lg:right-[unset] lg:w-[81px] z-[10000]">

@@ -7,9 +7,9 @@ export default function Footer() {
     return (
         <footer className="bg-secondary py-4">
             <Container className="flex items-center justify-between">
-                <div className="w-fit">
+                <h6 className="block w-fit">
                     © 2023 <Link href="/" className="text-white">Manuel Baldoni</Link>
-                </div>
+                </h6>
                 <Social />
             </Container>
         </footer>

@@ -1,8 +1,7 @@
 import type { NextPage } from 'next'
-import Container from '../components/container'
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import { projects } from '../lib/utils'
+import Container from '../components/container'
 
 const Project = dynamic(() => import('../components/project'), { ssr: false })
 

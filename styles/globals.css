@@ -39,12 +39,12 @@ h4,.h4{
 h5,.h5{
 	font-size: clamp(0.875rem, 0.8027rem + 0.3614vw, 1.25rem);
 }
+h6,.h6{
+	font-size: clamp(0.75rem, 0.7018rem + 0.241vw, 1rem);
+}
 /* ------------------ END TYPOGRAPHY ------------------- */
 
 /* ------------------ START GENERAL ------------------- */
-main > *:not(.no-padding-top){
-	@apply pt-20
-}
 main > div > section{
 	@apply py-16 lg:py-24
 }
