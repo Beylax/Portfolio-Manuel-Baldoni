@@ -25,13 +25,13 @@ export default function Hero() {
                 <div className="flex items-center justify-center lg:justify-start gap-x-10 lg:gap-x-20 mt-10">
                     <Link
                         href={"#skills"}
-                        className={`underline-effect-small py-2 text-center text-xl font-bold uppercase text-main hover:text-hemerald transition-all duration-500 delay-[1500ms] ${isLoading ? "scale-0" : ""}`}>
+                        className={`underline-effect-small py-2 text-center text-xl font-bold uppercase text-main hover:text-hemerald transition-[scale] duration-500 delay-[1500ms] ${isLoading ? "scale-0" : ""}`}>
                         my skills
                     </Link>
                     <Link
                         href={"maito:info@manuelbaldoni.com"}
                         target="_blank"
-                        className={`underline-effect-small py-2 text-center text-xl font-bold uppercase text-main hover:text-hemerald transition-all duration-500 delay-[1800ms] ${isLoading ? "scale-0" : ""}`}>
+                        className={`underline-effect-small py-2 text-center text-xl font-bold uppercase text-main hover:text-hemerald transition-[scale] duration-500 delay-[1800ms] ${isLoading ? "scale-0" : ""}`}>
                         contact me
                     </Link>
                 </div>
