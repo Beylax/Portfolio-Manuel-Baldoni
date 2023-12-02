@@ -11,12 +11,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': "#11071F",
+        'main': "#FFFFFF",
+        'primary': "#0F1012",
         'secondary': "#1A0B2E",
         'tertiary': "#CCD6F6",
         'highlight': "#A3178C",
         'highlight50': "#51127F",
-        "hemerald": "#50C878",
+        "hemerald": "#00AC89",
         "javascript": "#ffd600",
         "linkedin": "#0077B5",
         "github": "#333",
@@ -55,6 +56,7 @@ module.exports = {
       },
       boxShadow: {
         'skill': '0 10px 20px -15px rgba(255, 255, 255, 0.8)',
+        'project': '0px 0px 30px -10px rgba(0,172,137,0.6)'
       },
     },
   },

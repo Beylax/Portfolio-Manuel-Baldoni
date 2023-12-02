@@ -3,8 +3,10 @@ import Header from "./header";
 import { Poppins } from 'next/font/google'
 import Footer from "./footer";
 import { createContext, useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import Script from 'next/script'
+import Loader from "./loader";
+import MousePointer from "./mousePointer";
+import BackToTop from "./backToTop";
 
 const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], style: ["normal", "italic"], subsets: ["latin"] })
 
@@ -33,15 +35,27 @@ export default function Layout({ children }: any) {
                     <meta name="description" content="Portfolio di Manuel Baldoni - Full-stack developer - Front-end passion"></meta>
                 </Head>
 
-                <div className={`loading flex items-center justify-center fixed z-[100000] bg-gradient-to-r from-highlight to-highlight50 transition-all duration-500 overflow-hidden inset-0 ${isLoading ? "" : "scale-150 opacity-0 pointer-events-none"}`}>
-                    <div className="relative">
-                        <span className="loader"></span>
-                    </div>
-                </div>
+                <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4NYFFVC195"></Script>
+                <Script id="google-analytics">
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+
+                        gtag('config', 'G-4NYFFVC195');
+                    `}
+                </Script>
+
+                <Loader />
+                <MousePointer />
+                {/* <BackToTop /> */}
+
                 <Header></Header>
+                
                 <main className="overflow-x-hidden max-w-screen">
                     {children}
                 </main>
+                
                 <Footer></Footer>
             </div>
         </LoadingContext.Provider>

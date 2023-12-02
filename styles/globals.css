@@ -205,7 +205,7 @@ a{
 }
 
 .loader:after {
-	color: white;
+	@apply text-main;
 	transform: rotateY(70deg);
 	animation-delay: .4s;
 }
@@ -268,7 +268,7 @@ a{
 }
 
 .nav-item.active .nav-link{
-	@apply bg-white
+	@apply bg-main
 }
 
 .nav-item.active path{
@@ -288,3 +288,37 @@ a{
     -webkit-transform: rotate3d(-1.5, -0.2, -1,90deg) translateX(-10px);
 }
 /* ------------------ END HERO ------------------- */
+
+/* ------------------ START PROJECTS ------------------- */
+.projects-layout{
+	@apply transition-all duration-500 grid grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-10;
+}
+.projects-layout.list{
+	@apply md:grid-cols-1 gap-6;
+}
+
+.projects-layout.list .project-card{
+	@apply flex items-center border-l border-hemerald
+}
+
+.projects-layout.list .project-card .project-card-image{
+	@apply h-[100px] w-[100px] ml-4 rounded-lg overflow-hidden
+}
+/* ------------------ END PROJECTS ------------------- */
+
+/* ------------------ START GALLERY ------------------- */
+/* width */
+.gallery *::-webkit-scrollbar {
+	height: 10px;
+}
+  
+/* Track */
+.gallery *::-webkit-scrollbar-track {
+	@apply bg-transparent
+}
+
+/* Handle */
+.gallery *::-webkit-scrollbar-thumb {
+	@apply bg-highlight rounded-full
+}
+/* ------------------ END GALLERY ------------------- */
