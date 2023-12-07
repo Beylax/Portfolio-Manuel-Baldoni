@@ -6,12 +6,16 @@ import Container from '../components/container'
 import Hero from '../components/hero'
 import Skill from '../components/skill'
 import PopIn from '../components/pop-in'
+import Layout from '../components/layout'
 
 const Project = dynamic(() => import('../components/project'), { ssr: false })
 
-const Home = ({ projects } : { projects: Array<IProject> }) => {
+const Home = ({ projects }: { projects: Array<IProject> }) => {
 	return (
-		<div className='no-padding-top'>
+		<Layout
+			pageTitle='Manuel Baldoni - Portfolio'
+			pageDescription='Portfolio di Manuel Baldoni - Full-stack developer - Front-end passion'
+		>
 			<section className='relative isolate min-h-screen flex items-center'>
 				<Container>
 					<Hero></Hero>
@@ -78,20 +82,20 @@ const Home = ({ projects } : { projects: Array<IProject> }) => {
 					</Link>
 				</Container>
 			</section>
-		</div>
+		</Layout>
 	)
 }
 
 export async function getServerSideProps({ query }: GetServerSidePropsContext) {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
+	const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
 
-    const projects = (await res.json())?.data || null
+	const projects = (await res.json())?.data || null
 
-    return {
-        props: {
-            projects,
-        },
-    }
+	return {
+		props: {
+			projects,
+		},
+	}
 }
 
 export default Home

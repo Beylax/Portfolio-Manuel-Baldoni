@@ -5,6 +5,7 @@ import Container from '../../components/container'
 import { useState } from 'react'
 import Icon from '../../components/icon'
 import tailwindConfig from '../../tailwind.config'
+import Layout from '../../components/layout'
 
 const ProjectCard = dynamic(() => import('../../components/projectCard'), { ssr: false })
 
@@ -17,10 +18,14 @@ const Projects = ({projects}: { projects: Array<IProject> }) => {
     const [projectsLayout, setProjectsLayout] = useState(ProjectLayout.grid)
 
     return (
-        <div className="no-padding-top">
-            <section>
-                <Container className="mb-20">
-                    <h1 className='uppercase text-center font-bold'>MY <span className='uppercase text-highlight'>PROJECTS</span></h1>
+        <Layout
+            pageTitle='Projects | Manuel Baldoni - Portfolio'
+            pageDescription='Projects | Frontend | Listing'
+            breadcrumb
+        >
+            <section className='pt-0'>
+                <Container className="mb-10 lg:mb-20">
+                    <h1 className='uppercase font-bold'>MY <span className='uppercase text-highlight'>PROJECTS</span></h1>
                 </Container>
                 <Container className="flex items-center justify-between">
                     <div>
@@ -48,7 +53,7 @@ const Projects = ({projects}: { projects: Array<IProject> }) => {
                     }
                 </Container>
             </section>
-        </div>
+        </Layout>
     )
 }
 

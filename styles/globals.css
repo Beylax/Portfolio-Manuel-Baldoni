@@ -44,14 +44,15 @@ h6,.h6{
 /* ------------------ END TYPOGRAPHY ------------------- */
 
 /* ------------------ START GENERAL ------------------- */
+main > section,
 main > div > section{
 	@apply py-16 lg:py-24
 }
 
-main > div > section > h3,
-main > div > section > .h3,
-main > div > section > .container > h3,
-main > div > section > .container > .h3{
+main > section > h3,
+main > section > .h3,
+main > section > .container > h3,
+main > section > .container > .h3{
 	@apply mb-6 lg:mb-14
 }
 

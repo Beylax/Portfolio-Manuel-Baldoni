@@ -2,10 +2,11 @@ import type { NextPage } from 'next'
 import Container from '../components/container'
 import Link from 'next/link'
 import Self from '../components/self'
+import Layout from '../components/layout'
 
 const Page404: NextPage = () => {
 	return (
-		<div>
+		<Layout pageTitle='Page 404 | Not Found'>
 			<section className='p-0'>
 				<Container className="flex flex-col items-center justify-center h-[calc(100vh-64px)]">
 					<Link href={"/"} className={`block relative w-1/3 min-w-[300px] transition-all duration-500`}>
@@ -21,7 +22,7 @@ const Page404: NextPage = () => {
 					</Link>
 				</Container>
 			</section>
-		</div>
+		</Layout>
 	)
 }
 

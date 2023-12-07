@@ -7,32 +7,32 @@ import Script from 'next/script'
 import Loader from "./loader";
 import MousePointer from "./mousePointer";
 import BackToTop from "./backToTop";
+import Container from "./container";
+import Breadcrumb from "./breadcrumb";
 
 const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], style: ["normal", "italic"], subsets: ["latin"] })
 
-export const LoadingContext = createContext<{ isLoading: boolean }>({ isLoading: true })
+export const LoadingContext = createContext<{ isLoading: boolean, setIsLoading: any }>({ isLoading: false, setIsLoading: null })
 
-const DELAY_LOADING = 3
+interface IPropsLayout {
+    children: any
+    pageTitle: string
+    pageDescription?: string
+    breadcrumb?: boolean
+}
 
-export default function Layout({ children }: any) {
-    const [isLoading, setIsLoading] = useState(true)
-
-    useEffect(() => {
-        let timer = setTimeout(() => {
-            setIsLoading(false)
-        }, DELAY_LOADING * 1000)
-
-        return () => {
-            clearTimeout(timer)
-        }
-    }, [])
+export default function Layout({ children, pageTitle, pageDescription, breadcrumb }: IPropsLayout) {
+    const [isLoading, setIsLoading] = useState(false)
 
     return (
-        <LoadingContext.Provider value={{ isLoading }}>
+        <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
             <div className={poppins.className}>
                 <Head>
-                    <title>Manuel Baldoni | Portfolio</title>
-                    <meta name="description" content="Portfolio di Manuel Baldoni - Full-stack developer - Front-end passion"></meta>
+                    <title>{pageTitle}</title>
+                    {
+                        pageDescription ?
+                            <meta name="description" content={pageDescription}></meta> : null
+                    }
                 </Head>
 
                 <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4NYFFVC195"></Script>
@@ -51,11 +51,15 @@ export default function Layout({ children }: any) {
                 {/* <BackToTop /> */}
 
                 <Header></Header>
-                
+
                 <main className="overflow-x-hidden max-w-screen">
+                    {
+                        breadcrumb ?
+                            <Breadcrumb /> : null
+                    }
                     {children}
                 </main>
-                
+
                 <Footer></Footer>
             </div>
         </LoadingContext.Provider>
