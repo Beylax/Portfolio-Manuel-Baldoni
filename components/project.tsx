@@ -24,7 +24,7 @@ export default function Project(props: IPropsProject) {
                     </h4>
 
                     <Link href={`/projects/${slug}`} className={`block lg:hidden relative group w-11/12 mx-auto aspect-video rounded-xl overflow-hidden mt-10`}>
-                        <Image src={thumbnail_image.src} alt={thumbnail_image.alt} fill className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
+                        <Image src={thumbnail_image.src} alt={thumbnail_image.alt} fill sizes="90vw, min-width(1024px) 40vw" className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
                         <div className="absolute inset-0 opacity-50 bg-black"></div>
                     </Link>
 
@@ -35,7 +35,7 @@ export default function Project(props: IPropsProject) {
                     </Link>
                 </div>
                 <Link href={`/projects/${slug}`} className={`hidden lg:block relative group w-full lg:w-1/2 aspect-video rounded-xl overflow-hidden border-highlight z-10 border-none lg:border-t-[2px] ${reverse ? "lg:border-l-[2px] lg:shadow-project" : "lg:border-r-[2px] lg:shadow-project"}`}>
-                    <Image src={thumbnail_image.src} alt={thumbnail_image.alt} fill className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
+                    <Image src={thumbnail_image.src} alt={thumbnail_image.alt} fill sizes="90vw, min-width(1024px) 40vw" className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
                     <div className="absolute inset-0 opacity-50 bg-black"></div>
                 </Link>
             </div>

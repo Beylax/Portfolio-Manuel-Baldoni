@@ -43,7 +43,7 @@ const Home = ({ projects }: { projects: Array<IProject> }) => {
 					<h3 className='text-center font-bold'>MY SKILLS AND <span className='text-highlight'>KNOWLEDGE</span></h3>
 				</Container>
 				<Container>
-					<PopIn className='container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-6' delay={0}>
+					<PopIn className='container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 xl:grid-cols-8 gap-6' delay={0}>
 						{
 							skills?.map((skill: ISkill, i) => {
 								return (

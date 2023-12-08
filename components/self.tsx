@@ -15,6 +15,8 @@ export default function Self() {
                         src={"/images/hero/baldoni.png"}
                         alt='manuel-baldoni'
                         fill
+                        sizes="50vw"
+                        priority
                         className={`block pointer-events-none object-cover  transition-all duration-500 delay-[500ms] ${isLoading ? "rotate-[-15deg] brightness-0" : ""}`}
                     />
                     <div className={`absolute inset-0 bg-highlight opacity-20 blur-[100px] transition-all duration-500`}>
@@ -25,6 +27,8 @@ export default function Self() {
                         src={"/images/hero/baldoni.png"}
                         alt='manuel-baldoni'
                         fill
+                        sizes="50vw"
+                        priority
                         className={`block pointer-events-none object-cover transition-all duration-500 delay-[700ms] ${isLoading ? "rotate-[-15deg] brightness-0" : ""}`}
                     />
                 </div>
@@ -33,6 +37,8 @@ export default function Self() {
                         src={"/images/hero/baldoni.png"}
                         alt='manuel-baldoni'
                         fill
+                        sizes="50vw"
+                        priority
                         className={`block pointer-events-none object-cover transition-all duration-500 delay-[900ms] ${isLoading ? "rotate-[-15deg] brightness-0" : ""}`}
                     />
                 </div>

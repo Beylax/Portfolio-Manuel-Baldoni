@@ -19,7 +19,12 @@ function Content(props: { skill: ISkill; isHover: boolean }) {
                 <div className="absolute inset-0 flex items-center justify-center z-10 isolate overflow-hidden rounded-full after:bg-black after:opacity-80 after:absolute after:inset-0 after:z-[-1] font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 text-tertiary">
                     {skill?.level}%
                 </div>
-                <Image src={`/images/skills/${skill?.image_name}`} alt={skill?.title} fill className="object-contain bg-primary rounded-full p-4"></Image>
+                <Image
+                    src={`/images/skills/${skill?.image_name}`}
+                    alt={skill?.title}
+                    fill
+                    sizes="40vw, min-width(640px) 30vw, min-width(768px) 20vw, min-width(1280px) 10vw"
+                    className="object-contain bg-primary rounded-full p-4" />
             </div>
             <h5 className="text-center text-main font-bold mt-4">
                 {skill?.title}
