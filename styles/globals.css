@@ -260,11 +260,11 @@ a{
 
 /* ------------------ START HEADER ------------------- */
 .nav-item{
-	@apply flex flex-col items-center justify-center
+	@apply flex flex items-center justify-center gap-x-4
 }
 
 .nav-link{
-	@apply block w-fit p-2 rounded-full cursor-pointer
+	@apply hidden sm:block w-fit p-1 rounded-full cursor-pointer
 }
 
 .nav-item.active .nav-link{

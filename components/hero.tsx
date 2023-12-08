@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useContext } from "react"
 import { LoadingContext } from "./layout"
 import Self from "./self"
+import Blob from "./blob"
 
 export default function Hero() {
     const { isLoading } = useContext(LoadingContext)
@@ -35,7 +36,7 @@ export default function Hero() {
                         contact me
                     </Link>
                 </div>
-            </div>
+            B</div>
             <div className={`relative w-1/2 min-w-[300px] mx-auto order-first lg:order-last transition-all duration-500`}>
                 <Self />
             </div>
