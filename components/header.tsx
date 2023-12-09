@@ -29,16 +29,16 @@ export default function Header() {
                 <Image src={"/images/logo.png"} alt="logo" width={40} height={40} />
 
                 <nav>
-                    <ul className="flex items-center gap-x-4">
+                    <ul className="flex items-center gap-x-2 sm:gap-x-4">
                         {
                             navItems?.map((navItem, i) => {
                                 return (
-                                    <li key={navItem.link} className={`nav-item ${router?.route === navItem.link ? "active" : ""}`}>
-                                        <Link href={navItem.link} className="flex items-center gap-x-2">
+                                    <li key={navItem.link} className={`group nav-item ${router?.route === navItem.link ? "active" : ""}`}>
+                                        <Link href={navItem.link} className="flex items-center gap-x-1 sm:gap-x-2">
                                             <div className="nav-link">
                                                 <Icon icon={navItem.icon.icon} fill={navItem.icon.fill} classNameIcon={navItem.icon.classNameIcon} />
                                             </div>
-                                            <label className="text-main">{navItem.label}</label>
+                                            <label className="underline-effect after:bg-main text-main">{navItem.label}</label>
                                         </Link>
 
                                         {

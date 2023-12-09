@@ -90,7 +90,7 @@ a{
 }
 
 .underline-effect{
-	@apply relative after:absolute after:top-full after:left-0 after:w-0 after:h-[1px] after:rounded-full after:transition-all after:duration-500 hover:after:w-full
+	@apply relative after:absolute after:top-full after:left-0 after:w-0 after:h-[1px] after:rounded-full after:transition-all after:duration-500 hover:after:w-full group-hover:after:w-full
 }
 
 .translate-x-center{
@@ -264,7 +264,11 @@ a{
 }
 
 .nav-link{
-	@apply hidden sm:block w-fit p-1 rounded-full cursor-pointer
+	@apply hidden sm:block w-fit p-1 rounded-full cursor-pointer transition-all duration-300
+}
+
+.nav-item path{
+	@apply transition-all duration-300
 }
 
 .nav-item.active .nav-link{
@@ -272,6 +276,18 @@ a{
 }
 
 .nav-item.active path{
+	@apply fill-black
+}
+
+.nav-item.active label::after{
+	@apply w-full
+}
+
+.nav-item:hover .nav-link{
+	@apply bg-[rgba(160,160,160,.5)]
+}
+
+.nav-item:hover path{
 	@apply fill-black
 }
 /* ------------------ END HEADER ------------------- */

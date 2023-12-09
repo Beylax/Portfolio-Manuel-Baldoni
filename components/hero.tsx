@@ -36,7 +36,7 @@ export default function Hero() {
                         contact me
                     </Link>
                 </div>
-            B</div>
+            </div>
             <div className={`relative w-1/2 min-w-[300px] mx-auto order-first lg:order-last transition-all duration-500`}>
                 <Self />
             </div>

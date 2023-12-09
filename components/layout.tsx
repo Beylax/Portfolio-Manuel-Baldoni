@@ -9,6 +9,7 @@ import MousePointer from "./mousePointer";
 import BackToTop from "./backToTop";
 import Container from "./container";
 import Breadcrumb from "./breadcrumb";
+import Curriculum from "./curriculum";
 
 const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], style: ["normal", "italic"], subsets: ["latin"] })
 
@@ -48,7 +49,8 @@ export default function Layout({ children, pageTitle, pageDescription, breadcrum
 
                 <Loader />
                 <MousePointer />
-                {/* <BackToTop /> */}
+                <BackToTop />
+                <Curriculum /> 
 
                 <Header></Header>
 

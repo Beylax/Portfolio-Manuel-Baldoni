@@ -1,7 +1,7 @@
 import { SvgProperties } from 'csstype';
 
 export interface IIcon extends SvgProperties {
-    icon: "react" | "html" | "css" | "javascript" | "linkedin" | "github" | "instagram" | "home" | "project" | "mail-send" | "external-link" | "grid" | "list" | "chevron-up" | "chevron-right";
+    icon: "react" | "html" | "css" | "javascript" | "linkedin" | "github" | "instagram" | "home" | "project" | "mail-send" | "external-link" | "grid" | "list" | "chevron-up" | "chevron-right" | "close";
     className?: string;
     classNameIcon?: string;
     classNamePaths?: string;
@@ -87,6 +87,11 @@ const getIcon: any = (props: IIcon) => {
         "chevron-right": (
             <svg className={props.classNameIcon} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path className={props?.classNamePaths} fill={props.fill} d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path>
+            </svg>
+        ),
+        "close": (
+            <svg className={props.classNameIcon} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path className={props?.classNamePaths} fill={props.fill} d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
             </svg>
         ),
     }
