@@ -13,7 +13,6 @@ export default function Header() {
 
     useEffect(() => {
         document.addEventListener("scroll", function () {
-            console.log(window)
             if (window.scrollY <= 0) {
                 document.getElementById("header")?.classList.remove("scrolled")
             }
@@ -26,7 +25,9 @@ export default function Header() {
     return (
         <header id="header" className="fixed top-0 left-0 right-0 z-[10000] isolate before:absolute before:inset-0 before:backdrop-blur-md before:z-[-1] after:absolute after:inset-0 [&.scrolled]:after:bg-gradient-to-r after:from-highlight after:to-highlight50 after:opacity-0 [&.scrolled]:after:opacity-20 after:z-[-1] after:transition-all after:duration-1000 after:ease-in-out">
             <Container className="flex items-center justify-between py-2 lg:py-4">
-                <Image src={"/images/logo.png"} alt="logo" width={40} height={40} />
+                <Link href={"/"}>
+                    <Image src={"/images/logo.png"} alt="logo" width={40} height={40} />
+                </Link>
 
                 <nav>
                     <ul className="flex items-center gap-x-2 sm:gap-x-4">

@@ -13,7 +13,7 @@ export default function Breadcrumb() {
     let path = ""
 
     return (
-        <Container className="breadcrumb flex items-center gap-x-2 pt-16 lg:pt-24">
+        <Container className="breadcrumb flex items-center gap-x-2 pt-16 lg:pt-24 pb-4">
             <Link href={"/"} className="font-light text-main">
                 {"Home"}
             </Link>
