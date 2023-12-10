@@ -14,7 +14,7 @@ import SocialFlyout from "./socialFlyout";
 
 const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], style: ["normal", "italic"], subsets: ["latin"] })
 
-export const LoadingContext = createContext<{ isLoading: boolean, setIsLoading: any }>({ isLoading: false, setIsLoading: null })
+export const LoadingContext = createContext<{ isLoading: boolean, setIsLoading: any }>({ isLoading: true, setIsLoading: null })
 
 interface IPropsLayout {
     children: any
@@ -24,7 +24,11 @@ interface IPropsLayout {
 }
 
 export default function Layout({ children, pageTitle, pageDescription, breadcrumb }: IPropsLayout) {
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        setIsLoading(false)
+    }, [])
 
     return (
         <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
@@ -48,7 +52,7 @@ export default function Layout({ children, pageTitle, pageDescription, breadcrum
                     `}
                 </Script>
 
-                <Loader />
+                {/* <Loader /> */}
                 <MousePointer />
                 <BackToTop />
                 <SocialFlyout /> 

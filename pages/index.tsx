@@ -21,7 +21,7 @@ const Home = ({ projects }: { projects: Array<IProject> }) => {
 					<Hero></Hero>
 				</Container>
 			</section>
-			<section>
+			<section id='info'>
 				<Container>
 					<h3 className='text-tertiary text-center lg:text-start mb-5'>
 						I&apos;m a Software Engineer. <span className='animate-blink'>|</span>
