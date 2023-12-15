@@ -40,7 +40,7 @@ export default function Header() {
                                             <div className="nav-link">
                                                 <Icon icon={navItem.icon.icon} fill={navItem.icon.fill} classNameIcon={navItem.icon.classNameIcon} />
                                             </div>
-                                            <label className="text-main">{navItem.label}</label>
+                                            <label className="text-main underline-effect">{navItem.label}</label>
                                         </Link>
 
                                         {

@@ -279,7 +279,12 @@ a{
 	@apply fill-black
 }
 
-.nav-item.active label::after{
+.nav-item label::after{
+	@apply bg-main
+}
+
+.nav-item.active label::after,
+.nav-item:hover label::after{
 	@apply w-full
 }
 
