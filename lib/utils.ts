@@ -154,7 +154,21 @@ export const projects: Array<IProject> = [
             alt: 'dma'
         },
         link:'https://diemmea.com',
-        description: "I had the privilege of <i>collaborating</i> with <a href='https://diemmea.com' target='__blank' className='font-bold after:bg-highlight underline-effect'>DMA</a> on the development of the company's website. This project involved working closely with both the marketing and design teams to create an enjoyable user experience (UX).<br><br>Our front-end development utilized HTML, CSS (Bootstrap), and JavaScript, all integrated seamlessly into the HubSpot CMS tool."
+        description: "I had the privilege of <i>collaborating</i> with <a href='https://diemmea.com' target='__blank' className='font-bold after:bg-highlight underline-effect'>DMA</a> on the development of the company's website. This project involved working closely with both the marketing and design teams to create an enjoyable user experience (UX).<br><br>Our front-end development utilized HTML, CSS (Bootstrap), and JavaScript, all integrated seamlessly into the HubSpot CMS tool.",
+        images: [
+            {
+                src: '/images/projects/project_dma/home.png',
+                alt: 'amadori-ricette'
+            },
+            {
+                src: '/images/projects/project_dma/lavora.png',
+                alt: 'amadori-social'
+            },
+            {
+                src: '/images/projects/project_dma/general.png',
+                alt: 'amadori-filiera'
+            },
+        ]
     },
     {
         slug: 'area-41',
