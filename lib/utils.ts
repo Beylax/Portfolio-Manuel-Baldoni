@@ -51,6 +51,12 @@ export const skills : Array<ISkill> = [
         level: 80
     },
     {
+        image_name: "nextjs_logo.png",
+        title: "NextJS",
+        link: 'https://nextjs.org/',
+        level: 80
+    },
+    {
         image_name: "nodejs_logo.png",
         title: "NodeJS",
         link: 'https://nodejs.org',
@@ -71,6 +77,12 @@ export const skills : Array<ISkill> = [
         title: "Java",
         link: 'https://www.java.com/',
         level: 80
+    },
+    {
+        image_name: "wordpress_logo.png",
+        title: "WordPress",
+        link: 'https://it.wordpress.org/',
+        level: 70
     },
     {
         image_name: "git_logo.png",
