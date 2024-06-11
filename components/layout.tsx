@@ -19,61 +19,61 @@ const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "70
 export const LoadingContext = createContext<{ isLoading: boolean, setIsLoading: any }>({ isLoading: true, setIsLoading: null })
 
 interface IPropsLayout {
-    children: any
-    pageTitle: string
-    pageDescription?: string
-    breadcrumb?: boolean
+	children: any
+	pageTitle: string
+	pageDescription?: string
+	breadcrumb?: boolean
 }
 
 export default function Layout({ children, pageTitle, pageDescription, breadcrumb }: IPropsLayout) {
-    const [isLoading, setIsLoading] = useState(true)
+	const [isLoading, setIsLoading] = useState(true)
 
-    useEffect(() => {
-        setIsLoading(false)
-    }, [])
+	useEffect(() => {
+		setIsLoading(false)
+	}, [])
 
-    return (
-        <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
-            <div className={poppins.className}>
-                <Head>
-                    <title>{pageTitle}</title>
-                    {
-                        pageDescription ?
-                            <meta name="description" content={pageDescription}></meta> : null
-                    }
-                </Head>
+	return (
+		<LoadingContext.Provider value={{ isLoading, setIsLoading }}>
+			<div className={`${poppins.className} isolate`}>
+				<Head>
+					<title>{pageTitle}</title>
+					{
+						pageDescription ?
+							<meta name="description" content={pageDescription}></meta> : null
+					}
+				</Head>
 
-                <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4NYFFVC195"></Script>
-                <Script id="google-analytics">
-                    {`
+				<Script async src="https://www.googletagmanager.com/gtag/js?id=G-4NYFFVC195"></Script>
+				<Script id="google-analytics">
+					{`
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
 
                         gtag('config', 'G-4NYFFVC195');
                     `}
-                </Script>
+				</Script>
 
-                {/* <Loader /> */}
-                <MousePointer />
-                <BackToTop />
-                <SocialFlyout /> 
+				{/* <Loader /> */}
+				<MousePointer />
+				<BackToTop />
+				<SocialFlyout />
 
-                <Header></Header>
+				<Header></Header>
 
-                <main className="overflow-x-hidden max-w-screen">
-                    {
-                        breadcrumb ?
-                            <Breadcrumb /> : null
-                    }
-                    {children}
-                </main>
+				<main className="overflow-x-hidden max-w-screen z-10">
+					{
+						breadcrumb ?
+							<Breadcrumb /> : null
+					}
+					{children}
+				</main>
 
 				<Footer></Footer>
-				
+
 				<Analytics />
-				<SpeedInsights/>
-            </div>
-        </LoadingContext.Provider>
-    )
+				<SpeedInsights />
+			</div>
+		</LoadingContext.Provider>
+	)
 }
