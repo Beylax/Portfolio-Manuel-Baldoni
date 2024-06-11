@@ -11,6 +11,8 @@ import Container from "./container";
 import Breadcrumb from "./breadcrumb";
 import Curriculum from "./socialFlyout";
 import SocialFlyout from "./socialFlyout";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], style: ["normal", "italic"], subsets: ["latin"] })
 
@@ -67,7 +69,10 @@ export default function Layout({ children, pageTitle, pageDescription, breadcrum
                     {children}
                 </main>
 
-                <Footer></Footer>
+				<Footer></Footer>
+				
+				<Analytics />
+				<SpeedInsights/>
             </div>
         </LoadingContext.Provider>
     )

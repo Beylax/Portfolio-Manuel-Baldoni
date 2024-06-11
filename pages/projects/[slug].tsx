@@ -21,8 +21,8 @@ export default function SingleProject({ project }: { project: IProject }) {
                 <section className="pt-0">
                     {
                         project?.link ?
-                            <Link href={project?.link} target="_blank">
-                                <h1 className="text-hemerald font-bold">{project?.title}</h1>
+                            <Link href={project?.link} target="_blank" className="block w-fit">
+                                <h1 className="text-hemerald font-bold w-fit">{project?.title}</h1>
                             </Link>
                             :
                             <h1 className="text-hemerald font-bold">{project?.title}</h1>

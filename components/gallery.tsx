@@ -14,12 +14,12 @@ export default function Gallery(props: IGalleryProps) {
                 {
                     props?.images?.map((img, i) => {
                         return (
-                            <div key={img.src} className={"relative isolate h-[60px] lg:h-[100px] aspect-square shrink-0 rounded-lg overflow-hidden"} onClick={() => {
+                            <button type="button" key={img.src} className={"relative isolate h-[60px] lg:h-[100px] aspect-square shrink-0 rounded-lg overflow-hidden"} onClick={() => {
                                 setActiveImage(img)
                             }}>
                                 <div className={`absolute inset-0 bg-black z-[10] ${img.src !== activeImage.src ? "opacity-80" : "opacity-0"}`}></div>
                                 <Image src={img.src} alt={img.alt} fill className="object-cover" />
-                            </div>
+                            </button>
                         )
                     })
                 }

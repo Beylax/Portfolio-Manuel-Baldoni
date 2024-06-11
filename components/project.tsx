@@ -9,7 +9,7 @@ interface IPropsProject {
 }
 
 export default function Project(props: IPropsProject) {
-    const { slug, title, description, link, thumbnail_image } = props?.project
+    const { slug, title, description, link, thumbnail_image, publish_date } = props?.project
     const reverse = props?.reverse
 
     return (
@@ -35,7 +35,7 @@ export default function Project(props: IPropsProject) {
                     </Link>
                 </div>
                 <Link href={`/projects/${slug}`} className={`hidden lg:block relative group w-full lg:w-1/2 aspect-video rounded-xl overflow-hidden border-highlight z-10 border-none lg:border-t-[2px] ${reverse ? "lg:border-l-[2px] lg:shadow-project" : "lg:border-r-[2px] lg:shadow-project"}`}>
-                    <Image src={thumbnail_image.src} alt={thumbnail_image.alt} fill sizes="90vw, min-width(1024px) 40vw" className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500" />
+                    <Image src={thumbnail_image.src} alt={thumbnail_image.alt} fill sizes="90vw, min-width(1024px) 40vw" className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-300" />
                     <div className="absolute inset-0 opacity-50 bg-black"></div>
                 </Link>
             </div>
