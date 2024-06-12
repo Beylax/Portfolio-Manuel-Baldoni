@@ -9,6 +9,10 @@ module.exports = {
 		"./src/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
+		fontFamily: {
+			"poppins": "var(--poppins-font)",
+			"montserrat": "var(--montserrat-font)",
+		},
 		extend: {
 			colors: {
 				main: "#FFFFFF",

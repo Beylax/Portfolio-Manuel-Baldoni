@@ -11,7 +11,7 @@ function Content(props: { skill: ISkill; isHover: boolean }) {
         <div className="group">
             <div className="relative w-1/2 aspect-square mx-auto transition-all duration-300">
                 <div
-                    className="level absolute inset-[-3px] rounded-full group-hover:rotate-[720deg] transition-all duration-1000"
+                    className="level absolute inset-[-3px] rounded-full group-hover:rotate-[720deg] transition-all duration-1000 transform-gpu"
                     style={{
                         background: `conic-gradient(${isHover ? tailwindConfig.theme.extend.colors["highlight50"] : tailwindConfig.theme.extend.colors["hemerald"]} ${skill?.level || 0}%, transparent 0)`
                     }}

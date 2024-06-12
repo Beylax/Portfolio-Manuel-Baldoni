@@ -23,7 +23,7 @@ const Home = ({ projects }: { projects: Array<IProject> }) => {
 				</Container>
 			</section>
 			<section id='info' className='relative isolate overflow-visible'>
-				{/* <Image className='absolute object-right object-none z-[-1] opacity-10' src={"/images/technology_bg.png"} alt='' fill/> */}
+				<Image className='absolute object-right object-contain z-[-1] opacity-20' src={"/images/technology_bg2.png"} alt='' fill/>
 				<Container>
 					<h3 className='text-tertiary text-center lg:text-start mb-5'>
 						{`I'm a Software Engineer.`} <span className='animate-blink'>|</span>
@@ -79,7 +79,7 @@ const Home = ({ projects }: { projects: Array<IProject> }) => {
 						})
 					}
 
-					<Link href={"/projects"} className='ml-auto underline-effect after:bg-highlight'>
+					<Link href={"/projects"} className='mx-auto underline-effect-small after:bg-hemerald font-bold text-white'>
 						<h5>view all my projects</h5>
 					</Link>
 				</Container>
