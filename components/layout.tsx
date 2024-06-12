@@ -55,7 +55,7 @@ export default function Layout({ children, pageTitle, pageDescription, breadcrum
 				</Script>
 
 				{/* <Loader /> */}
-				<MousePointer />
+				{/* <MousePointer /> */}
 				<BackToTop />
 				<SocialFlyout />
 

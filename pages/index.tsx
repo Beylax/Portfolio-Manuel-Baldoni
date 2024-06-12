@@ -7,6 +7,7 @@ import Hero from '../components/hero'
 import Skill from '../components/skill'
 import PopIn from '../components/pop-in'
 import Layout from '../components/layout'
+import Image from 'next/image'
 
 const Project = dynamic(() => import('../components/project'), { ssr: false })
 
@@ -21,13 +22,14 @@ const Home = ({ projects }: { projects: Array<IProject> }) => {
 					<Hero></Hero>
 				</Container>
 			</section>
-			<section id='info'>
+			<section id='info' className='relative isolate overflow-visible'>
+				{/* <Image className='absolute object-right object-none z-[-1] opacity-10' src={"/images/technology_bg.png"} alt='' fill/> */}
 				<Container>
 					<h3 className='text-tertiary text-center lg:text-start mb-5'>
-						I&apos;m a Software Engineer. <span className='animate-blink'>|</span>
+						{`I'm a Software Engineer.`} <span className='animate-blink'>|</span>
 					</h3>
 					<p className='text-main text-center lg:text-start'>
-						Currently, I&apos;m a Front-end Developer at <a href='https://diemmea.com' target='__blank' className='font-bold after:bg-highlight underline-effect'>DMA - CX Company for B2B</a>
+						{`Currently, I'm a Front-end Developer at `}<a href='https://diemmea.com' target='__blank' className='font-bold after:bg-highlight underline-effect'>DMA - CX Company for B2B</a>
 					</p>
 					<p className='text-center lg:text-start text-main quote mx-auto lg:mx-0 mt-5'>
 						{"I am a passionate Front End Developer with my first significant professional experience in DMA, creating engaging and interactive user experiences. "}
