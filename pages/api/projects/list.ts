@@ -5,7 +5,7 @@ export default async function getProjects(
 	req: NextApiRequest,
 	res: NextApiResponse,
 ) {
-	const resFetch = await fetchRestAPI(`/entries?content_type=project&order=fields.order`);
+	const resFetch = await fetchRestAPI(`/entries?content_type=project&order=fields.order&include=3`);
 
 	const projects: Array<IProject> = []
 	for (let i of resFetch.items) {

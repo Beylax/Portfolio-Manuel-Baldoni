@@ -5,7 +5,7 @@ export default async function getProject(
 	req: NextApiRequest,
 	res: NextApiResponse,
 ) {
-	const resFetch = await fetchRestAPI(`/entries?content_type=project&fields.slug=${req.query.id}&include=10`);
+	const resFetch = await fetchRestAPI(`/entries?content_type=project&fields.slug=${req.query.id}&include=3`);
 	const contentful_project = resFetch.items[0]
 
 	const images: Array<{

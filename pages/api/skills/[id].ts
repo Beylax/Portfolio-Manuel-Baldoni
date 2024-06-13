@@ -6,7 +6,7 @@ export default async function getSkill(
 	req: NextApiRequest,
 	res: NextApiResponse,
 ) {
-	const resFetch = await fetchRestAPI(`/entries/${req.query.id}`);
+	const resFetch = await fetchRestAPI(`/entries/${req.query.id}?include=3`);
 
 	const resImage = await fetchRestAPI(
 		`/assets/${(resFetch.fields as SkillFields).image.sys.id}`,

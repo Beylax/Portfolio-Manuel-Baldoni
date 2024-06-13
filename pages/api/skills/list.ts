@@ -6,7 +6,7 @@ export default async function getSkills(
 	req: NextApiRequest,
 	res: NextApiResponse,
 ) {
-	const resFetch = await fetchRestAPI(`/entries?content_type=skill&include=10`);
+	const resFetch = await fetchRestAPI(`/entries?content_type=skill&include=3`);
 
 	const skills: Array<ISkill> = []
 	for (let i of resFetch.items) {
