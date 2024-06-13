@@ -48,14 +48,14 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 	}
 }
 
-export async function getStaticPaths() {
-	const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
+// export async function getStaticPaths() {
+// 	const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
 
-	const projects = (await resProjects.json())?.data || []
+// 	const projects = (await resProjects.json())?.data || []
 
-	const paths = projects.map((project: IProject) => ({
-		params: { slug: project.slug },
-	}))
+// 	const paths = projects.map((project: IProject) => ({
+// 		params: { slug: project.slug },
+// 	}))
 
-	return { paths, fallback: false }
-}
+// 	return { paths, fallback: false }
+// }
