@@ -1,7 +1,6 @@
-import type { GetServerSidePropsContext, NextPage } from 'next'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import { IProject, ISkill, projects, skills } from '../lib/utils'
+import { IProject, ISkill } from '../lib/utils'
 import Container from '../components/container'
 import Hero from '../components/hero'
 import Skill from '../components/skill'
@@ -11,7 +10,22 @@ import Image from 'next/image'
 
 const Project = dynamic(() => import('../components/project'), { ssr: false })
 
-const Home = ({ projects }: { projects: Array<IProject> }) => {
+export const getStaticProps = (async () => {
+	const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
+	const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills/list`)
+
+	const projects = (await resProjects.json())?.data || []
+	const skills = (await resSkills.json())?.data || []
+
+	return {
+		props: {
+			projects,
+			skills
+		},
+	}
+})
+
+const Home = ({ projects, skills }: { projects: Array<IProject>; skills: Array<ISkill> }) => {
 	return (
 		<Layout
 			pageTitle='Manuel Baldoni - Portfolio'
@@ -23,7 +37,7 @@ const Home = ({ projects }: { projects: Array<IProject> }) => {
 				</Container>
 			</section>
 			<section id='info' className='relative isolate overflow-visible'>
-				<Image className='absolute object-right object-contain z-[-1] opacity-20' src={"/images/technology_bg2.png"} alt='' fill/>
+				<Image className='absolute object-right object-contain z-[-1] opacity-20' src={"/images/technology_bg2.png"} alt='' fill />
 				<Container>
 					<h3 className='text-tertiary text-center lg:text-start mb-5'>
 						{`I'm a Software Engineer.`} <span className='animate-blink'>|</span>
@@ -86,18 +100,6 @@ const Home = ({ projects }: { projects: Array<IProject> }) => {
 			</section>
 		</Layout>
 	)
-}
-
-export async function getServerSideProps({ query }: GetServerSidePropsContext) {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
-
-	const projects = (await res.json())?.data || null
-
-	return {
-		props: {
-			projects,
-		},
-	}
 }
 
 export default Home

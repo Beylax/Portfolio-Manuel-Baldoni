@@ -9,7 +9,7 @@ interface IPropsProject {
 }
 
 export default function Project(props: IPropsProject) {
-	const { slug, title, description, link, thumbnail_image, publish_date } = props?.project
+	const { slug, title, description, images, publish_date } = props?.project
 	const reverse = props?.reverse
 
 	return (
@@ -25,7 +25,7 @@ export default function Project(props: IPropsProject) {
 					<span className={`block w-fit mx-auto lg:mx-0 text-highlight font-semibold pointer-events-none ${reverse ? "lg:ml-auto" : ""}`}>{new Date(publish_date * 1000)?.getFullYear()}</span>
 
 					<Link href={`/projects/${slug}`} className={`block lg:hidden relative group w-11/12 mx-auto aspect-video rounded-xl overflow-hidden mt-10`}>
-						<Image src={thumbnail_image.src} alt={thumbnail_image.alt} fill sizes="90vw, min-width(1024px) 40vw" className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500 transform-gpu" />
+						<Image src={images[0].image_url} alt={images[0].alt_text} fill sizes="90vw, min-width(1024px) 40vw" className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-500 transform-gpu" />
 						<div className="absolute inset-0 opacity-50 bg-black"></div>
 					</Link>
 
@@ -36,7 +36,7 @@ export default function Project(props: IPropsProject) {
 					</Link>
 				</div>
 				<Link href={`/projects/${slug}`} className={`hidden lg:block relative group w-full lg:w-1/2 aspect-video rounded-xl overflow-hidden border-highlight z-10 border-none lg:border-t-[2px] ${reverse ? "lg:border-l-[2px] lg:shadow-project" : "lg:border-r-[2px] lg:shadow-project"}`}>
-					<Image src={thumbnail_image.src} alt={thumbnail_image.alt} fill sizes="90vw, min-width(1024px) 40vw" className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-300" />
+					<Image src={images[0].image_url} alt={images[0].alt_text} fill sizes="90vw, min-width(1024px) 40vw" className="group-hover:scale-110 grayscale group-hover:grayscale-0 object-cover transition-all duration-300" />
 					<div className="absolute inset-0 opacity-50 bg-black"></div>
 				</Link>
 			</div>

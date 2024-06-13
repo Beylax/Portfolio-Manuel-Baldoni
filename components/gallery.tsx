@@ -2,7 +2,10 @@ import Image from "next/image"
 import { useState } from "react"
 
 interface IGalleryProps {
-    images: Array<any>
+    images: Array<{
+		image_url: string
+		alt_text: string
+	}>
 }
 
 export default function Gallery(props: IGalleryProps) {
@@ -14,11 +17,11 @@ export default function Gallery(props: IGalleryProps) {
                 {
                     props?.images?.map((img, i) => {
                         return (
-                            <button type="button" key={img.src} className={"relative isolate h-[60px] lg:h-[100px] aspect-square shrink-0 rounded-lg overflow-hidden"} onClick={() => {
+                            <button type="button" key={img.image_url} className={"relative isolate h-[60px] lg:h-[100px] aspect-square shrink-0 rounded-lg overflow-hidden"} onClick={() => {
                                 setActiveImage(img)
                             }}>
-                                <div className={`absolute inset-0 bg-black z-[10] ${img.src !== activeImage.src ? "opacity-80" : "opacity-0"}`}></div>
-                                <Image src={img.src} alt={img.alt} fill className="object-cover" />
+                                <div className={`absolute inset-0 bg-black z-[10] ${img.image_url !== activeImage.image_url ? "opacity-80" : "opacity-0"}`}></div>
+                                <Image src={img.image_url} alt={img.alt_text} fill className="object-cover" />
                             </button>
                         )
                     })
@@ -26,7 +29,7 @@ export default function Gallery(props: IGalleryProps) {
             </div>
             <div className="w-full lg:w-[80%] aspect-video">
                 <div className="relative w-full h-full rounded-lg overflow-hidden">
-                    <Image src={activeImage.src} alt={activeImage.alt} fill className="object-cover" />
+                    <Image src={activeImage.image_url} alt={activeImage.alt_text} fill className="object-cover" />
                 </div>
             </div>
         </div>

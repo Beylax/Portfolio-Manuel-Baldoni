@@ -1,6 +1,5 @@
-import type { GetServerSidePropsContext, NextPage } from 'next'
 import dynamic from 'next/dynamic'
-import { IProject, projects } from '../../lib/utils'
+import { IProject } from '../../lib/utils'
 import Container from '../../components/container'
 import { useState } from 'react'
 import Icon from '../../components/icon'
@@ -8,6 +7,18 @@ import tailwindConfig from '../../tailwind.config'
 import Layout from '../../components/layout'
 
 const ProjectCard = dynamic(() => import('../../components/projectCard'), { ssr: false })
+
+export const getStaticProps = (async () => {
+	const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
+
+	const projects = (await resProjects.json())?.data || []
+
+	return {
+		props: {
+			projects,
+		},
+	}
+})
 
 enum ProjectLayout {
     grid = "",
@@ -55,18 +66,6 @@ const Projects = ({projects}: { projects: Array<IProject> }) => {
             </section>
         </Layout>
     )
-}
-
-export async function getServerSideProps({ query }: GetServerSidePropsContext) {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
-
-    const projects = (await res.json())?.data || null
-
-    return {
-        props: {
-            projects,
-        },
-    }
 }
 
 export default Projects
