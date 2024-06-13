@@ -7,23 +7,7 @@ import Skill from '../components/skill'
 import PopIn from '../components/pop-in'
 import Layout from '../components/layout'
 import Image from 'next/image'
-
-const Project = dynamic(() => import('../components/project'), { ssr: false })
-
-export const getStaticProps = (async () => {
-	const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
-	const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills/list`)
-
-	const projects = (await resProjects.json())?.data || []
-	const skills = (await resSkills.json())?.data || []
-
-	return {
-		props: {
-			projects,
-			skills
-		},
-	}
-})
+import Project from '../components/project'
 
 const Home = ({ projects, skills }: { projects: Array<IProject>; skills: Array<ISkill> }) => {
 	return (
@@ -103,3 +87,18 @@ const Home = ({ projects, skills }: { projects: Array<IProject>; skills: Array<I
 }
 
 export default Home
+
+export const getStaticProps = (async () => {
+	const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
+	const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills/list`)
+
+	const projects = (await resProjects.json())?.data || []
+	const skills = (await resSkills.json())?.data || []
+
+	return {
+		props: {
+			projects,
+			skills
+		},
+	}
+})

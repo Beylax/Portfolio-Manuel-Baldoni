@@ -1,16 +1,10 @@
-import { useRouter } from "next/router"
 import Container from "../../components/container"
 import { IProject } from "../../lib/utils"
-import { useEffect, useState } from "react"
 import Link from "next/link"
-import Icon from "../../components/icon"
-import tailwindConfig from "../../tailwind.config"
-import { GetServerSidePropsContext } from "next"
 import Gallery from "../../components/gallery"
 import Layout from "../../components/layout"
 
 export default function SingleProject({ project }: { project: IProject }) {
-
 	return (
 		<Layout
 			pageTitle={`${project?.title} project | Manuel Baldoni - Portfolio`}
@@ -42,10 +36,10 @@ export default function SingleProject({ project }: { project: IProject }) {
 	)
 }
 
-export async function getServerSideProps({ query }: GetServerSidePropsContext) {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/${query.slug}`)
+export async function getStaticProps({ params }: { params: { slug: string } }) {
+	const resProject = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/${params.slug}`)
 
-	const project = (await res.json())?.data
+	const project = (await resProject.json())?.data || []
 
 	return {
 		props: {
@@ -59,13 +53,9 @@ export async function getStaticPaths() {
 
 	const projects = (await resProjects.json())?.data || []
 
-	// Get the paths we want to prerender based on posts
-	// In production environments, prerender all pages
-	// (slower builds, but faster initial page load)
 	const paths = projects.map((project: IProject) => ({
 		params: { slug: project.slug },
 	}))
 
-	// { fallback: false } means other routes should 404
 	return { paths, fallback: false }
 }
