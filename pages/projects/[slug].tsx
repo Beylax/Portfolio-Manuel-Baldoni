@@ -36,7 +36,7 @@ export default function SingleProject({ project }: { project: IProject }) {
 	)
 }
 
-export async function getStaticProps({ params }: { params: { slug: string } }) {
+export async function getServerSideProps({ params }: { params: { slug: string } }) {
 	const resProject = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/${params.slug}`)
 
 	const project = (await resProject.json())?.data || []

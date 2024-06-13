@@ -88,7 +88,7 @@ const Home = ({ projects, skills }: { projects: Array<IProject>; skills: Array<I
 
 export default Home
 
-export const getStaticProps = (async () => {
+export const getServerSideProps = (async () => {
 	const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
 	const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills/list`)
 

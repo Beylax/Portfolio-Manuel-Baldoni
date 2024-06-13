@@ -57,7 +57,7 @@ const Projects = ({ projects }: { projects: Array<IProject> }) => {
 
 export default Projects
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
 
 	const projects = (await resProjects.json())?.data || []
