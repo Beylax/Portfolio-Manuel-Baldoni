@@ -58,7 +58,7 @@ const Projects = ({ projects, skills }: { projects: Array<IProject>; skills: Arr
 						</button>
 					</div>
 				</Container>
-				<Container className={`projects-layout ${projectsLayout} mt-10`}>
+				<Container className={`projects-layout ${projectsLayout} mt-10 min-h-screen`}>
 					{
 						projects?.map((p, i) => {
 							return (
@@ -68,6 +68,10 @@ const Projects = ({ projects, skills }: { projects: Array<IProject>; skills: Arr
 								></ProjectCard>
 							)
 						})
+					}
+					{
+						projects?.length < 0 ? 
+							<h4 className='text-white italic'>No projects available</h4> : null
 					}
 				</Container>
 			</section>
