@@ -13,7 +13,7 @@ export default async function getProject(
 		alt_text: string
 	}> = []
 
-	for (let image of contentful_project.fields.images) {
+	for (let image of contentful_project?.fields?.images || []) {
 		const image_object = resFetch.includes.Asset.find((a: any) => a.sys.id === image.sys.id)
 		const image_url = `https:${image_object.fields.file.url}`;
 
@@ -25,13 +25,14 @@ export default async function getProject(
 
 	const skills: Array<ISkill> = []
 
-	for (let skill of contentful_project.fields.skills || []) {
+	for (let skill of contentful_project?.fields?.skills || []) {
 		const skill_object = resFetch.includes.Entry.find((a: any) => a.sys.id === skill.sys.id)
 
 		const image_object = resFetch.includes.Asset.find((a: any) => a.sys.id === skill_object.fields.image.sys.id)
 		const image_url = `https:${image_object.fields.file.url}`;
 
 		skills.push({
+			contentful_id: skill_object.sys.id,
 			image_url: image_url,
 			title: skill_object.fields.title,
 			link: skill_object.fields.link,
@@ -40,12 +41,12 @@ export default async function getProject(
 	}
 
 	const project: IProject = {
-		slug: contentful_project.fields.slug,
-		title: contentful_project.fields.title,
-		description: contentful_project.fields.description,
-		link: contentful_project.fields.link,
+		slug: contentful_project?.fields.slug,
+		title: contentful_project?.fields.title,
+		description: contentful_project?.fields.description,
+		link: contentful_project?.fields.link,
 		images: images,
-		publish_date: contentful_project.fields.publishDate,
+		publish_date: contentful_project?.fields.publishDate,
 		skills: skills
 	};
 

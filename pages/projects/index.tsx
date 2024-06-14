@@ -33,7 +33,7 @@ const Projects = ({ projects, skills }: { projects: Array<IProject>; skills: Arr
 					<div>
 						{/* TODO: */}
 						{/* CUSTOM MULTISELECT */}
-						{/* <MultiSelect
+						<MultiSelect
 							defaultOption={{
 								label: "Choose skills",
 								value: "",
@@ -42,12 +42,12 @@ const Projects = ({ projects, skills }: { projects: Array<IProject>; skills: Arr
 							options={skills?.map((s: ISkill) => {
 								return {
 									label: s.title,
-									value: s.title,
+									value: s.contentful_id,
 									image_url: s.image_url,
 									isCheckedByDefault: router.query.skills?.includes(s.title) ?? false
 								}
 							})}
-						/> */}
+						/>
 					</div>
 					<div className='flex items-center gap-1'>
 						<button className={`p-2 rounded-md ${projectsLayout === ProjectLayout.grid ? "bg-highlight" : ""}`} onClick={() => setProjectsLayout(ProjectLayout.grid)}>
@@ -78,7 +78,7 @@ const Projects = ({ projects, skills }: { projects: Array<IProject>; skills: Arr
 export default Projects
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-	const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
+	const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list?skills=${context.query.skills || ""}`)
 	const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills/list`)
 
 	const projects = (await resProjects.json())?.data || []

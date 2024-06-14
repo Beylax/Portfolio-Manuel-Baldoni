@@ -15,6 +15,7 @@ export default async function getSkill(
 	const image_url = `https:${resImage.fields.file.url}`;
 
 	const skill: ISkill = {
+		contentful_id: resFetch.sys.id,
 		image_url: image_url,
 		title: resFetch.fields.title,
 		link: resFetch.fields.link,

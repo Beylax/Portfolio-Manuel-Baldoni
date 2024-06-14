@@ -13,6 +13,7 @@ export default async function getSkills(
 		const image_url = `https:${resFetch?.includes.Asset.find((a:any) => a.sys.id === (i.fields as SkillFields).image.sys.id).fields.file.url}`;
 
 		skills.push({
+			contentful_id: i.sys.id,
 			image_url: image_url,
 			title: i.fields.title,
 			link: i.fields.link,

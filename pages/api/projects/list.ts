@@ -5,16 +5,21 @@ export default async function getProjects(
 	req: NextApiRequest,
 	res: NextApiResponse,
 ) {
-	const resFetch = await fetchRestAPI(`/entries?content_type=project&order=fields.order&include=3`);
+	const filters = []
+	if (req.query.skills) {
+		filters.push(`fields.skills.sys.id[in]=${req.query.skills}`)
+	}
+	const resFetch = await fetchRestAPI(`/entries?content_type=project&order=fields.order&include=3&${filters.join("&")}`);
+
 
 	const projects: Array<IProject> = []
-	for (let i of resFetch.items) {
+	for (let i of resFetch.items || []) {
 		const images: Array<{
 			image_url: string
 			alt_text: string
 		}> = []
 
-		for (let image of i.fields.images) {
+		for (let image of i.fields.images || []) {
 			const image_object = resFetch.includes.Asset.find((a: any) => a.sys.id === image.sys.id)
 			const image_url = `https:${image_object.fields.file.url}`;
 
@@ -33,6 +38,7 @@ export default async function getProjects(
 			const image_url = `https:${image_object.fields.file.url}`;
 
 			skills.push({
+				contentful_id: skill_object.sys.id,
 				image_url: image_url,
 				title: skill_object.fields.title,
 				link: skill_object.fields.link,
