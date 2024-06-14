@@ -10,7 +10,6 @@ interface IProjectCardProps {
 
 export default function ProjectCard(props: IProjectCardProps) {
 	const { slug, title, description, link, images, publish_date, skills } = props?.project
-	console.log(skills)
 
 	return (
 		<Link href={`/projects/${slug}`} className="project-card group block overflow-hidden bg-secondary rounded-lg outline outline-hemerald outline-0 hover:outline-1 hover:shadow-project hover:scale-105 transition-transform transform-gpu">

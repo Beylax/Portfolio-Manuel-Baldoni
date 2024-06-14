@@ -13,7 +13,6 @@ export default function Header() {
 
     useEffect(() => {
         document.addEventListener("scroll", function () {
-            console.log(window)
             if (window.scrollY <= 0) {
                 document.getElementById("header")?.classList.remove("scrolled")
             }

@@ -30,6 +30,13 @@ export interface IProject {
 	skills?: Array<ISkill>
 }
 
+export interface IMultiSelectOption {
+    label: string
+	value: string
+	isCheckedByDefault: boolean
+	image_url?: string
+}
+
 export interface INavItem {
 	label: string;
 	link: string;

@@ -1,19 +1,23 @@
 import dynamic from 'next/dynamic'
-import { IProject } from '../../lib/utils'
+import { IProject, ISkill } from '../../lib/utils'
 import Container from '../../components/container'
 import { useState } from 'react'
 import Icon from '../../components/icon'
-import tailwindConfig from '../../tailwind.config'
+import tailwindConfig, { content } from '../../tailwind.config'
 import Layout from '../../components/layout'
 import ProjectCard from '../../components/projectCard'
+import { GetServerSidePropsContext } from 'next'
+import { useRouter } from 'next/router'
+import MultiSelect from '../../components/multiSelect'
 
 enum ProjectLayout {
 	grid = "",
 	list = "list"
 }
 
-const Projects = ({ projects }: { projects: Array<IProject> }) => {
+const Projects = ({ projects, skills }: { projects: Array<IProject>; skills: Array<ISkill> }) => {
 	const [projectsLayout, setProjectsLayout] = useState(ProjectLayout.grid)
+	const router = useRouter()
 
 	return (
 		<Layout
@@ -28,6 +32,22 @@ const Projects = ({ projects }: { projects: Array<IProject> }) => {
 				<Container className="flex items-center justify-between">
 					<div>
 						{/* TODO: */}
+						{/* CUSTOM MULTISELECT */}
+						{/* <MultiSelect
+							defaultOption={{
+								label: "Choose skills",
+								value: "",
+								isCheckedByDefault: false
+							}}
+							options={skills?.map((s: ISkill) => {
+								return {
+									label: s.title,
+									value: s.title,
+									image_url: s.image_url,
+									isCheckedByDefault: router.query.skills?.includes(s.title) ?? false
+								}
+							})}
+						/> */}
 					</div>
 					<div className='flex items-center gap-1'>
 						<button className={`p-2 rounded-md ${projectsLayout === ProjectLayout.grid ? "bg-highlight" : ""}`} onClick={() => setProjectsLayout(ProjectLayout.grid)}>
@@ -57,14 +77,17 @@ const Projects = ({ projects }: { projects: Array<IProject> }) => {
 
 export default Projects
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
 	const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list`)
+	const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills/list`)
 
 	const projects = (await resProjects.json())?.data || []
+	const skills = (await resSkills.json())?.data || []
 
 	return {
 		props: {
 			projects,
+			skills
 		},
 	}
 }
