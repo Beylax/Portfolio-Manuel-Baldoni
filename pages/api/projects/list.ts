@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { IProject, fetchRestAPI } from "../../../lib/utils";
+import { IProject, ISkill, fetchRestAPI } from "../../../lib/utils";
 
 export default async function getProjects(
 	req: NextApiRequest,
@@ -24,13 +24,30 @@ export default async function getProjects(
 			})
 		}
 
+		const skills: Array<ISkill> = []
+
+		for (let skill of i.fields.skills || []) {
+			const skill_object = resFetch.includes.Entry.find((a: any) => a.sys.id === skill.sys.id)
+
+			const image_object = resFetch.includes.Asset.find((a: any) => a.sys.id === skill_object.fields.image.sys.id)
+			const image_url = `https:${image_object.fields.file.url}`;
+
+			skills.push({
+				image_url: image_url,
+				title: skill_object.fields.title,
+				link: skill_object.fields.link,
+				level: skill_object.fields.level,
+			})
+		}
+
 		projects.push({
 			slug: i.fields.slug,
 			title: i.fields.title,
 			description: i.fields.description,
 			link: i.fields.link,
 			images: images,
-			publish_date: i.fields.publishDate
+			publish_date: i.fields.publishDate,
+			skills: skills
 		});
 	};
 

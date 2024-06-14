@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { IProject } from "../lib/utils"
+import { IProject, ISkill } from "../lib/utils"
 import Link from "next/link"
 import Icon from "./icon"
 import tailwindConfig from "../tailwind.config"
@@ -9,7 +9,8 @@ interface IProjectCardProps {
 }
 
 export default function ProjectCard(props: IProjectCardProps) {
-	const { slug, title, description, link, images, publish_date } = props?.project
+	const { slug, title, description, link, images, publish_date, skills } = props?.project
+	console.log(skills)
 
 	return (
 		<Link href={`/projects/${slug}`} className="project-card group block overflow-hidden bg-secondary rounded-lg outline outline-hemerald outline-0 hover:outline-1 hover:shadow-project hover:scale-105 transition-transform transform-gpu">
@@ -18,8 +19,8 @@ export default function ProjectCard(props: IProjectCardProps) {
 				<div className="absolute inset-0 bg-black opacity-70 group-hover:opacity-50"></div>
 			</div>
 			<div className="project-card-content p-4 flex-grow">
-				<header className="flex items-start justify-between">
-					<h5 className="flex items-center gap-x-3 text-hemerald font-bold mb-4">
+				<header className="flex flex-wrap items-start justify-between mb-4">
+					<h5 className="flex items-center gap-x-3 text-hemerald font-bold">
 						<span>
 							{title}
 						</span>
@@ -28,6 +29,21 @@ export default function ProjectCard(props: IProjectCardProps) {
 					<span className="text-highlight italic">{`${(new Date(publish_date * 1000)).getFullYear()}`}</span>
 				</header>
 				<p className="text-main line-clamp-2" dangerouslySetInnerHTML={{ __html: description }}></p>
+				<div className="w-full flex gap-[8px] items-center mt-4">
+					{
+						skills?.slice(0, 4)?.map((s: ISkill) => {
+							return (
+								<div key={s.title} className="relative w-[24px] h-[24px] rounded-full overflow-hidden">
+									<Image className="object-contain object-center" src={s.image_url} alt={s.title} fill />
+								</div>
+							)
+						})
+					}
+					{
+						(skills?.length || 0) > 4 ?
+							<span>{`+${(skills?.length || 0) - 4} more...`}</span> : null
+					}
+				</div>
 			</div>
 		</Link>
 	)

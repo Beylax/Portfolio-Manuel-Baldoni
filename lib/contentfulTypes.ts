@@ -34,43 +34,25 @@ export interface Sys2 {
 }
 
 export interface Space {
-	sys: Sys3;
+	sys: Relation;
 }
 
-export interface Sys3 {
+export interface Relation{
 	type: string;
 	linkType: string;
 	id: string;
 }
 
 export interface Environment {
-	sys: Sys4;
-}
-
-export interface Sys4 {
-	id: string;
-	type: string;
-	linkType: string;
+	sys: Relation;
 }
 
 export interface ContentType {
-	sys: Sys5;
-}
-
-export interface Sys5 {
-	type: string;
-	linkType: string;
-	id: string;
+	sys: Relation;
 }
 
 export interface Image {
-	sys: Sys6;
-}
-
-export interface Sys6 {
-	type: string;
-	linkType: string;
-	id: string;
+	sys: Relation;
 }
 
 export interface Includes {
@@ -99,23 +81,11 @@ export interface Sys7 {
 }
 
 export interface Space2 {
-	sys: Sys8;
-}
-
-export interface Sys8 {
-	type: string;
-	linkType: string;
-	id: string;
+	sys: Relation;
 }
 
 export interface Environment2 {
-	sys: Sys9;
-}
-
-export interface Sys9 {
-	id: string;
-	type: string;
-	linkType: string;
+	sys: Relation;
 }
 
 export interface Fields2 {
@@ -154,4 +124,7 @@ export interface ProjectFields {
 	link?: string;
 	images: Image[]
 	publishDate: number;
+	skills?: Array<{
+		sys: Relation
+	}>
 }

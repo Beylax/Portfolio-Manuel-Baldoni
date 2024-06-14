@@ -27,6 +27,7 @@ export interface IProject {
 		alt_text: string
 	}>;
 	publish_date: number;
+	skills?: Array<ISkill>
 }
 
 export interface INavItem {
