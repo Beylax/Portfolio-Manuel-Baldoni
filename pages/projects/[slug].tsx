@@ -38,7 +38,7 @@ export default function SingleProject({ project }: { project: IProject }) {
 												<Image className="object-contain object-center" src={s.image_url} alt={s.title} fill />
 												{
 													s.link ?
-														<Link className="absolute inset-0 z-10" href={s.link}></Link> : null
+														<Link className="absolute inset-0 z-10" href={s.link} target="_blank"></Link> : null
 												}
 											</li>
 										)
