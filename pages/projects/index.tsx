@@ -70,7 +70,7 @@ const Projects = ({ projects, skills }: { projects: Array<IProject>; skills: Arr
 						})
 					}
 					{
-						projects?.length < 0 ? 
+						projects?.length <= 0 ? 
 							<h4 className='text-white italic'>No projects available</h4> : null
 					}
 				</Container>
