@@ -4,6 +4,7 @@ import Link from "next/link"
 import Gallery from "../../components/gallery"
 import Layout from "../../components/layout"
 import Image from "next/image"
+import FiverLink from "../../components/fiverLink"
 
 export default function SingleProject({ project }: { project: IProject }) {
 	return (
@@ -52,6 +53,9 @@ export default function SingleProject({ project }: { project: IProject }) {
 						project?.images ?
 							<Gallery images={project?.images} /> : null
 					}
+				</section>
+				<section className="pt-0">
+					<FiverLink />
 				</section>
 			</Container>
 		</Layout>

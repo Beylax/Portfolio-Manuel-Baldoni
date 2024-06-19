@@ -9,6 +9,7 @@ import ProjectCard from '../../components/projectCard'
 import { GetServerSidePropsContext } from 'next'
 import { useRouter } from 'next/router'
 import MultiSelect from '../../components/multiSelect'
+import FiverLink from '../../components/fiverLink'
 
 enum ProjectLayout {
 	grid = "",
@@ -73,6 +74,11 @@ const Projects = ({ projects, skills }: { projects: Array<IProject>; skills: Arr
 						projects?.length <= 0 ? 
 							<h4 className='text-white italic'>No projects available</h4> : null
 					}
+				</Container>
+			</section>
+			<section className="pt-0">
+				<Container>
+					<FiverLink />
 				</Container>
 			</section>
 		</Layout>

@@ -18,7 +18,7 @@ export default function ProjectCard(props: IProjectCardProps) {
 				<div className="absolute inset-0 bg-black opacity-70 group-hover:opacity-50"></div>
 			</div>
 			<div className="project-card-content p-4 flex-grow">
-				<header className="flex flex-wrap items-start justify-between mb-4">
+				<header className="flex flex-wrap items-start justify-between">
 					<h5 className="flex items-center gap-x-3 text-hemerald font-bold">
 						<span>
 							{title}
@@ -27,8 +27,8 @@ export default function ProjectCard(props: IProjectCardProps) {
 					</h5>
 					<span className="text-highlight italic">{`${(new Date(publish_date * 1000)).getFullYear()}`}</span>
 				</header>
-				<p className="text-main line-clamp-2" dangerouslySetInnerHTML={{ __html: description }}></p>
-				<div className="w-full flex gap-[8px] items-center mt-4">
+				<p className="project-description text-main line-clamp-2 my-4" dangerouslySetInnerHTML={{ __html: description }}></p>
+				<div className="w-full flex gap-[8px] items-center">
 					{
 						skills?.slice(0, 4)?.map((s: ISkill) => {
 							return (

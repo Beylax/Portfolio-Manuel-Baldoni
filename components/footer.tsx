@@ -8,7 +8,7 @@ export default function Footer() {
         <footer className="bg-secondary py-4">
             <Container className="flex items-center justify-between">
                 <h6 className="block w-fit">
-                    © 2023 <Link href="/" className="text-main">Manuel Baldoni</Link>
+                    © {(new Date()).getFullYear()} <Link href="/" className="text-main">Manuel Baldoni</Link>
                 </h6>
                 <Social />
             </Container>

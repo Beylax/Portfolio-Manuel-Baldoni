@@ -15,7 +15,6 @@ export default async function getProjects(
 	if (req.query.limit) {
 		filters.push(`limit=${req.query.limit}`)
 	}
-	console.log(`/entries?content_type=project&order=fields.order&include=3&${filters.join("&")}`)
 	const resFetch = await fetchRestAPI(`/entries?content_type=project&order=fields.order&include=3&${filters.join("&")}`);
 
 
@@ -36,9 +35,12 @@ export default async function getProjects(
 			})
 		}
 
-		const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills/list?skills=${(i.fields.skills || [])?.map((s: any) => { return s.sys.id })?.join(",")}`)
-
-		const skills: Array<ISkill> = (await resSkills.json())?.data || []
+		let skills: Array<ISkill> = []
+		if ((i.fields.skills?.length || 0) > 0) {
+			const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills/list?skills=${(i.fields.skills || [])?.map((s: any) => { return s.sys.id })?.join(",")}`)
+	
+			skills = (await resSkills.json())?.data			
+		}
 
 		projects.push({
 			slug: i.fields.slug,

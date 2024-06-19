@@ -34,7 +34,7 @@ const Home = (
 			</section>
 			<section id='projects' className='max-w-screen overflow-x-hidden'>
 				<Container>
-					<h3 className='text-center font-bold'>MY <span className='text-highlight'>PROJECTS</span></h3>
+					<h3 className='text-center font-bold'>SOME OF MY <span className='text-highlight'>PROJECTS</span></h3>
 				</Container>
 				<Container className="flex flex-col gap-y-20">
 					{

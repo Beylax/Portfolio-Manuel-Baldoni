@@ -20,7 +20,7 @@ export default function Period(props: IPeriodProps) {
     const { title, timeline, description, images, projects, skills } = props?.period
 
     return (
-        <div className="w-full grid grid-cols-[max-content_auto_300px] gap-[50px]">
+        <div className="w-full grid grid-cols-[max-content_auto] gap-[15px] lg:gap-[50px]">
             <div className="flex items-start justify-start">
                 <div className="period-timeline sticky top-[50vh] border border-hemerald px-[8px] py-[4px] rounded-md">
                     <h5 className="font-bold">{timeline}</h5>

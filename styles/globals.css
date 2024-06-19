@@ -346,6 +346,9 @@ a{
 .projects-layout.list .project-card .project-card-image{
 	@apply h-[100px] w-[100px] ml-4 rounded-lg overflow-hidden
 }
+.projects-layout.list .project-card .project-description{
+	@apply line-clamp-1 my-2
+}
 /* ------------------ END PROJECTS ------------------- */
 
 /* ------------------ START GALLERY ------------------- */

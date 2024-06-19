@@ -72,8 +72,8 @@ export default function Layout({ children, pageTitle, pageDescription, breadcrum
 
 				<Footer></Footer>
 
-				<Analytics />
 				<SpeedInsights />
+				<Analytics />
 			</div>
 		</LoadingContext.Provider>
 	)
