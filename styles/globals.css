@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.period-timeline{
+		animation: scroll-reveal;
+		animation-timeline: view(0vh);
+		animation-range: contain 0px;
+	}
+	
+	@keyframes scroll-reveal {
+		0%{
+			background-color: transparent;
+			color: theme('colors.hemerald');
+		}
+		50%{
+			background-color: theme('colors.hemerald');
+			color: white;
+		}
+		100%{
+			background-color: transparent;
+			color: theme('colors.hemerald');
+		}
+	}
+}
+
 *{
 	@apply accent-highlight
 }

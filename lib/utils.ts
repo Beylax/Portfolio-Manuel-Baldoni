@@ -25,11 +25,23 @@ export interface IProject {
 	description: string;
 	link?: string;
 	images: Array<{
-		image_url: string
-		alt_text: string
+		image_url: string;
+		alt_text: string;
 	}>;
 	publish_date: number;
-	skills?: Array<ISkill>
+	skills?: Array<ISkill>;
+}
+
+export interface IPeriod {
+	title: string;
+	timeline?: string;
+	description: string;
+	projects?: Array<IProject>;
+	skills?: Array<ISkill>;
+	images: Array<{
+		image_url: string;
+		alt_text: string;
+	}>;
 }
 
 export interface IMultiSelectOption {
@@ -40,6 +52,7 @@ export interface IMultiSelectOption {
 }
 
 export interface INavItem {
+	id: string;
 	label: string;
 	link: string;
 	icon: IIcon;
@@ -47,6 +60,7 @@ export interface INavItem {
 
 export const navItems: Array<INavItem> = [
 	{
+		id: "home",
 		label: "Home",
 		link: "/",
 		icon: {
@@ -56,6 +70,7 @@ export const navItems: Array<INavItem> = [
 		},
 	},
 	{
+		id: "projects",
 		label: "Projects",
 		link: "/projects",
 		icon: {
@@ -65,8 +80,9 @@ export const navItems: Array<INavItem> = [
 		},
 	},
 	{
+		id: "contact",
 		label: "Contact",
-		link: "mailto:info@manuelbaldoni.com",
+		link: "mailto:manuel.baldoni.lavoro@gmail.com",
 		icon: {
 			icon: "mail-send",
 			fill: tailwindConfig.theme.extend.colors["main"],

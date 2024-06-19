@@ -38,6 +38,7 @@ module.exports = {
 				spin: "spinning 10s linear infinite",
 				"spin-reverse": "spinning-reverse 10s linear infinite",
 				pause: "pause",
+				wiggle: 'wiggle 1s infinite',
 			},
 			keyframes: {
 				blinking: {
@@ -51,6 +52,15 @@ module.exports = {
 					"0%": { rotate: "0deg" },
 					"100%": { rotate: "-360deg" },
 				},
+				wiggle: {
+					'0%': { transform: 'rotate(-3deg)' },
+					'10%': { transform: 'rotate(3deg)' },
+					'20%': { transform: 'rotate(-3deg)' },
+					'30%': { transform: 'rotate(3deg)' },
+					'40%': { transform: 'rotate(-3deg)' },
+					'50%': { transform: 'rotate(3deg)' },
+					'100%': { transform: 'rotate(0deg)' }
+				}
 			},
 			spacing: {
 				translate: {

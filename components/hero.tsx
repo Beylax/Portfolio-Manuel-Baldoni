@@ -30,7 +30,7 @@ export default function Hero() {
                         my info
                     </Link>
                     <Link
-                        href={"maito:info@manuelbaldoni.com"}
+                        href={"maito:manuel.baldoni.lavoro@gmail.com"}
                         target="_blank"
                         className={`underline-effect-small py-2 text-center text-xl font-bold uppercase text-main hover:text-hemerald transition-[scale] duration-500 delay-[1800ms] ${isLoading ? "scale-0" : ""}`}>
                         contact me

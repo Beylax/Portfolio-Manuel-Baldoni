@@ -6,7 +6,14 @@ export default async function getSkills(
 	req: NextApiRequest,
 	res: NextApiResponse,
 ) {
-	const resFetch = await fetchRestAPI(`/entries?content_type=skill&include=3`);
+	const filters = []
+	if (req.query.skills) {
+		filters.push(`sys.id[in]=${req.query.skills}`)
+	}
+	if (req.query.limit) {
+		filters.push(`limit=${req.query.limit}`)
+	}
+	const resFetch = await fetchRestAPI(`/entries?content_type=skill&include=3&${filters.join("&")}`);
 
 	const skills: Array<ISkill> = []
 	for (let i of resFetch.items) {

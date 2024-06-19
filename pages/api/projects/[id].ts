@@ -23,22 +23,9 @@ export default async function getProject(
 		})
 	}
 
-	const skills: Array<ISkill> = []
+	const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills/list?skills=${(contentful_project.fields.skills || [])?.map((s: any) => { return s.sys.id })?.join(",")}`)
 
-	for (let skill of contentful_project?.fields?.skills || []) {
-		const skill_object = resFetch.includes.Entry.find((a: any) => a.sys.id === skill.sys.id)
-
-		const image_object = resFetch.includes.Asset.find((a: any) => a.sys.id === skill_object.fields.image.sys.id)
-		const image_url = `https:${image_object.fields.file.url}`;
-
-		skills.push({
-			contentful_id: skill_object.sys.id,
-			image_url: image_url,
-			title: skill_object.fields.title,
-			link: skill_object.fields.link,
-			level: skill_object.fields.level,
-		})
-	}
+	const skills: Array<ISkill> = (await resSkills.json())?.data || []
 
 	const project: IProject = {
 		slug: contentful_project?.fields.slug,

@@ -1,25 +1,18 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { IProject, ISkill, fetchRestAPI } from "../../../lib/utils";
+import { IPeriod, IProject, ISkill, fetchRestAPI } from "../../../lib/utils";
 
-export default async function getProjects(
+export default async function getPeriods(
 	req: NextApiRequest,
 	res: NextApiResponse,
 ) {
 	const filters = []
-	if (req.query.projects) {
-		filters.push(`sys.id[in]=${req.query.projects}`)
-	}
-	if (req.query.skills) {
-		filters.push(`fields.skills.sys.id[in]=${req.query.skills}`)
-	}
 	if (req.query.limit) {
 		filters.push(`limit=${req.query.limit}`)
 	}
-	console.log(`/entries?content_type=project&order=fields.order&include=3&${filters.join("&")}`)
-	const resFetch = await fetchRestAPI(`/entries?content_type=project&order=fields.order&include=3&${filters.join("&")}`);
+	const resFetch = await fetchRestAPI(`/entries?content_type=period&order=fields.timeline&include=5&${filters.join("&")}`);
 
 
-	const projects: Array<IProject> = []
+	const periods: Array<IPeriod> = []
 	for (let i of resFetch.items || []) {
 		const images: Array<{
 			image_url: string
@@ -39,17 +32,20 @@ export default async function getProjects(
 		const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills/list?skills=${(i.fields.skills || [])?.map((s: any) => { return s.sys.id })?.join(",")}`)
 
 		const skills: Array<ISkill> = (await resSkills.json())?.data || []
+		
+        const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list?projects=${(i.fields.projects || [])?.map((p: any) => { return p.sys.id })?.join(",")}`)
 
-		projects.push({
-			slug: i.fields.slug,
-			title: i.fields.title,
-			description: i.fields.description,
-			link: i.fields.link,
-			images: images,
-			publish_date: i.fields.publishDate,
-			skills: skills
+		const projects: Array<IProject> = (await resProjects.json())?.data || []
+
+		periods.push({
+            title: i.fields.title,
+            timeline: i.fields.timeline,
+            description: i.fields.description,
+            skills: skills,
+            projects: projects,
+            images: images
 		});
 	};
 
-	return res.status(200).json({ data: projects });
+	return res.status(200).json({ data: periods });
 }

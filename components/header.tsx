@@ -20,6 +20,22 @@ export default function Header() {
                 document.getElementById("header")?.classList.add("scrolled")
             }
         })
+
+        const info_section = document.querySelector("#info")
+        const obsverver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    document.getElementById("contact")?.classList.add("notification")
+                }
+                else {
+                    document.getElementById("contact")?.classList.remove("notification")
+                }
+            });
+        })
+
+        if (info_section) {
+            obsverver.observe(info_section)
+        }
     }, [])
 
     return (
@@ -34,9 +50,9 @@ export default function Header() {
                         {
                             navItems?.map((navItem, i) => {
                                 return (
-                                    <li key={navItem.link} className={`nav-item ${router?.route === navItem.link ? "active" : ""}`}>
+                                    <li id={navItem.id} key={navItem.id} className={`nav-item ${router?.route === navItem.link ? "active" : ""} [&.notification_.nav-link:before]:opacity-100 [&.notification_.nav-link:after]:opacity-100 [&.notification_.nav-link:before]:animate-ping [&.notification]:animate-wiggle`}>
                                         <Link href={navItem.link} className="flex items-center gap-x-2">
-                                            <div className="nav-link">
+                                            <div className={`relative nav-link ${navItem.id === "contact" ? "after:absolute after:w-[6px] after:h-[6px] after:rounded-full after:bg-white after:top-0 after:right-0 after:z-20 after:transition-all after:opacity-0 before:absolute before:w-[6px] before:h-[6px] before:rounded-full before:bg-white before:top-0 before:right-0 before:z-10 before:transition-all before:opacity-0" : ""}`}>
                                                 <Icon icon={navItem.icon.icon} fill={navItem.icon.fill} classNameIcon={navItem.icon.classNameIcon} />
                                             </div>
                                             <label className="text-main underline-effect">{navItem.label}</label>

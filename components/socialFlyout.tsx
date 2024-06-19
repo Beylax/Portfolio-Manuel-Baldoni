@@ -10,20 +10,20 @@ export default function SocialFlyout() {
 
     return (
         <>
-            <div className="fixed left-4 top-1/2 translate-y-[-50%] hidden lg:flex flex-col gap-4 z-[10000]">
-                <button className="w-[50px] h-[50px] p-2 flex items-center justify-center z-[10000] bg-gradient-to-r from-highlight to-highlight50 rounded-full z-[100000]" onClick={() => {
+            <div className="fixed right-4 top-1/2 translate-y-[-50%] hidden lg:flex flex-col gap-4 z-[10000]">
+                <button className="aspect-square p-2 flex items-center justify-center z-[10000] bg-gradient-to-r from-highlight to-highlight50 rounded-full z-[100000]" onClick={() => {
                     setIsVisible(true)
                     document.querySelector("html")?.classList?.add("overflow-hidden")
                 }}>
                     <span className="text-sm font-bold ">CV</span>
                 </button>
-                <Link href="https://www.linkedin.com/in/manuel-baldoni" target="__blank" className="w-[50px] h-[50px] p-2 flex items-center justify-center bg-gradient-to-r from-highlight to-highlight50 rounded-full">
+                <Link href="https://www.linkedin.com/in/manuel-baldoni" target="__blank" className="aspect-square p-2 flex items-center justify-center bg-gradient-to-r from-highlight to-highlight50 rounded-full">
                     <Icon icon="linkedin" classNameIcon="fill-main transition-all duration-300" />
                 </Link>
-                <Link href="https://github.com/Beylax" target="__blank" className="w-[50px] h-[50px] p-2 flex items-center justify-center bg-gradient-to-r from-highlight to-highlight50 rounded-full">
+                <Link href="https://github.com/Beylax" target="__blank" className="aspect-square p-2 flex items-center justify-center bg-gradient-to-r from-highlight to-highlight50 rounded-full">
                     <Icon icon="github" classNameIcon="fill-main transition-all duration-300" />
                 </Link>
-                <Link href="https://www.instagram.com/_baldo._/" target="__blank" className="w-[50px] h-[50px] p-2 flex items-center justify-center bg-gradient-to-r from-highlight to-highlight50 rounded-full">
+                <Link href="https://www.instagram.com/_baldo._/" target="__blank" className="aspect-square p-2 flex items-center justify-center bg-gradient-to-r from-highlight to-highlight50 rounded-full">
                     <Icon icon="instagram" classNameIcon="fill-main transition-all duration-300" />
                 </Link>
             </div>

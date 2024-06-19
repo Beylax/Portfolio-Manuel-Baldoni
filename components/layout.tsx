@@ -62,7 +62,7 @@ export default function Layout({ children, pageTitle, pageDescription, breadcrum
 
 				<Header></Header>
 
-				<main className="overflow-x-hidden max-w-screen z-10">
+				<main className="relative max-w-screen z-10">
 					{
 						breadcrumb ?
 							<Breadcrumb /> : null
