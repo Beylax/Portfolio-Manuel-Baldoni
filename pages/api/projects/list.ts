@@ -15,6 +15,9 @@ export default async function getProjects(
 	if (req.query.limit) {
 		filters.push(`limit=${req.query.limit}`)
 	}
+	if (req.query.query) {
+		filters.push(`query=${req.query.query}`)
+	}
 	const resFetch = await fetchRestAPI(`/entries?content_type=project&order=fields.order&include=3&${filters.join("&")}`);
 
 

@@ -22,8 +22,8 @@ export default function MultiSelect(props: IMultiSelectProps) {
     });
 
     return (
-        <div ref={ref} className={`group relative text-black font-bold z-40`} aria-expanded={isOpen}>
-            <button className="bg-white py-2 pl-2 pr-10 rounded-md" onClick={() => setIsOpen(o => !o)}>
+        <div ref={ref} className={`w-full lg:w-auto group relative text-black z-40`} aria-expanded={isOpen}>
+            <button className="min-w-full bg-white py-2 pl-2 pr-10 rounded-md" onClick={() => setIsOpen(o => !o)}>
                 <Icon className="absolute top-[50%] right-[10px] translate-y-[-50%] transition-all duration-400 rotate-180 group-aria-expanded:rotate-0" icon="chevron-up" fill="black" />
                 <span className="flex items-center gap-[8px] ">
                     {defaultOption.label}
@@ -35,7 +35,7 @@ export default function MultiSelect(props: IMultiSelectProps) {
                     }
                 </span>
             </button>
-            <ul className="absolute top-[calc(100%+4px)] left-0 flex flex-col items-stretch gap-[2px] p-2 rounded-md bg-white text-black max-h-[300px] overflow-auto transition-all duration-400 opacity-0 pointer-events-none group-aria-expanded:opacity-100 group-aria-expanded:pointer-events-auto">
+            <ul className="min-w-full absolute top-[calc(100%+4px)] left-0 flex flex-col items-stretch gap-[2px] p-2 rounded-md bg-white text-black max-h-[300px] overflow-auto transition-all duration-400 opacity-0 pointer-events-none group-aria-expanded:opacity-100 group-aria-expanded:pointer-events-auto">
                 {
                     options?.map((o: IMultiSelectOption) => {
                         return (
