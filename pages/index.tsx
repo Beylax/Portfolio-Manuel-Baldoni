@@ -27,7 +27,7 @@ const Home = (
 			pageTitle='Manuel Baldoni - Portfolio'
 			pageDescription='Portfolio di Manuel Baldoni - Full-stack developer - Front-end passion'
 		>
-			<section className='relative isolate min-h-screen flex items-center p-0'>
+			<section className='relative isolate min-h-screen flex items-center lg:p-0'>
 				<Container>
 					<Hero></Hero>
 				</Container>
