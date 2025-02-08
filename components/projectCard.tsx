@@ -23,7 +23,6 @@ export default function ProjectCard(props: IProjectCardProps) {
 						<span>
 							{title}
 						</span>
-						<Icon icon="external-link" fill={tailwindConfig.theme.extend.colors["hemerald"]} />
 					</h5>
 					<span className="text-highlight italic">{`${(new Date(publish_date * 1000)).getFullYear()}`}</span>
 				</header>
