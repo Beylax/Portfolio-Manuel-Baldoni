@@ -15,7 +15,7 @@ export default function ProjectCard(props: IProjectCardProps) {
 		<Link href={`/projects/${slug}`} className="project-card group block overflow-hidden bg-secondary rounded-lg outline outline-hemerald outline-0 hover:outline-1 hover:shadow-project hover:scale-105 transition-transform transform-gpu">
 			<div className="project-card-image relative isolate h-[200px] flex-shrink-0">
 				<Image src={images[0].image_url} alt={images[0].alt_text} className="object-cover" fill />
-				<div className="absolute inset-0 bg-black opacity-70 group-hover:opacity-50"></div>
+				<div className="absolute inset-0 bg-black opacity-70 group-hover:opacity-20 transition-opacity"></div>
 			</div>
 			<div className="project-card-content p-4 flex-grow">
 				<header className="flex flex-wrap items-start justify-between">
