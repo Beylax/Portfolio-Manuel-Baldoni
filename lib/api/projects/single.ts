@@ -5,11 +5,13 @@ export default async function getProject({
 	slug,
 }: {
 	slug: string;
-}): Promise<IProject> {
+}): Promise<IProject | null> {
 	const resFetch = await fetchRestAPI(
 		`/entries?content_type=project&fields.slug=${slug}&include=3`,
 	);
 	const contentful_project = resFetch.items[0];
+
+	if (!contentful_project) return null;
 
 	const images: Array<{
 		image_url: string;
@@ -29,7 +31,7 @@ export default async function getProject({
 	}
 
 	const skills: Array<ISkill> = await getSkills({
-		skills: (contentful_project.fields.skills || [])
+		skills: (contentful_project?.fields.skills || [])
 			?.map((s: any) => {
 				return s.sys.id;
 			})

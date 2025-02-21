@@ -6,6 +6,7 @@ import { Params } from "../../../lib/types/general";
 import { ISkill } from "../../../lib/utils";
 import getProject from "../../../lib/api/projects/single";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export default async function ProjectPage(props: {
 	params: Params
@@ -16,6 +17,10 @@ export default async function ProjectPage(props: {
 	const project = await getProject({
 		slug: slug
 	})
+
+	if (!project) {
+		notFound()
+	}
 
 	return (
 		<Container>

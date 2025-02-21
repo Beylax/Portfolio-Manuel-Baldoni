@@ -15,7 +15,7 @@ const montserrat = Montserrat({ weight: ["100", "200", "300", "400", "500", "600
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='en'>
-			<body>
+			<body className={`${montserrat.className}`}>
 				<GoogleTagManager gtmId={"GTM-N9VXK56B"} />
 				{/* <MousePointer /> */}
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					<BackToTop />
 					<SocialFlyout />
 					<Header />
-					<main className={`${montserrat.className} isolate relative z-10`}>
+					<main className="isolate relative z-10">
 						<Breadcrumb />
 						{children}
 					</main>

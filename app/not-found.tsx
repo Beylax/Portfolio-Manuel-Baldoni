@@ -1,17 +1,21 @@
 import Link from "next/link";
 import Container from "../components/container";
+import Self from "../components/self";
 
 export default function PageNotFound() {
 	return (
-		<Container className="min-h-[calc(100vh_-_64px_-_104px)] lg:min-h-[calc(100vh_-_64px_-_136px)] flex items-center justify-center">
-			<div className="text-center">
-				<h1 className="font-bold mb-10">Page Not Found</h1>
-				<Link
-					href={"/"}
-					className={`underline-effect-small py-2 text-center text-xl font-bold uppercase text-main hover:text-hemerald transition-[scale] duration-500 delay-[1500ms]`}>
-					{"Go back home"}
+		<section className='p-0'>
+			<Container className="flex flex-col items-center justify-center min-h-[calc(100vh_-_64px_-_104px)] lg:min-h-[calc(100vh_-_64px_-_136px)]">
+				<Link href={"/"} className={`block relative w-1/3 min-w-[300px] transition-all duration-500`}>
+					<Self />
 				</Link>
-			</div>
-		</Container>
+				<h1 className='h3 text-highlight uppercase text-center !mb-2 font-bold'>
+					Page not Found
+				</h1>
+				<Link href="/" className='block text-center w-fit underline-effect-small py-2 text-xl font-bold uppercase text-main hover:text-tertiary transition-all duration-500 mx-auto'>
+					HOME
+				</Link>
+			</Container>
+		</section>
 	)
 }
