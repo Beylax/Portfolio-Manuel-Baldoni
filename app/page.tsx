@@ -1,32 +1,34 @@
-import Link from 'next/link'
-import dynamic from 'next/dynamic'
-import { IPeriod, IProject, ISkill } from '../lib/utils'
-import Container from '../components/container'
-import Hero from '../components/hero'
-import Skill from '../components/skill'
-import PopIn from '../components/pop-in'
-import Layout from '../components/layout'
-import Image from 'next/image'
-import Project from '../components/project'
-import Period from '../components/period'
+import Link from "next/link"
+import projects from "../_pages/projects"
+import Container from "../components/container"
+import Hero from "../components/hero"
+import Period from "../components/period"
+import PopIn from "../components/pop-in"
+import Project from "../components/project"
+import Skill from "../components/skill"
+import { ISkill, IPeriod, IProject } from "../lib/utils"
+import Image from "next/image"
+import { ONE_MONTH } from "../lib/consts"
+import { Metadata } from "next"
+import getProjects from "../lib/api/projects/list"
+import getSkills from "../lib/api/skills/list"
+import getPeriods from "../lib/api/periods/list"
 
-const Home = (
-	{
-		projects,
-		skills,
-		periods
-	}:
-		{
-			projects: Array<IProject>;
-			skills: Array<ISkill>;
-			periods: Array<IPeriod>
-		}
-) => {
+export const revalidate = ONE_MONTH
+
+export const metadata: Metadata = {
+	title: 'Manuel Baldoni - Portfolio',
+	description: 'Portfolio di Manuel Baldoni - Full-stack developer - Front-end passion',
+	keywords: 'Manuel Baldoni, Portfolio, Full-stack developer, Front-end passion, CSS, NextJS, React, Javascript, Typescript, HTML, Web Development, Web Design, Web Developer, Front-end Developer, Back-end Developer, Software Engineer, Software Developer',
+}
+
+export default async function HomePage() {
+	const projects = await getProjects({ limit: "3" })
+	const skills = await getSkills()
+	const periods = await getPeriods()
+
 	return (
-		<Layout
-			pageTitle='Manuel Baldoni - Portfolio'
-			pageDescription='Portfolio di Manuel Baldoni - Full-stack developer - Front-end passion'
-		>
+		<div>
 			<section className='relative isolate min-h-screen flex items-center lg:p-0'>
 				<Container>
 					<Hero></Hero>
@@ -38,7 +40,7 @@ const Home = (
 				</Container>
 				<Container className="flex flex-col gap-y-20">
 					{
-						projects?.map((p, i) => {
+						projects?.map((p: IProject, i: number) => {
 							return (
 								<Project
 									key={p?.slug}
@@ -62,7 +64,7 @@ const Home = (
 				<Container>
 					<PopIn className='container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 xl:grid-cols-8 gap-6' delay={0}>
 						{
-							skills?.map((skill: ISkill, i) => {
+							skills?.map((skill: ISkill, i: number) => {
 								return (
 									<Skill
 										key={skill?.title}
@@ -104,26 +106,6 @@ const Home = (
 					}
 				</Container>
 			</section>
-		</Layout>
+		</div>
 	)
 }
-
-export default Home
-
-export const getServerSideProps = (async () => {
-	const resProjects = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects/list?limit=3`)
-	const resSkills = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills/list`)
-	const resPeriods = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/periods/list`)
-
-	const projects = (await resProjects.json())?.data || []
-	const skills = (await resSkills.json())?.data || []
-	const periods = (await resPeriods.json())?.data || []
-
-	return {
-		props: {
-			projects,
-			skills,
-			periods
-		},
-	}
-})

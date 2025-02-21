@@ -1,12 +1,15 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { useContext } from "react"
-import { LoadingContext } from "./layout"
+import { LoadingContext } from "./contexts/loadingContext"
 import Self from "./self"
 import Blob from "./blob"
 
 export default function Hero() {
-    const { isLoading } = useContext(LoadingContext)
+	// const { isLoading } = useContext(LoadingContext)
+	const isLoading = false
 
     return (
         <div className={`hero relative flex flex-wrap items-center gap-y-20`}>
@@ -26,13 +29,13 @@ export default function Hero() {
                 <div className="flex items-center justify-center lg:justify-start gap-x-10 lg:gap-x-20 mt-10">
                     <Link
                         href={"#info"}
-                        className={`underline-effect-small py-2 text-center text-xl font-bold uppercase text-main hover:text-hemerald transition-[scale] duration-500 delay-[1500ms] ${isLoading ? "scale-0" : ""}`}>
+                        className={`underline-effect-small py-2 text-center text-xl font-bold uppercase text-main hover:text-hemerald transition-scale duration-500 delay-[1500ms] ${isLoading ? "scale-0" : ""}`}>
                         my info
                     </Link>
                     <Link
                         href={"maito:manuel.baldoni.lavoro@gmail.com"}
                         target="_blank"
-                        className={`underline-effect-small py-2 text-center text-xl font-bold uppercase text-main hover:text-hemerald transition-[scale] duration-500 delay-[1800ms] ${isLoading ? "scale-0" : ""}`}>
+                        className={`underline-effect-small py-2 text-center text-xl font-bold uppercase text-main hover:text-hemerald transition-scale duration-500 delay-[1800ms] ${isLoading ? "scale-0" : ""}`}>
                         contact me
                     </Link>
                 </div>

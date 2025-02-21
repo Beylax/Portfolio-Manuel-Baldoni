@@ -3,35 +3,35 @@
 @tailwind utilities;
 
 @layer components {
-	.period-timeline{
+	.period-timeline {
 		animation: scroll-reveal;
 		animation-timeline: view(0vh);
 		animation-range: contain 0px;
 	}
-	
+
 	@keyframes scroll-reveal {
-		0%{
+		0% {
 			background-color: transparent;
-			color: theme('colors.hemerald');
+			color: theme("colors.hemerald");
 		}
-		50%{
-			background-color: theme('colors.hemerald');
+		50% {
+			background-color: theme("colors.hemerald");
 			color: white;
 		}
-		100%{
+		100% {
 			background-color: transparent;
-			color: theme('colors.hemerald');
+			color: theme("colors.hemerald");
 		}
 	}
 }
 
-*{
-	@apply accent-highlight
+* {
+	@apply accent-highlight;
 }
 
 html,
 body,
-main{
+main {
 	color-scheme: dark;
 	scroll-behavior: smooth !important;
 	padding: 0;
@@ -41,160 +41,176 @@ main{
 }
 
 /* ------------------ START TYPOGRAPHY ------------------- */
-h1,.h1{
+h1,
+.h1 {
 	font-size: clamp(3.25rem, 2.65rem + 3vw, 6.25rem);
 	line-height: 1;
 }
-h2,.h2{
+h2,
+.h2 {
 	font-size: clamp(2.5rem, 2.25rem + 1.25vw, 3.75rem);
 	line-height: 1;
 }
-h3,.h3{
+h3,
+.h3 {
 	font-size: clamp(1.875rem, 1.634rem + 1.2048vw, 3.125rem);
 	line-height: 1;
 }
-h4,.h4{
+h4,
+.h4 {
 	font-size: clamp(1.25rem, 1.1054rem + 0.7229vw, 2rem);
 }
-h5,.h5{
+h5,
+.h5 {
 	font-size: clamp(0.875rem, 0.8027rem + 0.3614vw, 1.25rem);
 }
-h6,.h6{
+h6,
+.h6 {
 	font-size: clamp(0.75rem, 0.7018rem + 0.241vw, 1rem);
 }
 /* ------------------ END TYPOGRAPHY ------------------- */
 
 /* ------------------ START GENERAL ------------------- */
 main > section,
-main > div > section{
-	@apply py-16 lg:py-24
+main > div > section {
+	@apply py-16 lg:py-24;
 }
 
 main > section > h3,
 main > section > .h3,
 main > section > .container > h3,
-main > section > .container > .h3{
-	@apply mb-6 lg:mb-14
+main > section > .container > .h3,
+main > div > section > h3,
+main > div > section > .h3,
+main > div > section > .container > h3,
+main > div > section > .container > .h3 {
+	@apply mb-6 lg:mb-14;
 }
 
-a{
-	@apply relative text-highlight
+a {
+	@apply relative text-highlight;
 }
 
-.quote{
-	@apply max-w-[600px]
+.quote {
+	@apply max-w-[600px];
 }
 
-.underline-effect-small{
-	@apply relative after:absolute after:top-full after:left-1/2 after:w-7/12 after:h-1 after:bg-hemerald after:rounded-full after:transition-all after:duration-300
+.underline-effect-small {
+	@apply relative after:absolute after:top-full after:left-1/2 after:w-7/12 after:h-1 after:bg-hemerald after:rounded-full after:transition-all after:duration-300;
 }
-.underline-effect-small::after{
+.underline-effect-small::after {
 	transform: translateX(-50%);
 }
-.underline-effect-small:hover{
-	@apply after:w-full
+.underline-effect-small:hover {
+	@apply after:w-full;
 }
 
 /* width */
 ::-webkit-scrollbar {
 	width: 10px;
 }
-  
+
 /* Track */
 ::-webkit-scrollbar-track {
-	@apply bg-transparent
+	@apply bg-transparent;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	@apply bg-highlight rounded-full
+	@apply bg-highlight rounded-full;
 }
 
-.underline-effect{
-	@apply relative after:absolute after:top-full after:left-0 after:w-0 after:h-[1px] after:rounded-full after:transition-all after:duration-300 hover:after:w-full group-hover:after:w-full
+.underline-effect {
+	@apply relative after:absolute after:top-full after:left-0 after:w-0 after:h-[1px] after:rounded-full after:transition-all after:duration-300 hover:after:w-full group-hover:after:w-full;
 }
 
-.translate-x-center{
+.translate-x-center {
 	transform: translateX(-50%);
 }
 
-.translate-y-center{
+.translate-y-center {
 	transform: translateY(-50%);
 }
 
-.translate-tl-full{
+.translate-tl-full {
 	translate: 50% 50%;
 }
-.translate-bl-full{
+.translate-bl-full {
 	translate: 50% -50%;
 }
-.translate-tr-full{
+.translate-tr-full {
 	translate: -50% 50%;
 }
-.translate-br-full{
+.translate-br-full {
 	translate: -50% -50%;
 }
 
-.slide-in{
+.slide-in {
 	opacity: 0;
 	filter: blur(20px);
-	transition: all .5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
-.slide-in-left{
+.slide-in-left {
 	transform: translateX(-100%);
 }
-.slide-in-right{
+.slide-in-right {
 	transform: translateX(100%);
 }
-.slide-in.show{
+.slide-in.show {
 	transform: translateX(0);
 	opacity: 1;
 	filter: blur(0px);
 }
 
-.drop-down{
+.drop-down {
 	opacity: 0;
 	transform: translateY(-80%);
-	transition: all .5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 
-.drop-down.show{
+.drop-down.show {
 	opacity: 1;
 	transform: translateY(0%);
 }
 
-.pop-in.container > *{
+.pop-in.container > * {
 	opacity: 0;
 	transform: scale(0.3);
-	transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.pop-in.container.show > *{
+.pop-in.container.show > * {
 	opacity: 1;
 	transform: scale(1);
 }
 
-.pop-in:not(.container){
+.pop-in:not(.container) {
 	opacity: 0;
 	transform: scale(0.3);
-	transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.pop-in:not(.container).show{
+.pop-in:not(.container).show {
 	opacity: 1;
 	transform: scale(1);
 }
-
 
 @media (prefers-reduced-motion) {
-	.slide-in{
+	.slide-in {
 		opacity: 1;
 		filter: blur(0px);
 		transform: translate(0%, 0%);
 	}
 
-	.drop-down{
+	.drop-down {
 		opacity: 1;
 		transform: translateY(0%);
+	}
+
+	.pop-in,
+	.pop-in.container > *,
+	.pop-in.container.show > * {
+		opacity: 1;
+		transform: scale(1);
 	}
 }
 
@@ -202,9 +218,7 @@ a{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: 
-		translate(-50%, -50%)
-		rotateZ(45deg);
+	transform: translate(-50%, -50%) rotateZ(45deg);
 	perspective: 1000px;
 	border-radius: 50%;
 	width: 100px;
@@ -213,7 +227,7 @@ a{
 }
 .loader:before,
 .loader:after {
-	content: '';
+	content: "";
 	display: block;
 	position: absolute;
 	top: 0;
@@ -228,7 +242,7 @@ a{
 .loader:after {
 	@apply text-main;
 	transform: rotateY(70deg);
-	animation-delay: .4s;
+	animation-delay: 0.4s;
 }
 
 @keyframes rotate {
@@ -252,69 +266,69 @@ a{
 @keyframes spin {
 	0%,
 	100% {
-		box-shadow: .2em 0px 0 0px currentcolor;
+		box-shadow: 0.2em 0px 0 0px currentcolor;
 	}
 	12% {
-		box-shadow: .2em .2em 0 0 currentcolor;
+		box-shadow: 0.2em 0.2em 0 0 currentcolor;
 	}
 	25% {
-		box-shadow: 0 .2em 0 0px currentcolor;
+		box-shadow: 0 0.2em 0 0px currentcolor;
 	}
 	37% {
-		box-shadow: -.2em .2em 0 0 currentcolor;
+		box-shadow: -0.2em 0.2em 0 0 currentcolor;
 	}
 	50% {
-		box-shadow: -.2em 0 0 0 currentcolor;
+		box-shadow: -0.2em 0 0 0 currentcolor;
 	}
 	62% {
-		box-shadow: -.2em -.2em 0 0 currentcolor;
+		box-shadow: -0.2em -0.2em 0 0 currentcolor;
 	}
 	75% {
-		box-shadow: 0px -.2em 0 0 currentcolor;
+		box-shadow: 0px -0.2em 0 0 currentcolor;
 	}
 	87% {
-		box-shadow: .2em -.2em 0 0 currentcolor;
+		box-shadow: 0.2em -0.2em 0 0 currentcolor;
 	}
 }
 
 /* ------------------ END GENERAL ------------------- */
 
 /* ------------------ START HEADER ------------------- */
-.nav-item{
-	@apply flex flex items-center justify-center gap-x-4
+.nav-item {
+	@apply flex flex items-center justify-center gap-x-4;
 }
 
-.nav-link{
-	@apply hidden sm:block w-fit p-1 rounded-full cursor-pointer transition-all duration-300
+.nav-link {
+	@apply hidden sm:block w-fit p-1 rounded-full cursor-pointer transition-all duration-300;
 }
 
-.nav-item path{
-	@apply transition-all duration-300
+.nav-item path {
+	@apply transition-all duration-300;
 }
 
-.nav-item.active .nav-link{
-	@apply bg-main
+.nav-item.active .nav-link {
+	@apply bg-main;
 }
 
-.nav-item.active path{
-	@apply fill-black
+.nav-item.active path {
+	@apply fill-black;
 }
 
-.nav-item label::after{
-	@apply bg-main
+.nav-item label::after {
+	@apply bg-main;
 }
 
 .nav-item.active label::after,
-.nav-item:hover label::after{
-	@apply w-full
+.nav-item:hover label::after {
+	@apply w-full;
 }
 
-.nav-item:hover .nav-link{
-	@apply bg-[rgba(160,160,160,.5)]
+.nav-item:hover .nav-link {
+	@apply bg-[rgba(160,160,160,.5)];
 }
 
-.nav-item:hover path{
-	@apply fill-black
+.nav-item:hover path {
+	@apply fill-black;
 }
 /* ------------------ END HEADER ------------------- */
 
@@ -322,32 +336,32 @@ a{
 .orbit {
 	position: relative;
 	padding: 10%;
-    -webkit-transform-style: preserve-3d; 
-    -webkit-transform: rotate3d(1.5, 0.2, 1, 90deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: rotate3d(1.5, 0.2, 1, 90deg);
 }
 .orbit > .hero-img {
-    -webkit-transform-style: preserve-3d; 
-    -webkit-transform: rotate3d(-1.5, -0.2, -1,90deg) translateX(-10px);
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: rotate3d(-1.5, -0.2, -1, 90deg) translateX(-10px);
 }
 /* ------------------ END HERO ------------------- */
 
 /* ------------------ START PROJECTS ------------------- */
-.projects-layout{
+.projects-layout {
 	@apply transition-all duration-500 grid grid-cols-1 md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-10;
 }
-.projects-layout.list{
+.projects-layout.list {
 	@apply md:grid-cols-1 gap-6;
 }
 
-.projects-layout.list .project-card{
-	@apply flex items-center border-l border-hemerald
+.projects-layout.list .project-card {
+	@apply flex items-center border-l border-hemerald;
 }
 
-.projects-layout.list .project-card .project-card-image{
-	@apply h-[100px] w-[100px] ml-4 rounded-lg overflow-hidden
+.projects-layout.list .project-card .project-card-image {
+	@apply h-[100px] w-[100px] ml-4 rounded-lg overflow-hidden;
 }
-.projects-layout.list .project-card .project-description{
-	@apply line-clamp-1 my-2
+.projects-layout.list .project-card .project-description {
+	@apply line-clamp-1 my-2;
 }
 /* ------------------ END PROJECTS ------------------- */
 
@@ -356,14 +370,14 @@ a{
 .gallery *::-webkit-scrollbar {
 	height: 10px;
 }
-  
+
 /* Track */
 .gallery *::-webkit-scrollbar-track {
-	@apply bg-transparent
+	@apply bg-transparent;
 }
 
 /* Handle */
 .gallery *::-webkit-scrollbar-thumb {
-	@apply bg-highlight rounded-full
+	@apply bg-highlight rounded-full;
 }
 /* ------------------ END GALLERY ------------------- */

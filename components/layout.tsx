@@ -1,3 +1,5 @@
+"use client"
+
 import Head from "next/head";
 import Header from "./header";
 import { Montserrat, Poppins } from 'next/font/google'

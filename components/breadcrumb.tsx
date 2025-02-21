@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { usePathname } from 'next/navigation'
 import Container from "./container"
@@ -10,7 +12,11 @@ export default function Breadcrumb() {
 
     const paths = pathname?.split("/")?.filter(p => !!p)
 
-    let path = ""
+	let path = ""
+	
+	if (pathname === "/") {
+		return null
+	}
 
     return (
         <Container className="breadcrumb flex items-center gap-x-2 pt-16 lg:pt-24 pb-4">

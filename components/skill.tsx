@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
 import { ISkill } from "../lib/utils";
@@ -43,7 +45,7 @@ export default function Skill(props: ISkillProps) {
 
 	const [isHover, setIsHover] = useState<boolean>(false)
 
-	const ref = useRef<any>()
+	const ref = useRef<any>(undefined)
 
 	useEffect(() => {
 		(ref?.current as HTMLElement)?.addEventListener("mouseenter", () => setIsHover(true));

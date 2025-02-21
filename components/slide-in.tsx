@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect } from "react"
 
 interface ISlideIn {
@@ -16,7 +18,7 @@ export default function SlideIn({ children, direction }: ISlideIn) {
         }, { threshold: 0 })
         const elements = document.querySelectorAll(`.slide-in-${direction}`)
         elements.forEach(element => observer.observe(element))
-    })
+    }, [])
 
     return (
         <div className={`slide-in slide-in-${direction}`}>

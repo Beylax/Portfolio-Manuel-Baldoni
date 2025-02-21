@@ -1,8 +1,5 @@
-import { headers } from "next/dist/client/components/headers";
 import { IIcon } from "../components/icon";
 import tailwindConfig from "../tailwind.config";
-import { ContentfulResponse } from "./contentfulTypes";
-import { useEffect, useRef } from 'react';
 
 export interface IImage {
 	src: string;
@@ -125,25 +122,3 @@ export async function fetchRestAPI(link: string) {
 		throw new Error("Failed to fetch contentful API");
 	}
 }
-
-export const useOutsideClick = (callback: () => void) => {
-	const ref = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-			if (ref.current && !ref.current.contains(event.target as Node)) {
-				callback();
-			}
-		};
-
-		document.addEventListener('mouseup', handleClickOutside);
-		document.addEventListener('touchend', handleClickOutside);
-
-		return () => {
-			document.removeEventListener('mouseup', handleClickOutside);
-			document.removeEventListener('touchend', handleClickOutside);
-		};
-	}, [callback]);
-
-	return ref;
-};

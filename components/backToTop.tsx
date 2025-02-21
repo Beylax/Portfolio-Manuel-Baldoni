@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect } from "react";
 import tailwindConfig from "../tailwind.config";
 import Icon from "./icon";

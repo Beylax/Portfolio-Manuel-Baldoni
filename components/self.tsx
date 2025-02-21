@@ -1,6 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import { useContext } from "react"
-import { LoadingContext } from "./layout"
+import { LoadingContext } from "./contexts/loadingContext"
 
 export default function Self() {
     const { isLoading } = useContext(LoadingContext)
