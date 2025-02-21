@@ -8,6 +8,7 @@ import Icon from "./icon";
 import Image from "next/image";
 import Container from "./container";
 import { LoadingContext } from "./contexts/loadingContext";
+import path from "path";
 
 export default function Header() {
 	const { isLoading } = useContext(LoadingContext)
@@ -50,7 +51,7 @@ export default function Header() {
 	}, [])
 
 	return (
-		<header id="header" className={`fixed top-0 left-0 right-0 z-[10000] isolate transition-all duration-700 before:absolute before:inset-0 before:backdrop-blur-md before:z-[-1] after:absolute after:inset-0 [&.scrolled]:after:bg-gradient-to-r after:from-highlight after:to-highlight50 after:opacity-0 [&.scrolled]:after:opacity-20 after:z-[-1] after:transition-all after:duration-1000 after:ease-in-out delay-[2000ms] ${isLoading ? "translate-y-[-100%]" : ""}`}>
+		<header id="header" className={`fixed top-0 left-0 right-0 z-[10000] isolate transition-all duration-700 before:absolute before:inset-0 before:backdrop-blur-md before:z-[-1] after:absolute after:inset-0 [&.scrolled]:after:bg-gradient-to-r after:from-highlight after:to-highlight50 after:opacity-0 [&.scrolled]:after:opacity-20 after:z-[-1] after:transition-all after:duration-1000 after:ease-in-out ${isLoading ? "translate-y-[-100%]" : ""} ${pathname === "/" ? "delay-[2000ms]" : ""}`}>
 			<Container className="flex items-center justify-between py-2 lg:py-4">
 				<Link href={"/"}>
 					<Image src={"/images/logo.png"} alt="logo" width={40} height={40} />

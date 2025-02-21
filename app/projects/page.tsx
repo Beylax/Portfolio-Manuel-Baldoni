@@ -4,11 +4,9 @@ import { SearchParams } from "../../lib/types/general"
 import getSkills from "../../lib/api/skills/list"
 import getProjects from "../../lib/api/projects/list"
 import ListingProjects from "../../components/listingProjects"
+import { ONE_MONTH } from "../../lib/consts"
 
-enum ProjectLayout {
-	grid = "",
-	list = "list"
-}
+export const revalidate = ONE_MONTH
 
 export default async function ProjectsPage(props: {
 	searchParams: SearchParams

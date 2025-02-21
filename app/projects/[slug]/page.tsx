@@ -7,6 +7,9 @@ import { ISkill } from "../../../lib/utils";
 import getProject from "../../../lib/api/projects/single";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { ONE_MONTH } from "../../../lib/consts";
+
+export const revalidate = ONE_MONTH
 
 export default async function ProjectPage(props: {
 	params: Params
