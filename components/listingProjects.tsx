@@ -1,7 +1,5 @@
 "use client";
 
-import router from "next/router";
-import projects from "../_pages/projects";
 import { IProject, ISkill } from "../lib/utils";
 import tailwindConfig from "../tailwind.config";
 import Container from "./container";

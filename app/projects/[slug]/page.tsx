@@ -3,13 +3,30 @@ import Container from "../../../components/container";
 import FiverLink from "../../../components/fiverLink";
 import Gallery from "../../../components/gallery";
 import { Params } from "../../../lib/types/general";
-import { ISkill } from "../../../lib/utils";
+import { IProject, ISkill } from "../../../lib/utils";
 import getProject from "../../../lib/api/projects/single";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ONE_MONTH } from "../../../lib/consts";
+import { Metadata } from "next";
+import getProjects from "../../../lib/api/projects/list";
 
-export const revalidate = ONE_MONTH
+export async function generateMetadata(
+	{ params }: { params: Params }
+): Promise<Metadata> {
+	const slug = (await params).slug
+
+	const project = await getProject({
+		slug: slug
+	})
+
+	return {
+		title: `${project?.title} | Projects | Manuel Baldoni - Portfolio`,
+		description: project?.description,
+		keywords: `Manuel Baldoni, Portfolio, Full-stack developer, Front-end passion, CSS, NextJS, React, Javascript, Typescript, HTML, Web Development, Web Design, Web Developer, Front-end Developer, Back-end Developer, Software Engineer, Software Developer, Projects, Portfolio Projects, ${project?.title}`,
+	}
+}
+
+export const revalidate = 18144000
 
 export default async function ProjectPage(props: {
 	params: Params
@@ -72,4 +89,12 @@ export default async function ProjectPage(props: {
 			</section>
 		</Container>
 	)
+}
+
+export async function generateStaticParams() {
+	const projects = await getProjects()
+
+	return projects.map((p: IProject) => ({
+		slug: p.slug,
+	}))
 }

@@ -1,5 +1,4 @@
 import Link from "next/link"
-import projects from "../_pages/projects"
 import Container from "../components/container"
 import Hero from "../components/hero"
 import Period from "../components/period"
@@ -8,13 +7,12 @@ import Project from "../components/project"
 import Skill from "../components/skill"
 import { ISkill, IPeriod, IProject } from "../lib/utils"
 import Image from "next/image"
-import { ONE_MONTH } from "../lib/consts"
 import { Metadata } from "next"
 import getProjects from "../lib/api/projects/list"
 import getSkills from "../lib/api/skills/list"
 import getPeriods from "../lib/api/periods/list"
 
-export const revalidate = ONE_MONTH
+export const revalidate = 18144000
 
 export const metadata: Metadata = {
 	title: 'Manuel Baldoni - Portfolio',
