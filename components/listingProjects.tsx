@@ -7,7 +7,7 @@ import Icon from "./icon";
 import MultiSelect from "./multiSelect";
 import ProjectCard from "./projectCard";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface IListingProjectsProps {
 	projects: IProject[];
@@ -56,6 +56,15 @@ export default function ListingProjects(props: IListingProjectsProps) {
 	)
 
 	const [projectsLayout, setProjectsLayout] = useState(ProjectLayout.grid)
+	const [searchText, setSearchText] = useState("")
+
+	useEffect(() => {
+		if (searchText !== searchParams.get("query")) {
+			router.push(pathname + '?' + createQueryString('query', searchText, searchText ? 'update' : 'delete'), {
+				scroll: false
+			})
+		}
+	}, [searchText])
 
 	return (
 		<section className="pt-0">
@@ -71,12 +80,8 @@ export default function ListingProjects(props: IListingProjectsProps) {
 						className="w-full lg:w-auto lg:order-2 bg-white text-black p-2 rounded-md"
 						type="search"
 						placeholder="Search..."
-						value={searchParams.get("query") ?? ""}
-						onChange={(e) => {
-							router.push(pathname + '?' + createQueryString('query', e.target.value, e.target.value ? 'update' : 'remove'), {
-								scroll: false
-							})
-						}}
+						value={searchText}
+						onChange={(e) => { setSearchText(e.target.value) }}
 					/>
 					<div className="flex items-center gap-4">
 						{/* CUSTOM MULTISELECT */}
