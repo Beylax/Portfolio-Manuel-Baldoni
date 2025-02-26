@@ -12,6 +12,7 @@ import getSkills from "../lib/api/skills/list"
 import getPeriods from "../lib/api/periods/list"
 import FiverLink from "../components/fiverLink"
 import ProjectCard from "../components/projectCard"
+import SlideIn from "../components/slide-in"
 
 export const revalidate = 18144000
 
@@ -37,18 +38,20 @@ export default async function HomePage() {
 				<Container>
 					<h3 className='text-center font-bold'>SOME OF MY <span className='clip-text'>PROJECTS</span></h3>
 				</Container>
-				<Container className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-					{
-						projects?.map((p: IProject, i: number) => {
-							return (
-								<ProjectCard
-									key={p?.slug}
-									project={p}
-									i={i}
-								/>
-							)
-						})
-					}
+				<Container>
+					<SlideIn direction="top" className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+						{
+							projects?.map((p: IProject, i: number) => {
+								return (
+									<ProjectCard
+										key={p?.slug}
+										project={p}
+										i={i}
+									/>
+								)
+							})
+						}
+					</SlideIn>
 				</Container>
 				<Container>
 					<Link

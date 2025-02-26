@@ -11,7 +11,7 @@ export default function Self() {
         <div className="orbit">
             {/* <div className="absolute inset-0 rounded-full border-4 border-main animate-spin opacity-50 blur-sm">
             </div> */}
-            <div className="hero-img">
+            <div className={`hero-img ${isLoading ? "opacity-0" : ""} transition-all duration-500`}>
                 <div className='block relative w-full aspect-square transition-all duration-500 overflow-hidden rounded-[84%_32%_33%_49%_/_94%_74%_49%_25%] blur-md z-10'>
                     <Image
                         src={"/images/hero/baldoni.png"}

@@ -15,17 +15,17 @@ export default function Hero() {
 		<div className={`hero relative flex flex-wrap items-center gap-y-10 lg:gap-y-20 isolate`}>
 			<div className={`w-full lg:w-1/2 transition-all duration-700 ease-[cubic-bezier(.47,1.64,.41,.8)]`}>
 				<div>
-					<p className={`text-main text-center lg:text-start p-0 m-0 transition-all duration-1000 ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}>Driven by <span className='text-highlight50 uppercase font-black'>passion</span></p>
+					<p className={`text-main text-center lg:text-start p-0 m-0 transition-all duration-1000 delay-[900ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}>Driven by <span className='text-highlight50 uppercase font-black'>passion</span></p>
 					<h1 className='text-main font-extrabold text-center lg:text-start my-6 leading-[90%] tracking-tight'>
-						<span className={`inline-block transition-all duration-1000 delay-[500ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}>Manuel</span>
+						<span className={`inline-block transition-all duration-1000 delay-[1200ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}>Manuel</span>
 						<br></br>
-						<span className={`clip-text inline-block transition-all duration-1000 delay-[800ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}>
+						<span className={`clip-text inline-block transition-all duration-1000 delay-[1500ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}>
 							Baldoni
 						</span>
 					</h1>
 				</div>
 				<div className='relative quote my-4 lg:my-10 mx-auto lg:mx-0'>
-					<p className={`relative text-tertiary italic text-center lg:text-start mx-auto lg:mx-0 transition-all duration-[1100ms] delay-[1000ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}>
+					<p className={`relative text-tertiary italic text-center lg:text-start mx-auto lg:mx-0 transition-all duration-[1100ms] delay-[1800ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}>
 						{
 							`"Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars to change the world"`
 						}
@@ -34,7 +34,7 @@ export default function Hero() {
 
 				<div className="flex items-center justify-center lg:justify-start gap-x-10 mt-10">
 					<div
-						className={`transition-all duration-500 delay-[1400ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}
+						className={`transition-all duration-500 delay-[2100ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}
 					>
 						<Link
 							href={"#info"}
@@ -44,7 +44,7 @@ export default function Hero() {
 						</Link>
 					</div>
 					<div
-						className={`transition-all duration-500 delay-[1400ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}
+						className={`transition-all duration-500 delay-[2400ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}
 					>
 						<Link
 							href={"maito:manuel.baldoni.lavoro@gmail.com"}

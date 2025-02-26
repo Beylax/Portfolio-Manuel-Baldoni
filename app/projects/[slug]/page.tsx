@@ -44,23 +44,23 @@ export default async function ProjectPage(props: {
 
 	return (
 		<Container>
-			<section className="pt-0">
+			<section className="py-0">
 				{
 					project?.link ?
 						<Link href={project?.link} target="_blank" className="block w-fit">
-							<h1 className="text-hemerald font-bold w-fit">{project?.title}</h1>
+							<h1 className="clip-text font-bold w-fit">{project?.title}</h1>
 						</Link>
 						:
-						<h1 className="text-hemerald font-bold">{project?.title}</h1>
+						<h1 className="clip-text font-bold">{project?.title}</h1>
 				}
 			</section>
-			<section className="pt-0">
+			<section className="pt-10">
 				<p dangerouslySetInnerHTML={{ __html: project?.description }}></p>
 			</section>
 			{
 				(project?.skills || [])?.length > 0 ?
 					<section className="pt-0">
-						<h4 className="text-tertiary mb-5">{"Skills used and acuired in this project:"}</h4>
+						<h5 className="text-tertiary mb-5 uppercase font-bold">{"Skills used and acuired developing this project:"}</h5>
 						<ul className="flex flex-wrap items-center gap-[12px]">
 							{
 								project?.skills?.map((s: ISkill) => {
