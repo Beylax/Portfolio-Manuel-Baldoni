@@ -4,10 +4,11 @@ import { useEffect } from "react"
 
 interface ISlideIn {
     children: any,
-    direction: "left" | "right"
+	direction: "left" | "right" | "top" | "bottom"
+	delay?: number
 }
 
-export default function SlideIn({ children, direction }: ISlideIn) {
+export default function SlideIn({ children, direction, delay }: ISlideIn) {
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -21,7 +22,7 @@ export default function SlideIn({ children, direction }: ISlideIn) {
     }, [])
 
     return (
-        <div className={`slide-in slide-in-${direction}`}>
+        <div className={`slide-in slide-in-${direction}`} style={{ transitionDelay: `${delay ?? 0}ms` }}>
             {children}
         </div>
     )

@@ -159,7 +159,7 @@ export default function ListingProjects(props: IListingProjectsProps) {
 							<ProjectCard
 								key={p?.slug}
 								project={p}
-							></ProjectCard>
+							/>
 						);
 					})}
 					{projects?.length <= 0 ? (

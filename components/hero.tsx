@@ -38,7 +38,7 @@ export default function Hero() {
 					>
 						<Link
 							href={"#info"}
-							className={`rainbow-border text-main shadow-[0_0_10px_-2px_#ffffff] px-6 py-3 text-center text-xl font-bold uppercase rounded-md`}
+							className={`rainbow-border text-main shadow-[0_0_10px_-2px_#ffffff] px-2 py-1 lg:px-6 lg:py-3 text-center text-medium lg:text-xl font-bold uppercase rounded-md`}
 						>
 							{"my info"}
 						</Link>
@@ -48,7 +48,7 @@ export default function Hero() {
 					>
 						<Link
 							href={"maito:manuel.baldoni.lavoro@gmail.com"}
-							className={`rainbow-border text-main shadow-[0_0_10px_-2px_#ffffff] px-6 py-3 text-center text-xl font-bold uppercase rounded-md`}
+							className={`rainbow-border text-main shadow-[0_0_10px_-2px_#ffffff] px-2 py-1 lg:px-6 lg:py-3 text-center text-medium lg:text-xl font-bold uppercase rounded-md`}
 						>
 							{"contact me"}
 						</Link>

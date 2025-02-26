@@ -3,7 +3,6 @@ import Container from "../components/container"
 import Hero from "../components/hero"
 import Period from "../components/period"
 import PopIn from "../components/pop-in"
-import Project from "../components/project"
 import Skill from "../components/skill"
 import { ISkill, IPeriod, IProject } from "../lib/utils"
 import Image from "next/image"
@@ -12,6 +11,7 @@ import getProjects from "../lib/api/projects/list"
 import getSkills from "../lib/api/skills/list"
 import getPeriods from "../lib/api/periods/list"
 import FiverLink from "../components/fiverLink"
+import ProjectCard from "../components/projectCard"
 
 export const revalidate = 18144000
 
@@ -37,15 +37,15 @@ export default async function HomePage() {
 				<Container>
 					<h3 className='text-center font-bold'>SOME OF MY <span className='clip-text'>PROJECTS</span></h3>
 				</Container>
-				<Container className="flex flex-col gap-y-20">
+				<Container className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 					{
 						projects?.map((p: IProject, i: number) => {
 							return (
-								<Project
+								<ProjectCard
 									key={p?.slug}
 									project={p}
-									reverse={i % 2 === 0}
-								></Project>
+									i={i}
+								/>
 							)
 						})
 					}

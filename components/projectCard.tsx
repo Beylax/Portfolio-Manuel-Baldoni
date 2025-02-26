@@ -1,48 +1,54 @@
 "use client"
 
-import Image from "next/image"
-import { IProject, ISkill } from "../lib/utils"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
+import SlideIn from "./slide-in";
+import { IProject, ISkill } from "../lib/utils";
 
-interface IProjectCardProps {
+interface IPropsProject {
 	project: IProject
+	reverse?: boolean
+	i?: number
 }
 
-export default function ProjectCard(props: IProjectCardProps) {
-	const { slug, title, description, link, images, publish_date, skills } = props?.project
+export default function ProjectCard(props: IPropsProject) {
+	const { slug, title, description, images, publish_date, skills } = props?.project
+	const reverse = props?.reverse
 
 	return (
-		<Link href={`/projects/${slug}`} className="project-card group block overflow-hidden bg-secondary rounded-lg outline outline-hemerald outline-0 hover:outline-1 hover:shadow-project hover:scale-105 transition-transform transform-gpu">
-			<div className="project-card-image relative isolate h-[200px] flex-shrink-0">
-				<Image src={images[0].image_url} alt={images[0].alt_text ?? title ?? "Project"} className="object-cover" fill />
-				<div className="absolute inset-0 bg-black opacity-70 group-hover:opacity-20 transition-opacity"></div>
-			</div>
-			<div className="project-card-content p-4 flex-grow">
-				<header className="flex flex-wrap items-start justify-between">
-					<h5 className="flex items-center gap-x-3 text-hemerald font-bold">
-						<span>
-							{title}
-						</span>
-					</h5>
-					<span className="text-highlight italic">{`${(new Date(publish_date * 1000)).getFullYear()}`}</span>
-				</header>
-				<p className="project-description text-main line-clamp-2 my-4" dangerouslySetInnerHTML={{ __html: description }}></p>
-				<div className="w-full flex gap-[8px] items-center">
-					{
-						skills?.slice(0, 4)?.map((s: ISkill) => {
-							return (
-								<div key={s.title} className="relative w-[24px] h-[24px] rounded-full overflow-hidden">
-									<Image className="object-contain object-center" src={s.image_url} alt={s.title} fill />
-								</div>
-							)
-						})
-					}
-					{
-						(skills?.length || 0) > 4 ?
-							<span>{`+${(skills?.length || 0) - 4} more...`}</span> : null
-					}
+		<SlideIn direction={"top"} delay={props.i ?? 0 * 200}>
+			<Link href={`/projects/${slug}`} className="project-card block relative isolate h-full rounded-xl overflow-hidden before:absolute before:inset-0 before:backdrop-blur-md before:z-[-1] after:absolute after:inset-0 after:bg-gradient-to-r after:from-highlight after:to-highlight50 after:opacity-20 after:z-[-1] after:transition-all after:duration-1000 after:ease-in-out border-4 border-transparent rainbow-border-hover hover:scale-105 transition-transform transform-gpu">
+				<div className="project-card-image relative isolate h-[250px] flex-shrink-0">
+					<div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+					<Image src={images[0].image_url} alt={images[0].alt_text ?? title ?? "Project"} fill className="object-cover" />
 				</div>
-			</div>
-		</Link>
+				<div className="p-4">
+					<header className="flex flex-wrap items-center justify-between">
+						<h5 className="flex items-center gap-x-3 text-tertiary font-bold">
+							<span>
+								{title}
+							</span>
+						</h5>
+						<span className="text-sm font-bold text-hemerald italic">{`${(new Date(publish_date * 1000)).getFullYear()}`}</span>
+					</header>
+					<div className="project-description line-clamp-3 my-4 text-main" dangerouslySetInnerHTML={{ __html: description }}></div>
+					<div className="w-full flex gap-[8px] items-center">
+						{
+							skills?.slice(0, 4)?.map((s: ISkill) => {
+								return (
+									<div key={s.title} className="relative w-[24px] h-[24px] rounded-full overflow-hidden">
+										<Image className="object-contain object-center" src={s.image_url} alt={s.title} fill />
+									</div>
+								)
+							})
+						}
+						{
+							(skills?.length || 0) > 4 ?
+								<span>{`+${(skills?.length || 0) - 4} more...`}</span> : null
+						}
+					</div>
+				</div>
+			</Link>
+		</SlideIn>
 	)
 }
