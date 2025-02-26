@@ -11,6 +11,7 @@ import { Metadata } from "next"
 import getProjects from "../lib/api/projects/list"
 import getSkills from "../lib/api/skills/list"
 import getPeriods from "../lib/api/periods/list"
+import FiverLink from "../components/fiverLink"
 
 export const revalidate = 18144000
 
@@ -100,11 +101,17 @@ export default async function HomePage() {
 			</section>
 			<section>
 				<Container className="relative flex flex-col items-stretch gap-[100px]">
+					<div className="absolute top-0 bottom-0 bg-gradient-to-b from-transparent via-hemerald to-transparent w-[10px] left-[50%] translate-x-[-50%]"></div>
 					{
 						periods?.map((p: IPeriod) => {
 							return <Period key={p.title} period={p} />
 						})
 					}
+				</Container>
+			</section>
+			<section>
+				<Container>
+					<FiverLink />
 				</Container>
 			</section>
 		</div>

@@ -11,19 +11,16 @@ export default function Period(props: IPeriodProps) {
 	const { title, timeline, description } = props?.period
 
 	return (
-		<div className="w-full grid grid-cols-[max-content_auto] gap-[15px] lg:gap-[50px]">
-			<div className="flex items-start justify-start">
-				<div className="period-timeline sticky top-[50vh] border border-hemerald px-[8px] py-[4px] rounded-md">
-					<h5 className="font-bold">{timeline}</h5>
-				</div>
+		<div className="period-timeline w-full grid grid-cols-[1fr_1fr] gap-[15px] lg:gap-[100px] items-start py-20">
+			<div className="sticky top-[50vh] flex items-start justify-between gap-[20px]">
+				<h4 className="text-2xl font-bold">
+					{title}
+				</h4>
+				<h5 className="text-3xl font-bold shrink-0">
+					{timeline}
+				</h5>
 			</div>
-			<div>
-				<h4 className="text-tertiary font-bold leading-none">{title}</h4>
-				<div className="font-thin mt-[14px]" dangerouslySetInnerHTML={{ __html: description }}></div>
-			</div>
-			<div className="">
-
-			</div>
+			<div dangerouslySetInnerHTML={{ __html: description }}></div>
 		</div>
 	)
 }

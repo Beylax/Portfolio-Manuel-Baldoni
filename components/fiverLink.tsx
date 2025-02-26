@@ -1,9 +1,12 @@
 import Link from "next/link";
 
 export default function FiverLink() {
-    return (
-        <Link className="fiver-link underline-effect-small text-white block w-fit mx-auto text-center" href={"https://it.fiverr.com/s/XL0ExYZ"}>
-            {"If you'd like to work with me check out my fiver! I'll see you there"}
-        </Link>
-    )
+	return (
+		<Link
+			href={"https://it.fiverr.com/s/XL0ExYZ"}
+			className={`block w-fit mx-auto mt-10 rainbow-border text-main shadow-[0_0_10px_-2px_#ffffff] px-6 py-3 text-center text-xl font-bold uppercase rounded-md`}
+		>
+			{"If you'd like to work with me check out my fiver! I'll see you there"}
+		</Link>
+	)
 }
