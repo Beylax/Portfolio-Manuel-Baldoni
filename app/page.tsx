@@ -101,10 +101,13 @@ export default async function HomePage() {
 			</section>
 			<section>
 				<Container className="relative flex flex-col items-stretch gap-[100px]">
-					<div className="absolute top-0 bottom-0 bg-gradient-to-b from-transparent via-hemerald to-transparent w-[10px] left-[50%] translate-x-[-50%]"></div>
+					<div className="absolute top-0 bottom-0 w-[10px] left-0 lg:left-[50%] lg:translate-x-[-50%]">
+						<div className="sticky top-[50vh] translate-y-[-50%] w-[10px] h-[200px] bg-gradient-to-b from-transparent via-highlight to-transparent"></div>
+						<div className="absolute inset-0 bg-highlight opacity-10"></div>
+					</div>
 					{
-						periods?.map((p: IPeriod) => {
-							return <Period key={p.title} period={p} />
+						periods?.map((p: IPeriod, i: number) => {
+							return <Period key={p.title} period={p} i={i} />
 						})
 					}
 				</Container>
