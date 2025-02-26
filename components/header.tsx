@@ -11,7 +11,8 @@ import { LoadingContext } from "./contexts/loadingContext";
 import path from "path";
 
 export default function Header() {
-	const { isLoading } = useContext(LoadingContext)
+	// const { isLoading } = useContext(LoadingContext)
+	const isLoading = false
 	const pathname = usePathname()
 
 	useEffect(() => {

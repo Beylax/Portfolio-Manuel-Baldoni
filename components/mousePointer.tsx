@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from "react"
 
 export default function MousePointer() {
@@ -36,7 +38,7 @@ export default function MousePointer() {
                 top: mouseCoords.y,
                 left: mouseCoords.x
             }}
-            className={`${isTouchEnabled ? "hidden" : ""} fixed pointer-events-none translate-x-[-50%] translate-y-[-50%] w-[20px] h-[20px] bg-hemerald rounded-full blur-sm z-[100000]`}
+            className={`${isTouchEnabled ? "hidden" : ""} fixed pointer-events-none translate-x-[-50%] translate-y-[-50%] w-[500px] h-[500px] bg-hemerald rounded-full blur-3xl z-[-1] opacity-10`}
         >
         </div>
     )

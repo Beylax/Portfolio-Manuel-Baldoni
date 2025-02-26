@@ -13,18 +13,18 @@ export default function SocialFlyout() {
                 }}>
                     <span className="text-sm font-bold ">CV</span>
                 </button> */}
-				<PopIn delay={2000}>
-					<Link href="https://www.linkedin.com/in/manuel-baldoni" target="__blank" className="aspect-square p-2 flex items-center justify-center bg-gradient-to-r from-highlight to-highlight50 rounded-full">
+				<PopIn delay={2100}>
+					<Link href="https://www.linkedin.com/in/manuel-baldoni" target="__blank" className="rainbow-border-small aspect-square p-2 flex items-center justify-center rounded-full">
 						<Icon icon="linkedin" classNameIcon="fill-main transition-all duration-300" />
 					</Link>
 				</PopIn>
-				<PopIn delay={2250}>
-					<Link href="https://github.com/Beylax" target="__blank" className="aspect-square p-2 flex items-center justify-center bg-gradient-to-r from-highlight to-highlight50 rounded-full">
+				<PopIn delay={2350}>
+					<Link href="https://github.com/Beylax" target="__blank" className="rainbow-border-small aspect-square p-2 flex items-center justify-center rounded-full">
 						<Icon icon="github" classNameIcon="fill-main transition-all duration-300" />
 					</Link>
 				</PopIn>
-				<PopIn delay={2500}>
-					<Link href="https://www.instagram.com/_baldo._/" target="__blank" className="aspect-square p-2 flex items-center justify-center bg-gradient-to-r from-highlight to-highlight50 rounded-full">
+				<PopIn delay={2600}>
+					<Link href="https://www.instagram.com/_baldo._/" target="__blank" className="rainbow-border-small aspect-square p-2 flex items-center justify-center  rounded-full">
 						<Icon icon="instagram" classNameIcon="fill-main transition-all duration-300" />
 					</Link>
 				</PopIn>

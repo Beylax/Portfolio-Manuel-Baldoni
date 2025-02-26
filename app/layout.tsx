@@ -9,6 +9,7 @@ import SocialFlyout from '../components/socialFlyout'
 import Header from '../components/header'
 import { Montserrat } from 'next/font/google'
 import Loading from '../components/contexts/loadingContext'
+import MousePointer from '../components/mousePointer'
 
 const montserrat = Montserrat({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], style: ["normal", "italic"], subsets: ["latin"], variable: "--montserrat-font" })
 
@@ -17,13 +18,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang='en'>
 			<body className={`${montserrat.className}`}>
 				<GoogleTagManager gtmId={"GTM-N9VXK56B"} />
-				{/* <MousePointer /> */}
 
 				<Loading>
 					<BackToTop />
 					<SocialFlyout />
 					<Header />
 					<main className="isolate relative z-10">
+						{/* <MousePointer /> */}
 						<Breadcrumb />
 						{children}
 					</main>

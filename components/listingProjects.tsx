@@ -71,7 +71,7 @@ export default function ListingProjects(props: IListingProjectsProps) {
 			<Container className="mb-10 lg:mb-20">
 				<h1 className="uppercase font-bold">
 					MY{" "}
-					<span className="uppercase text-highlight">PROJECTS</span>
+					<span className="uppercase clip-text">PROJECTS</span>
 				</h1>
 			</Container>
 			<Container className="flex items-start gap-4">

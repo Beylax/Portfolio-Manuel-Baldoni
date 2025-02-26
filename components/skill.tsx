@@ -11,7 +11,7 @@ function Content(props: { skill: ISkill; isHover: boolean }) {
 
 	return (
 		<div className="group transition-all transform-gpu">
-			<div className="relative w-1/2 aspect-square mx-auto transition-all duration-300 border-[3px] border-hemerald rounded-full transform-gpu group-hover:scale-110">
+			<div className="relative w-1/2 aspect-square mx-auto transition-all duration-300 rainbow-border rounded-full transform-gpu group-hover:scale-110">
 				{/* <div
 					className="level absolute inset-[-3px] rounded-full group-hover:rotate-[720deg] transition-all duration-1000 transform-gpu"
 					style={{

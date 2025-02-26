@@ -34,7 +34,7 @@ export default async function HomePage() {
 			</section>
 			<section id='projects' className='max-w-screen overflow-x-hidden'>
 				<Container>
-					<h3 className='text-center font-bold'>SOME OF MY <span className='text-highlight'>PROJECTS</span></h3>
+					<h3 className='text-center font-bold'>SOME OF MY <span className='clip-text'>PROJECTS</span></h3>
 				</Container>
 				<Container className="flex flex-col gap-y-20">
 					{
@@ -50,14 +50,17 @@ export default async function HomePage() {
 					}
 				</Container>
 				<Container>
-					<Link href={"/projects"} className='block w-fit mx-auto mt-0 lg:mt-[60px] underline-effect-small after:bg-hemerald font-bold text-white'>
-						<h5>view all my projects</h5>
+					<Link
+						href={"/projects"}
+						className={`block w-fit mx-auto mt-10 rainbow-border text-main shadow-[0_0_10px_-2px_#ffffff] px-6 py-3 text-center text-xl font-bold uppercase rounded-md`}
+					>
+						{"view all projects"}
 					</Link>
 				</Container>
 			</section>
 			<section id='skills'>
 				<Container>
-					<h3 className='text-center font-bold'>MY SKILLS AND <span className='text-highlight'>KNOWLEDGE</span></h3>
+					<h3 className='text-center font-bold'>MY SKILLS AND <span className='clip-text'>KNOWLEDGE</span></h3>
 				</Container>
 				<Container>
 					<PopIn className='container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 xl:grid-cols-8 gap-6' delay={0}>
