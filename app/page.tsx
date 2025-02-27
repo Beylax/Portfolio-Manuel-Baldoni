@@ -38,20 +38,18 @@ export default async function HomePage() {
 				<Container>
 					<h3 className='text-center font-bold'>SOME OF MY <span className='clip-text'>PROJECTS</span></h3>
 				</Container>
-				<Container>
-					<SlideIn direction="top" className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-						{
-							projects?.map((p: IProject, i: number) => {
-								return (
-									<ProjectCard
-										key={p?.slug}
-										project={p}
-										i={i}
-									/>
-								)
-							})
-						}
-					</SlideIn>
+				<Container className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+					{
+						projects?.map((p: IProject, i: number) => {
+							return (
+								<ProjectCard
+									key={p?.slug}
+									project={p}
+									i={i}
+								/>
+							)
+						})
+					}
 				</Container>
 				<Container>
 					<Link
