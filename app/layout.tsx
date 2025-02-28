@@ -9,7 +9,6 @@ import SocialFlyout from '../components/socialFlyout'
 import Header from '../components/header'
 import { Montserrat } from 'next/font/google'
 import Loading from '../components/contexts/loadingContext'
-import MousePointer from '../components/mousePointer'
 
 const montserrat = Montserrat({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], style: ["normal", "italic"], subsets: ["latin"], variable: "--montserrat-font" })
 
