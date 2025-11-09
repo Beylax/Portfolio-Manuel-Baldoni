@@ -25,7 +25,7 @@ export default function Hero() {
 					</h1>
 				</div>
 				<div className='relative quote my-4 lg:my-10 mx-auto lg:mx-0'>
-					<p className={`relative text-tertiary italic text-center lg:text-start mx-auto lg:mx-0 transition-all duration-[1100ms] delay-[1800ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}>
+					<p className={`relative text-tertiary italic text-center lg:text-start mx-auto lg:mx-0 transition-all duration-1000 delay-[1800ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}>
 						{
 							`"Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars to change the world"`
 						}
@@ -34,7 +34,7 @@ export default function Hero() {
 
 				<div className="flex items-center justify-center lg:justify-start gap-x-10 mt-10">
 					<div
-						className={`transition-all duration-500 delay-[2100ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}
+						className={`transition-all duration-1000 delay-[2100ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}
 					>
 						<Link
 							href={"#info"}
@@ -44,7 +44,7 @@ export default function Hero() {
 						</Link>
 					</div>
 					<div
-						className={`transition-all duration-500 delay-[2400ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}
+						className={`transition-all duration-1000 delay-[2400ms] ${isLoading ? "translate-y-[-100%] opacity-0" : ""}`}
 					>
 						<Link
 							href={"maito:manuel.baldoni.lavoro@gmail.com"}
@@ -55,7 +55,7 @@ export default function Hero() {
 					</div>
 				</div>
 			</div>
-			<div className={`relative w-1/2 min-w-[300px] mx-auto order-first lg:order-last transition-all duration-500`}>
+			<div className={`relative w-1/2 min-w-[300px] mx-auto order-first lg:order-last transition-all duration-1000`}>
 				<Self />
 			</div>
 		</div>
